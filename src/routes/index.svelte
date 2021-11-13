@@ -1,5 +1,15 @@
 <script>
+	import { onMount } from 'svelte';
 	import template1 from '../../static/template1.json';
+
+	let showVsCode = false;
+	let newTemplate = {
+		'workbench.colorCustomizations': {},
+		'editor.tokenColorCustomizations': {
+			textMateRules: []
+		}
+	};
+
 	let baseColorsArr = [
 		'baseColorA',
 		'baseColorB',
@@ -14,53 +24,19 @@
 		'baseColorK'
 	];
 	let baseColors = {
-		baseColorA: 1,
-		baseColorB: 2,
-		baseColorC: 3,
-		baseColorD: 4,
-		baseColorE: 5,
-		baseColorF: 6,
-		baseColorG: 7,
-		baseColorH: 8,
-		baseColorI: 9,
-		baseColorJ: 10,
-		baseColorK: 11
+		baseColorA: '#282A36',
+		baseColorB: '#F8F8F2',
+		baseColorC: '#44475A',
+		baseColorD: '#6272A4',
+		baseColorE: '#8BE9FD',
+		baseColorF: '#50FA7B',
+		baseColorG: '#FFB86C',
+		baseColorH: '#FF79C6',
+		baseColorI: '#BD93F9',
+		baseColorJ: '#FF5555',
+		baseColorK: '#F1FA8C'
 	};
-	let baseColorsArrObj = [
-		{
-			baseColor0: '1'
-		},
-		{
-			baseColor1: '2'
-		},
-		{
-			baseColor2: '3'
-		},
-		{
-			baseColor3: '4'
-		},
-		{
-			baseColor4: '5'
-		},
-		{
-			baseColor5: '6'
-		},
-		{
-			baseColor6: '7'
-		},
-		{
-			baseColor7: '8'
-		},
-		{
-			baseColor8: '9'
-		},
-		{
-			baseColor9: '10'
-		},
-		{
-			baseColor10: '11'
-		}
-	];
+
 	let ansiColorsArr = [
 		'ansiColorA',
 		'ansiColorB',
@@ -81,27 +57,27 @@
 	];
 
 	let ansiColors = {
-		ansiColorA: 1,
-		ansiColorB: 2,
-		ansiColorC: 3,
-		ansiColorD: 4,
-		ansiColorE: 5,
-		ansiColorF: 6,
-		ansiColorG: 7,
-		ansiColorH: 8,
-		ansiColorI: 9,
-		ansiColorJ: 10,
-		ansiColorK: 11,
-		ansiColorL: 12,
-		ansiColorM: 13,
-		ansiColorN: 14,
-		ansiColorO: 15,
-		ansiColorP: 16
+		ansiColorA: '#21222C',
+		ansiColorB: '#FF5555',
+		ansiColorC: '#50FA7B',
+		ansiColorD: '#F1FA8C',
+		ansiColorE: '#BD93F9',
+		ansiColorF: '#FF79C6',
+		ansiColorG: '#8BE9FD',
+		ansiColorH: '#F8F8F2',
+		ansiColorI: '#6272A4',
+		ansiColorJ: '#FF6E6E',
+		ansiColorK: '#69FF94',
+		ansiColorL: '#FFFFA5',
+		ansiColorM: '#D6ACFF',
+		ansiColorN: '#FF92DF',
+		ansiColorO: '#A4FFFF',
+		ansiColorP: '#FFFFFF'
 	};
 	let brightColorsArr = ['brightColorA', 'brightColorB'];
 	let brightColors = {
-		brightColorA: 1,
-		brightColorB: 2
+		brightColorA: '#E9F284',
+		brightColorB: '#8BE9FE'
 	};
 	let otherColorsArr = [
 		'otherColorA',
@@ -114,75 +90,48 @@
 		'otherColorH'
 	];
 	let otherColors = {
-		otherColorA: 1,
-		otherColorB: 2,
-		otherColorC: 3,
-		otherColorD: 4,
-		otherColorE: 5,
-		otherColorF: 6,
-		otherColorG: 7,
-		otherColorH: 8,
-		otherColorI: 9
+		otherColorA: '#44475A75',
+		otherColorB: '#FFFFFF1A',
+		otherColorC: '#FFFFFF',
+		otherColorD: '#44475A70',
+		otherColorE: '#424450',
+		otherColorF: '#343746',
+		otherColorG: '#21222C',
+		otherColorH: '#191A21'
 	};
 
 	const generateTheme = () => {
-		// let testString = 'thisisateststringforben';
-		// let newString = testString.replace('stringfor', 'excercisefor');
-		// console.log(newString);
-		/*change colors functions*/
-		//base colors
-		Object.entries(template1.colors).forEach(([key, val], i) => {
-			const replaceIfTrue = baseColorsArr.find((color) => {
+		/*change editor colors*/
+		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
+			const replaceIfTrue = colorsArr.find((color) => {
 				return val.includes(color);
 			});
 			if (replaceIfTrue) {
 				const newColor = template1.colors[key].replace(
 					replaceIfTrue,
-					`${baseColors[replaceIfTrue]}`
+					`${colorsObj[replaceIfTrue]}`
 				);
 				template1.colors[key] = newColor;
 			}
+		};
+
+		//base colors
+		Object.entries(template1.colors).forEach(([key, val]) => {
+			replaceEditorColors(baseColors, baseColorsArr, key, val);
 		});
 		//ansi colors
-		Object.entries(template1.colors).forEach(([key, val], i) => {
-			const replaceIfTrue = ansiColorsArr.find((color) => {
-				return val.includes(color);
-			});
-			if (replaceIfTrue) {
-				const newColor = template1.colors[key].replace(
-					replaceIfTrue,
-					`${ansiColors[replaceIfTrue]}`
-				);
-				template1.colors[key] = newColor;
-			}
+		Object.entries(template1.colors).forEach(([key, val]) => {
+			replaceEditorColors(ansiColors, ansiColorsArr, key, val);
 		});
 		//bright other colors
-		Object.entries(template1.colors).forEach(([key, val], i) => {
-			const replaceIfTrue = brightColorsArr.find((color) => {
-				return val.includes(color);
-			});
-			if (replaceIfTrue) {
-				const newColor = template1.colors[key].replace(
-					replaceIfTrue,
-					`${brightColors[replaceIfTrue]}`
-				);
-				template1.colors[key] = newColor;
-			}
+		Object.entries(template1.colors).forEach(([key, val]) => {
+			replaceEditorColors(brightColors, brightColorsArr, key, val);
 		});
 		//other colors
-		Object.entries(template1.colors).forEach(([key, val], i) => {
-			const replaceIfTrue = otherColorsArr.find((color) => {
-				return val.includes(color);
-			});
-			if (replaceIfTrue) {
-				const newColor = template1.colors[key].replace(
-					replaceIfTrue,
-					`${otherColors[replaceIfTrue]}`
-				);
-				template1.colors[key] = newColor;
-			}
+		Object.entries(template1.colors).forEach(([key, val]) => {
+			replaceEditorColors(otherColors, otherColorsArr, key, val);
 		});
-		/*end change colors*/
+		/*end change editor colors*/
 
 		/*change tokenColors functions*/
 		template1.tokenColors.forEach((token) => {
@@ -212,22 +161,67 @@
 				token.settings.foreground = otherColors[tokenKey];
 			}
 		});
-		Object.entries(template1.colors).forEach(([key, val], i) => {
-			console.log(key, val);
-		});
+
+		newTemplate['workbench.colorCustomizations'] = template1.colors;
+		newTemplate['editor.tokenColorCustomizations']['textMateRules'] = template1.tokenColors;
+		console.log(newTemplate);
+		newTemplate = JSON.stringify(newTemplate);
+		console.log('after', newTemplate);
 	};
+
+	onMount(() => {
+		/**anonymous async function to allow normal onMount lifecycle*/
+		(async () => {
+			const Picker = (await import('vanilla-picker')).default;
+			/**
+			 * instantiates Picker library on input
+			 * @function instantiatePicker
+			 * @param divId Id of the div on which to instantiate Picker
+			 * @param inputVal value that will be bound to color picker
+			 */
+			const instantiatePicker = (divId, inputVal) => {
+				new Picker({
+					parent: document.querySelector(divId),
+					color: inputVal,
+					onChange: function (colorVal) {
+						inputVal = colorVal.hex;
+					}
+				});
+			};
+
+			baseColorsArr.forEach((color, i) => {
+				instantiatePicker(`#base-color-${i}`, baseColors[baseColorsArr[i]]);
+			});
+
+			ansiColorsArr.forEach((color, i) => {
+				instantiatePicker(`#ansi-color-${i}`, ansiColors[ansiColorsArr[i]]);
+			});
+			brightColorsArr.forEach((color, i) => {
+				instantiatePicker(`#bright-color-${i}`, brightColors[brightColorsArr[i]]);
+			});
+			otherColorsArr.forEach((color, i) => {
+				instantiatePicker(`#other-color-${i}`, otherColors[otherColorsArr[i]]);
+			});
+		})();
+	});
 </script>
 
 <h1>Welcome to Visual Studio Code Theme Generator</h1>
-<p>input colors into the following inputs and click generate to download your custom theme json</p>
+<p>
+	select colors using the following inputs and click generate to download your custom theme json
+</p>
 <div>
 	<span>
 		<h3>Base Colors</h3>
 		{#each baseColorsArr as color, i}
-			<div>
+			<div id="base-color-{i}">
 				<label>
 					color {i + 1}
-					<input type="text" bind:value={baseColors[color]} />
+					<input
+						type="text"
+						bind:value={baseColors[color]}
+						style="background-color: {baseColors[color]}"
+					/>
 				</label>
 			</div>
 		{/each}
@@ -235,10 +229,14 @@
 	<span>
 		<h3>ANSI Colors</h3>
 		{#each ansiColorsArr as color, i}
-			<div>
+			<div id="ansi-color-{i}">
 				<label>
 					color {i + 1}
-					<input type="text" bind:value={ansiColors[color]} />
+					<input
+						type="text"
+						bind:value={ansiColors[color]}
+						style="background-color: {ansiColors[color]}"
+					/>
 				</label>
 			</div>
 		{/each}
@@ -246,10 +244,14 @@
 	<span>
 		<h3>Bright Other Colors</h3>
 		{#each brightColorsArr as color, i}
-			<div>
+			<div id="bright-color-{i}">
 				<label>
 					color {i + 1}
-					<input type="text" bind:value={brightColors[color]} />
+					<input
+						type="text"
+						bind:value={brightColors[color]}
+						style="background-color: {brightColors[color]}"
+					/>
 				</label>
 			</div>
 		{/each}
@@ -257,19 +259,36 @@
 	<span>
 		<h3>Other Colors</h3>
 		{#each otherColorsArr as color, i}
-			<div>
+			<div id="other-color-{i}">
 				<label>
 					color {i + 1}
-					<input type="text" bind:value={otherColors[color]} />
+					<input
+						type="text"
+						bind:value={otherColors[color]}
+						style="background-color: {otherColors[color]}"
+					/>
 				</label>
 			</div>
 		{/each}
 	</span>
 </div>
-
 <div class="generate-btn-container">
 	<button on:click={generateTheme}>Generate Theme</button>
 </div>
+<div>
+	<button on:click={() => (showVsCode = !showVsCode)}>Show Vs Code</button>
+</div>
+{#if showVsCode}
+	<div class="vscode-container">
+		<iframe
+			id="inlineFrameExample"
+			title="Inline Frame Example"
+			width="1000"
+			height="500"
+			src="https://www.vscode.dev"
+		/>
+	</div>
+{/if}
 
 <style>
 	span {
@@ -278,5 +297,11 @@
 
 	.generate-btn-container {
 		margin-top: 10rem;
+	}
+
+	.vscode-container {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20rem;
 	}
 </style>
