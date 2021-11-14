@@ -3,7 +3,10 @@
 	import template1 from '/static/template1.json';
 	import ColorSet from './components/ColorSet.svelte';
 	import CodeFrame from './components/CodeFrame.svelte';
-
+	import { text } from 'svelte/internal';
+	/**
+	 * @function xyz {}
+	 */
 	let Picker;
 	let showVsCode = false;
 	let showDownload = false;
@@ -151,26 +154,41 @@
 
 	let showColorCategory = {
 		base: true,
-		ansi: false,
-		bright: false,
-		other: false
+		ansi: true,
+		bright: true,
+		other: true
 	};
+
 	const showColorCategoryHandler = (category) => {
 		showColorCategory[category] = !showColorCategory[category];
 	};
 	const generateTheme = () => {
 		let newTemplate = JSON.parse(JSON.stringify(template1));
-		console.log(newTemplate);
 		/*change editor colors*/
 		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
-			const replaceIfTrue = colorsArr.find((color) => {
+			const replacementKey = colorsArr.find((color) => {
 				return val.includes(color);
 			});
-			if (replaceIfTrue) {
-				const newColor = newTemplate.colors[key].replace(
-					replaceIfTrue,
-					`${colorsObj[replaceIfTrue]}`
-				);
+			if (replacementKey) {
+				let newColor;
+				//if hardcoded opacity in template, replace set opacity
+				if (newTemplate.colors[key].length > replacementKey.length) {
+					const opacityVal = newTemplate.colors[key].substring(
+						newTemplate.colors[key].length - 2,
+						newTemplate.colors[key].length
+					);
+					const replacementVal = colorsObj[replacementKey].substring(
+						0,
+						colorsObj[replacementKey].length - 2
+					);
+					newColor = replacementVal + opacityVal;
+				} else {
+					//set new color with opacity
+					newColor = newTemplate.colors[key].replace(
+						replacementKey,
+						`${colorsObj[replacementKey]}`
+					);
+				}
 				newTemplate.colors[key] = newColor;
 			}
 		};
