@@ -1,8 +1,8 @@
 {
 	"baseColors": {
 		"baseColorA": {
-			"name": "Primary Dark Background",
-			"description": "Sets the background for your main IDE container and terminal as well as sets many other dark background colors across the theme",
+			"name": "Primary Background",
+			"description": "Sets the background for your main IDE container and terminal as well as sets many other background colors across the theme",
 			"scopes": [],
 			"tags": [
 				"terminal.background",
@@ -110,8 +110,8 @@
 			]
 		},
 		"baseColorC": {
-			"name": "Secondary Dark Background",
-			"description": "Defines the background for buttons and other minor dark backgrounds",
+			"name": "Secondary Background",
+			"description": "Defines the background for buttons and other minor backgrounds",
 			"scopes": [],
 			"tags": [
 				"button.background",
@@ -465,7 +465,7 @@
 			"tags": ["editor.selectionHighlightBackground", "listFilterWidget.outline"]
 		},
 		"baseColorM": {
-			"name": "Secondary Backgrounds Color",
+			"name": "Activity Bar Backgrounds",
 			"description": "Defines the backgrounds of the activity bar and status bar as well as other backgrounds and borders",
 			"scopes": [],
 			"tags": [

@@ -4,7 +4,7 @@
 	import ColorSet from './components/ColorSet.svelte';
 	import CodeFrame from './components/CodeFrame.svelte';
 
-	let Picker;
+	let Picker; //color picker
 	let showVsCode = false;
 	let showDownload = false;
 	let showCopy = false;
@@ -12,7 +12,14 @@
 
 	let themeName = '';
 
-	let generatedTemplate;
+	/**
+	 * @param generatedTemplate downloadable template for creating/publishing a theme
+	 */
+	let generatedTemplate = {};
+
+	/**
+	 * @param generatedSettings copyable settings that can go directly into settings.json
+	 */
 	let generatedSettings = {
 		'workbench.colorCustomizations': {},
 		'editor.tokenColorCustomizations': {
@@ -21,8 +28,9 @@
 	};
 	let baseColorsArr = [
 		'baseColorA',
-		'baseColorB',
 		'baseColorC',
+		'baseColorM',
+		'baseColorB',
 		'baseColorD',
 		'baseColorE',
 		'baseColorF',
@@ -31,8 +39,7 @@
 		'baseColorI',
 		'baseColorJ',
 		'baseColorK',
-		'baseColorL',
-		'baseColorM'
+		'baseColorL'
 	];
 	let baseColors = {
 		baseColorA: '#282A36',
@@ -155,7 +162,11 @@
 		generatedSettings['workbench.colorCustomizations'] = newTemplate.colors;
 		generatedSettings['editor.tokenColorCustomizations']['textMateRules'] = newTemplate.tokenColors;
 		generatedSettings = JSON.stringify(generatedSettings);
-		generatedTemplate = JSON.stringify(newTemplate);
+
+		generatedTemplate = newTemplate;
+		generatedTemplate.name = themeName;
+		generatedTemplate = JSON.stringify(generatedTemplate);
+
 		showDownload = true;
 		showCopy = true;
 	};
@@ -187,7 +198,7 @@
 
 <h1>Welcome to Visual Studio Code Theme Generator</h1>
 <p>
-	select colors using the following inputs and click generate to download your custom theme json
+	Select colors using the following inputs and click generate to download your custom theme json
 </p>
 <div>
 	<div>
@@ -214,7 +225,7 @@
 		{/if}
 	</div>
 	<div>
-		<span><h3>ANSI Colors</h3></span>
+		<span><h3>Terminal Colors</h3></span>
 		<span>
 			<button on:click={() => showColorCategoryHandler('ansi')}
 				>{showColorCategory.ansi ? 'Hide' : 'Show'}</button
