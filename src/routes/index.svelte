@@ -104,6 +104,13 @@
 		showColorCategory[category] = !showColorCategory[category];
 	};
 	const generateTheme = () => {
+		generatedSettings = {
+			'workbench.colorCustomizations': {},
+			'editor.tokenColorCustomizations': {
+				textMateRules: []
+			}
+		};
+		generatedTemplate = {};
 		let newTemplate = JSON.parse(JSON.stringify(template1));
 		/*change editor colors*/
 		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
