@@ -1,4 +1,6 @@
 <script>
+	import { clickOutside } from '../../helpers';
+
 	import colorInfo from '/static/colorInfo.json';
 	import MoreInfo from './MoreInfo.svelte';
 	import { onMount } from 'svelte';
@@ -37,7 +39,7 @@
 		</span>
 		<span class="color-box" style="background-color: {colorObj[color]}" />
 	</div>
-	<div>
+	<div use:clickOutside on:click_outside={() => (showMoreInfo = false)}>
 		<button on:click={() => (showMoreInfo = !showMoreInfo)} class="more-info"
 			>{showMoreInfo ? 'Hide' : 'Show'} More Info</button
 		>
@@ -52,6 +54,7 @@
 		display: flex;
 		flex-direction: column;
 		flex: 0 0 25%;
+		margin-bottom: 1rem;
 	}
 	.input-container {
 		display: flex;

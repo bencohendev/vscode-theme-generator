@@ -13,7 +13,7 @@
 
 <div class="more-info">
 	<div>{description}</div>
-	<button on:click={() => (showAdvancedInfo = !showAdvancedInfo)}
+	<button class="show-advanced" on:click={() => (showAdvancedInfo = !showAdvancedInfo)}
 		>{showAdvancedInfo ? 'Hide' : 'Show'} Tags/Scopes</button
 	>
 	{#if showAdvancedInfo}
@@ -43,5 +43,13 @@
 		z-index: 1;
 		background: white;
 		position: absolute;
+		border: solid 1px black;
+		box-shadow: 2px 3px 5px 1px #a5a5a5;
+		padding: 0.5rem;
+		max-height: 30rem;
+		overflow-y: scroll;
+	}
+	.show-advanced {
+		margin-top: 0.5rem;
 	}
 </style>
