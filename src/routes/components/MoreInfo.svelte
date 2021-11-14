@@ -14,7 +14,7 @@
 <div class="more-info">
 	<div>{description}</div>
 	<button on:click={() => (showAdvancedInfo = !showAdvancedInfo)}
-		>{showAdvancedInfo ? 'Hide' : 'Show'} Advanced Info</button
+		>{showAdvancedInfo ? 'Hide' : 'Show'} Tags/Scopes</button
 	>
 	{#if showAdvancedInfo}
 		<div>

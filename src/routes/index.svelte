@@ -6,6 +6,8 @@
 
 	let Picker;
 	let showVsCode = false;
+	let themeName = '';
+
 	let newTemplate = {
 		'workbench.colorCustomizations': {},
 		'editor.tokenColorCustomizations': {
@@ -211,7 +213,6 @@
 		newTemplate['workbench.colorCustomizations'] = template1.colors;
 		newTemplate['editor.tokenColorCustomizations']['textMateRules'] = template1.tokenColors;
 		newTemplate = JSON.stringify(newTemplate);
-
 		addDownloadButton(newTemplate);
 	};
 
@@ -238,6 +239,12 @@
 	select colors using the following inputs and click generate to download your custom theme json
 </p>
 <div>
+	<div>
+		<label>
+			Theme Name
+			<input type="text" bind:value={themeName} />
+		</label>
+	</div>
 	<span>
 		<h3>Base Colors</h3>
 		<div class="color-input-row">
