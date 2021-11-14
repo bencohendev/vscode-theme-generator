@@ -1,19 +1,34 @@
 <script>
 	import colorInfo from '/static/colorInfo.json';
 	import MoreInfo from './MoreInfo.svelte';
+	import { onMount } from 'svelte';
 
 	export let colorObj;
 	export let colorCategory;
 	export let color;
 	export let i;
+	export let Picker;
 
-	let name = colorInfo[colorCategory][color].name;
+	let el;
+	let colorCategoryPlus = colorCategory + 'Colors';
+	let name = colorInfo[colorCategoryPlus][color].name;
 
 	let showMoreInfo = false;
+
+	const instantiatePicker = (Picker) => {
+		new Picker({
+			parent: el,
+			color: colorObj[color],
+			onChange: function (colorVal) {
+				colorObj[color] = colorVal.hex;
+			}
+		});
+	};
+	$: if (Picker) instantiatePicker(Picker);
 </script>
 
 <div class="color-input-column">
-	<div id="base-color-{i}" class="input-container">
+	<div bind:this={el} class="input-container">
 		<span class="input-container_inner">
 			<label>
 				{name}
@@ -27,7 +42,7 @@
 			>{showMoreInfo ? 'Hide' : 'Show'} More Info</button
 		>
 		{#if showMoreInfo}
-			<MoreInfo {colorCategory} colorKey={color} />
+			<MoreInfo colorCategory={colorCategoryPlus} colorKey={color} />
 		{/if}
 	</div>
 </div>

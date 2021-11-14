@@ -4,6 +4,7 @@
 	import ColorSet from './components/ColorSet.svelte';
 	import CodeFrame from './components/CodeFrame.svelte';
 
+	let Picker;
 	let showVsCode = false;
 	let newTemplate = {
 		'workbench.colorCustomizations': {},
@@ -210,8 +211,13 @@
 		newTemplate['workbench.colorCustomizations'] = template1.colors;
 		newTemplate['editor.tokenColorCustomizations']['textMateRules'] = template1.tokenColors;
 		newTemplate = JSON.stringify(newTemplate);
+
+		addDownloadButton(newTemplate);
+	};
+
+	const addDownloadButton = (template) => {
 		let filename = 'theme.json';
-		let blob = new Blob([JSON.stringify(newTemplate)], { type: 'application/json' });
+		let blob = new Blob([template], { type: 'application/json' });
 		let link = document.createElement('a');
 		link.download = filename;
 		link.innerHTML = 'Download Your Theme';
@@ -222,43 +228,7 @@
 	onMount(() => {
 		/**anonymous async function to allow normal onMount lifecycle*/
 		(async () => {
-			const Picker = (await import('vanilla-picker')).default;
-			baseColorsArr.forEach((color, i) => {
-				new Picker({
-					parent: document.querySelector(`#base-color-${i}`),
-					color: baseColors[baseColorsArr[i]],
-					onChange: function (colorVal) {
-						baseColors[baseColorsArr[i]] = colorVal.hex;
-					}
-				});
-			});
-			ansiColorsArr.forEach((color, i) => {
-				new Picker({
-					parent: document.querySelector(`#ansi-color-${i}`),
-					color: ansiColors[ansiColorsArr[i]],
-					onChange: function (colorVal) {
-						ansiColors[ansiColorsArr[i]] = colorVal.hex;
-					}
-				});
-			});
-			brightColorsArr.forEach((color, i) => {
-				new Picker({
-					parent: document.querySelector(`#bright-color-${i}`),
-					color: brightColors[brightColorsArr[i]],
-					onChange: function (colorVal) {
-						brightColors[brightColorsArr[i]] = colorVal.hex;
-					}
-				});
-			});
-			otherColorsArr.forEach((color, i) => {
-				new Picker({
-					parent: document.querySelector(`#other-color-${i}`),
-					color: otherColors[otherColorsArr[i]],
-					onChange: function (colorVal) {
-						otherColors[otherColorsArr[i]] = colorVal.hex;
-					}
-				});
-			});
+			Picker = (await import('vanilla-picker')).default;
 		})();
 	});
 </script>
@@ -272,7 +242,7 @@
 		<h3>Base Colors</h3>
 		<div class="color-input-row">
 			{#each baseColorsArr as color, i}
-				<ColorSet colorObj={baseColors} colorCategory={'baseColors'} {color} {i} />
+				<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {i} {Picker} />
 			{/each}
 		</div>
 	</span>
@@ -280,7 +250,7 @@
 		<h3>ANSI Colors</h3>
 		<div class="color-input-row">
 			{#each ansiColorsArr as color, i}
-				<ColorSet colorObj={ansiColors} colorCategory={'ansiColors'} {color} {i} />
+				<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {i} {Picker} />
 			{/each}
 		</div>
 	</span>
@@ -288,7 +258,7 @@
 		<h3>Bright Other Colors</h3>
 		<div class="color-input-row">
 			{#each brightColorsArr as color, i}
-				<ColorSet colorObj={brightColors} colorCategory={'brightColors'} {color} {i} />
+				<ColorSet colorObj={brightColors} colorCategory={'bright'} {color} {i} {Picker} />
 			{/each}
 		</div>
 	</span>
@@ -296,7 +266,7 @@
 		<h3>Other Colors</h3>
 		<div class="color-input-row">
 			{#each otherColorsArr as color, i}
-				<ColorSet colorObj={otherColors} colorCategory={'otherColors'} {color} {i} />
+				<ColorSet colorObj={otherColors} colorCategory={'other'} {color} {i} {Picker} />
 			{/each}
 		</div>
 	</span>
