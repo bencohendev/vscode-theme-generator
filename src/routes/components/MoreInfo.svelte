@@ -3,6 +3,8 @@
 
 	export let colorCategory;
 	export let colorKey;
+	export let background;
+	export let buttonText;
 
 	const description = colorInfo[colorCategory][colorKey].description;
 	const tags = colorInfo[colorCategory][colorKey].tags;
@@ -13,7 +15,10 @@
 
 <div class="more-info">
 	<div>{description}</div>
-	<button class="show-advanced" on:click={() => (showAdvancedInfo = !showAdvancedInfo)}
+	<button
+		class="show-advanced"
+		style="background-color:{background}; color:{buttonText}"
+		on:click={() => (showAdvancedInfo = !showAdvancedInfo)}
 		>{showAdvancedInfo ? 'Hide' : 'Show'} Tags/Scopes</button
 	>
 	{#if showAdvancedInfo}

@@ -203,80 +203,129 @@
 	});
 </script>
 
-<h1>Welcome to Visual Studio Code Theme Generator</h1>
-<p>
-	Select colors using the following inputs and click generate to download your custom theme json
-</p>
-<div>
+<main>
+	<h1>Visual Studio Code Theme Generator</h1>
+	<p>
+		Select colors using the following inputs and click generate to download your custom theme json.
+		Then you can either download a json file to use with the Vs Code yo generator, or click the copy
+		button and just paste the results directly into your settings.json file. You can also click the
+		'Show Vs Code' button to open a browser instance of Vs Code directly in the page and try your
+		theme out there by pasting the results into your settings.json.
+	</p>
 	<div>
-		<label>
-			Theme Name
-			<input type="text" bind:value={themeName} />
-		</label>
+		<div>
+			<label>
+				Theme Name
+				<input type="text" bind:value={themeName} />
+			</label>
+		</div>
+		<div>
+			<div class="color-header">
+				<span><h3>Base Colors</h3></span>
+				<span>
+					<button on:click={() => showColorCategoryHandler('base')}
+						>{showColorCategory.base ? 'Hide' : 'Show'}</button
+					>
+				</span>
+			</div>
+			{#if showColorCategory.base}
+				<span class="base">
+					<div class="color-input-row">
+						{#each baseColorsArr as color}
+							<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {Picker} />
+						{/each}
+					</div>
+				</span>
+			{/if}
+		</div>
+		<div>
+			<div class="color-header">
+				<span><h3>Terminal Colors</h3></span>
+				<span>
+					<button on:click={() => showColorCategoryHandler('ansi')}
+						>{showColorCategory.ansi ? 'Hide' : 'Show'}</button
+					>
+				</span>
+			</div>
+			{#if showColorCategory.ansi}
+				<span>
+					<div class="color-input-row">
+						{#each ansiColorsArr as color}
+							<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {Picker} />
+						{/each}
+					</div>
+				</span>
+			{/if}
+		</div>
 	</div>
-	<div>
-		<span><h3>Base Colors</h3></span>
-		<span>
-			<button on:click={() => showColorCategoryHandler('base')}
-				>{showColorCategory.base ? 'Hide' : 'Show'}</button
+	<div class="generate-btn-row">
+		<div class="generate-btn-container">
+			<button class="generate-btn" on:click={generateTheme}>Generate Theme</button>
+		</div>
+		<div class="generate-btn-container">
+			<button on:click={() => (showVsCode = !showVsCode)}
+				>{showVsCode ? 'Hide' : 'Show'} Vs Code</button
 			>
-		</span>
-		{#if showColorCategory.base}
-			<span class="base">
-				<div class="color-input-row">
-					{#each baseColorsArr as color}
-						<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {Picker} />
-					{/each}
-				</div>
-			</span>
+		</div>
+		{#if showDownload}
+			<div>
+				<a href="" bind:this={downloadButton} on:click={() => downloadHandler()}
+					>Download Your Theme</a
+				>
+			</div>
+		{/if}
+		{#if showCopy}
+			<div class="generate-btn-container">
+				<button on:click={() => copyHandler()}>Copy to Clipboard</button>
+			</div>
 		{/if}
 	</div>
-	<div>
-		<span><h3>Terminal Colors</h3></span>
-		<span>
-			<button on:click={() => showColorCategoryHandler('ansi')}
-				>{showColorCategory.ansi ? 'Hide' : 'Show'}</button
-			>
-		</span>
-		{#if showColorCategory.ansi}
-			<span>
-				<div class="color-input-row">
-					{#each ansiColorsArr as color}
-						<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {Picker} />
-					{/each}
-				</div>
-			</span>
-		{/if}
-	</div>
-</div>
-<div class="generate-btn-container">
-	<button on:click={generateTheme}>Generate Theme</button>
-</div>
-<div>
-	<button on:click={() => (showVsCode = !showVsCode)}>{showVsCode ? 'Hide' : 'Show'} Vs Code</button
-	>
-</div>
-{#if showVsCode}
-	<CodeFrame />
-{/if}
-{#if showDownload}
-	<a href="" bind:this={downloadButton} on:click={() => downloadHandler()}>Download Your Theme</a>
-{/if}
-{#if showCopy}
-	<button on:click={() => copyHandler()}>Copy to Clipboard</button>
-{/if}
+	{#if showVsCode}
+		<CodeFrame />
+	{/if}
+</main>
 
 <style>
 	@import '/static/global.css';
+	main {
+		max-width: 1280px;
+		margin: auto;
+	}
 	span {
 		display: inline-block;
 	}
-	.generate-btn-container {
-		margin-top: 10rem;
+
+	input {
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		margin: 0.25rem 0.5rem 0.5rem 0;
+	}
+
+	.color-header {
+		display: flex;
+		align-items: center;
+	}
+	.color-header span {
+		margin-right: 1rem;
+	}
+	.generate-btn-row {
+		margin-top: 2rem;
+		display: flex;
+		align-items: center;
+	}
+	.generate-btn-container,
+	a {
+		margin-right: 1rem;
+	}
+
+	.generate-btn {
+		padding: 1rem;
+		background-color: rgb(0, 185, 0);
+		color: rgb(0, 0, 0);
 	}
 	.color-input-row {
 		display: flex;
-		padding: 2rem;
+		padding: 0.5rem 2rem 2rem;
 		flex-wrap: wrap;
 	}
 </style>

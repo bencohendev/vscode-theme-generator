@@ -1,5 +1,5 @@
 <script>
-	import { clickOutside } from '../../helpers';
+	import { clickOutside, hexToRgb } from '../../helpers';
 
 	import colorInfo from '/static/colorInfo.json';
 	import MoreInfo from './MoreInfo.svelte';
@@ -16,12 +16,15 @@
 
 	let showMoreInfo = false;
 
+	let whiteOrBlack;
+
 	const instantiatePicker = (Picker) => {
 		new Picker({
 			parent: el,
 			color: colorObj[color],
 			onChange: function (colorVal) {
 				colorObj[color] = colorVal.hex;
+				whiteOrBlack = hexToRgb(colorVal.hex);
 			}
 		});
 	};
@@ -45,11 +48,19 @@
 	</div>
 
 	<div use:clickOutside on:click_outside={() => (showMoreInfo = false)}>
-		<button on:click={() => (showMoreInfo = !showMoreInfo)} class="more-info"
+		<button
+			on:click={() => (showMoreInfo = !showMoreInfo)}
+			class="more-info"
+			style="background-color:{colorObj[color]}; color:{whiteOrBlack}"
 			>{showMoreInfo ? 'Hide' : 'Show'} More Info</button
 		>
 		{#if showMoreInfo}
-			<MoreInfo colorCategory={colorCategoryPlus} colorKey={color} />
+			<MoreInfo
+				colorCategory={colorCategoryPlus}
+				colorKey={color}
+				background={colorObj[color]}
+				buttonText={whiteOrBlack}
+			/>
 		{/if}
 	</div>
 </div>
