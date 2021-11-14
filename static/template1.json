@@ -53,7 +53,7 @@
 		"terminal.background": "baseColorA",
 		"terminal.foreground": "baseColorB",
 		"terminal.ansiBrightBlack": "ansiColorI",
-		"terminal.ansiBrightRed": "ansiColorA",
+		"terminal.ansiBrightRed": "ansiColorJ",
 		"terminal.ansiBrightGreen": "ansiColorK",
 		"terminal.ansiBrightYellow": "ansiColorL",
 		"terminal.ansiBrightBlue": "ansiColorM",

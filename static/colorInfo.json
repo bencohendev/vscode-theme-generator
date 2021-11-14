@@ -1,0 +1,683 @@
+{
+	"baseColors": {
+		"baseColorA": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": [
+				"terminal.background",
+				"button.secondaryBackground",
+				"input.background",
+				"sideBarSectionHeader.background",
+				"tab.activeBackground",
+				"editor.background",
+				"editor.snippetTabstopHighlightBackground",
+				"editor.snippetFinalTabstopHighlightBackground",
+				"editorHoverWidget.background",
+				"peekViewEditor.background",
+				"panel.background",
+				"statusBarItem.remoteForeground",
+				"notification.background",
+				"notification.infoForeground",
+				"notification.warningForeground",
+				"breadcrumb.background"
+			]
+		},
+		"baseColorB": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"invalid.deprecated",
+				"meta.paragraph.markdown punctuation.definition.string.begin",
+				"meta.paragraph.markdown punctuation.definition.string.end",
+				"keyword.operator.other.powershell",
+				"keyword.other.statement-separator.powershell",
+				"meta.brace.round",
+				"meta.function-call punctuation",
+				"punctuation.definition.arguments.begin",
+				"punctuation.definition.arguments.end",
+				"punctuation.definition.entity.begin",
+				"punctuation.definition.entity.end",
+				"punctuation.definition.tag.cs",
+				"punctuation.definition.type.begin",
+				"punctuation.definition.type.end",
+				"punctuation.section.scope.begin",
+				"punctuation.section.scope.end",
+				"storage.type.generic.java",
+				"string.template meta.brace",
+				"string.template punctuation.accessor",
+				"variable",
+				"constant.other.key.perl",
+				"support.variable.property",
+				"variable.other.constant.js",
+				"variable.other.constant.ts",
+				"variable.other.constant.tsx",
+				"meta.import variable.other.readwrite.alias",
+				"meta.export variable.other.readwrite.alias",
+				"meta.variable.assignment.destructured.object.coffee variable variable",
+				"meta.selectionset.graphql meta.arguments variable",
+				"constant.other.symbol.hashkey.ruby",
+				"keyword.operator.dereference.java",
+				"keyword.operator.navigation.groovy",
+				"meta.scope.for-loop.shell punctuation.definition.string.begin",
+				"meta.scope.for-loop.shell punctuation.definition.string.end",
+				"meta.scope.for-loop.shell string",
+				"storage.modifier.import",
+				"punctuation.section.embedded.begin.tsx",
+				"punctuation.section.embedded.end.tsx",
+				"punctuation.section.embedded.begin.jsx",
+				"punctuation.section.embedded.end.jsx",
+				"punctuation.separator.list.comma.css",
+				"constant.language.empty-list.haskell",
+				"punctuation.definition.attribute-selector.end.bracket.square.scss",
+				"punctuation.definition.attribute-selector.begin.bracket.square.scss"
+			],
+			"tags": [
+				"terminal.foreground",
+				"foreground",
+				"button.foreground",
+				"button.secondaryForeground",
+				"dropdown.foreground",
+				"input.foreground",
+				"badge.foreground",
+				"list.activeSelectionForeground",
+				"activityBar.foreground",
+				"activityBarBadge.foreground",
+				"sideBarTitle.foreground",
+				"tab.activeForeground",
+				"editor.foreground",
+				"editorBracketHighlight.foreground1",
+				"editorSuggestWidget.foreground",
+				"peekViewResult.fileForeground",
+				"peekViewResult.lineForeground",
+				"peekViewResult.selectionForeground",
+				"peekViewTitleLabel.foreground",
+				"panelTitle.activeForeground",
+				"statusBar.foreground",
+				"statusBar.noFolderForeground",
+				"titleBar.activeForeground",
+				"notification.foreground",
+				"notification.buttonForeground",
+				"notification.errorForeground",
+				"extensionButton.prominentForeground",
+				"settings.headerForeground",
+				"settings.dropdownForeground",
+				"settings.checkboxForeground",
+				"settings.textInputForeground",
+				"settings.numberInputForeground",
+				"breadcrumb.focusForeground",
+				"breadcrumb.activeSelectionForeground"
+			]
+		},
+		"baseColorC": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": [
+				"button.background",
+				"badge.background",
+				"list.activeSelectionBackground",
+				"list.dropBackground",
+				"list.focusBackground",
+				"list.hoverBackground",
+				"list.inactiveSelectionBackground",
+				"editorGroup.dropBackground",
+				"editor.selectionBackground",
+				"editor.findRangeHighlightBackground",
+				"editor.lineHighlightBorder",
+				"editorSuggestWidget.selectedBackground",
+				"peekView.border",
+				"peekViewResult.selectionBackground",
+				"notification.buttonBackground",
+				"notification.buttonHoverBackground"
+			]
+		},
+		"baseColorD": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"meta.diff",
+				"meta.diff.header",
+				"meta.separator.markdown",
+
+				"comment",
+				"punctuation.definition.comment",
+				"unused.comment",
+				"wildcard.comment",
+				"string.quoted.docstring.multi",
+				"string.quoted.docstring.multi.python punctuation.definition.string.begin",
+				"string.quoted.docstring.multi.python punctuation.definition.string.end",
+				"string.quoted.docstring.multi.python constant.character.escape",
+				"meta.preprocessor.haskell"
+			],
+			"tags": [
+				"focusBorder",
+				"input.placeholderForeground",
+				"activityBar.inactiveForeground",
+				"tab.inactiveForeground",
+				"editorLineNumber.foreground",
+				"editor.snippetTabstopHighlightBorder",
+				"editorCodeLens.foreground",
+				"gitDecoration.ignoredResourceForeground",
+				"editorHoverWidget.border",
+				"peekViewTitleDescription.foreground",
+				"panelTitle.inactiveForeground",
+				"titleBar.inactiveForeground",
+				"breadcrumb.foreground"
+			]
+		},
+		"baseColorE": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"beginning.punctuation.definition.list.markdown",
+				"beginning.punctuation.definition.quote.markdown",
+				"punctuation.definition.link.restructuredtext",
+				"markup.underline.link",
+				"markup.underline.link.image",
+				"entity.name.type.class",
+				"entity.name.class",
+				"entity.other.inherited-class",
+				"comment.block.documentation entity.name.type",
+
+				"comment.block.documentation entity.name.type punctuation.definition.bracket",
+				"support",
+
+				"entity.name.function.target.makefile",
+				"entity.name.section.toml",
+				"entity.name.tag.yaml",
+				"variable.other.key.toml",
+				"entity.name.type",
+				"keyword.primitive-datatypes.swift",
+				"keyword.type.cs",
+				"meta.protocol-list.objc",
+				"meta.return-type.objc",
+				"source.go storage.type",
+				"source.groovy storage.type",
+				"source.java storage.type",
+				"source.powershell entity.other.attribute-name",
+				"storage.class.std.rust",
+				"storage.type.attribute.swift",
+				"storage.type.c",
+				"storage.type.core.rust",
+				"storage.type.cs",
+				"storage.type.groovy",
+				"storage.type.objc",
+				"storage.type.php",
+				"storage.type.haskell",
+				"storage.type.ocaml",
+				"punctuation.definition.character-class.regexp",
+				"entity.name.fragment.graphql",
+				"variable.fragment.graphql"
+			],
+			"tags": [
+				"list.highlightForeground",
+				"editor.wordHighlightBackground",
+				"editor.hoverHighlightBackground",
+				"editorLink.activeForeground",
+				"editorBracketHighlight.foreground3",
+				"editorOverviewRuler.wordHighlightForeground",
+				"editorOverviewRuler.modifiedForeground",
+				"editorOverviewRuler.infoForeground",
+				"editorWarning.foreground",
+				"editorGutter.modifiedBackground",
+				"gitDecoration.modifiedResourceForeground",
+				"notification.infoBackground",
+				"pickerGroup.foreground"
+			]
+		},
+		"baseColorF": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"markup.inserted",
+				"markup.inline.raw",
+				"markup.raw.restructuredtext",
+
+				"fenced_code.block.language",
+				"markup.raw.inner.restructuredtext",
+				"markup.fenced_code.block.markdown punctuation.definition.markdown",
+				"entity.other.attribute-name",
+
+				"entity.name.function",
+				"meta.function-call.object",
+				"meta.function-call.php",
+				"meta.function-call.static",
+				"meta.method-call.java meta.method",
+				"meta.method.groovy",
+				"support.function.any-method.lua",
+				"keyword.operator.function.infix",
+				"meta.decorator variable.other.readwrite",
+				"meta.decorator variable.other.property",
+				"meta.decorator variable.other.object",
+				"variable.other.alias.yaml",
+				"meta.assertion.look-ahead.regexp"
+			],
+			"tags": [
+				"editor.wordHighlightStrongBackground",
+				"editor.snippetFinalTabstopHighlightBorder",
+				"editorBracketHighlight.foreground4",
+				"editorOverviewRuler.wordHighlightStrongForeground",
+				"editorOverviewRuler.addedForeground",
+				"editorGutter.addedBackground",
+				"gitDecoration.untrackedResourceForeground",
+				"diffEditor.insertedTextBackground",
+				"merge.currentHeaderBackground",
+				"editorOverviewRuler.currentContentForeground",
+				"extensionButton.prominentBackground",
+				"extensionButton.prominentHoverBackground"
+			]
+		},
+		"baseColorG": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"markup.changed",
+				"markup.bold",
+				"comment.block.documentation variable",
+
+				"entity.name.variable.parameter",
+				"meta.at-rule.function variable",
+				"meta.at-rule.mixin variable",
+				"meta.function.arguments variable.other.php",
+				"meta.selectionset.graphql meta.arguments.graphql variable.arguments.graphql",
+				"variable.parameter",
+				"constant.other.date",
+				"constant.other.timestamp",
+
+				"entity.name.type.type-parameter",
+				"meta.indexer.mappedtype.declaration entity.name.type",
+				"meta.type.parameters entity.name.type",
+				"punctuation.definition.group.regexp",
+
+				"meta.import variable.other.readwrite",
+				"meta.object-binding-pattern-variable variable.object.property",
+				"meta.variable.assignment.destructured.object.coffee variable"
+			],
+			"tags": [
+				"inputValidation.warningBorder",
+				"list.warningForeground",
+				"editor.findMatchBackground",
+				"editorBracketHighlight.foreground6",
+				"editorOverviewRuler.selectionHighlightForeground",
+				"editorOverviewRuler.warningForeground",
+				"gitDecoration.conflictingResourceForeground",
+				"statusBarItem.prominentHoverBackground",
+				"notification.warningBackground",
+				"settings.modifiedItemForeground",
+				"settings.modifiedItemIndicator"
+			]
+		},
+		"baseColorH": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"meta.link.reference.def.restructuredtext",
+				"punctuation.definition.directive.restructuredtext",
+				"string.other.link.description",
+				"string.other.link.title",
+				"comment keyword.codetag.notation",
+				"comment.block.documentation keyword",
+				"comment.block.documentation storage.type.class",
+				"constant.character.escape",
+				"constant.character.string.escape",
+				"constant.regexp",
+				"entity.name.tag",
+				"entity.other.attribute-name.parent-selector",
+				"keyword",
+				"punctuation.definition.keyword",
+				"meta.selector",
+
+				"constant.other.symbol.hashkey punctuation.definition.constant.ruby",
+				"entity.other.attribute-name.placeholder punctuation",
+				"entity.other.attribute-name.pseudo-class punctuation",
+				"entity.other.attribute-name.pseudo-element punctuation",
+				"meta.group.double.toml",
+				"meta.group.toml",
+				"meta.object-binding-pattern-variable punctuation.destructuring",
+				"punctuation.colon.graphql",
+				"punctuation.definition.block.scalar.folded.yaml",
+				"punctuation.definition.block.scalar.literal.yaml",
+				"punctuation.definition.block.sequence.item.yaml",
+				"punctuation.definition.entity.other.inherited-class",
+				"punctuation.function.swift",
+				"punctuation.separator.dictionary.key-value",
+				"punctuation.separator.hash",
+				"punctuation.separator.inheritance",
+				"punctuation.separator.key-value",
+				"punctuation.separator.key-value.mapping.yaml",
+				"punctuation.separator.namespace",
+				"punctuation.separator.pointer-access",
+				"punctuation.separator.slice",
+				"string.unquoted.heredoc punctuation.definition.string",
+				"support.other.chomping-indicator.yaml",
+				"punctuation.separator.annotation",
+				"meta.string-contents.quoted.double punctuation.definition.variable",
+				"punctuation.definition.interpolation.begin",
+				"punctuation.definition.interpolation.end",
+				"punctuation.definition.template-expression.begin",
+				"punctuation.definition.template-expression.end",
+				"punctuation.section.embedded.begin",
+				"punctuation.section.embedded.coffee",
+				"punctuation.section.embedded.end",
+				"punctuation.section.embedded.end source.php",
+				"punctuation.section.embedded.end source.ruby",
+				"punctuation.definition.variable.makefile",
+				"storage",
+				"meta.implementation storage.type.objc",
+				"meta.interface-or-protocol storage.type.objc",
+				"source.groovy storage.type.def",
+				"storage.modifier",
+				"punctuation.definition.group.capture.regexp"
+			],
+			"tags": [
+				"inputValidation.infoBorder",
+				"progressBar.background",
+				"activityBar.activeBorder",
+				"activityBarBadge.background",
+				"tab.activeBorderTop",
+				"editorBracketHighlight.foreground2",
+				"panelTitle.activeBorder"
+			]
+		},
+		"baseColorI": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"header",
+				"markup.heading",
+				"punctuation.definition.constant.restructuredtext",
+
+				"markup.heading.markdown punctuation.definition.string.begin",
+				"markup.heading.markdown punctuation.definition.string.end",
+				"keyword.expressions-and-types.swift",
+				"keyword.other.this",
+				"variable.language",
+				"variable.language punctuation.definition.variable.php",
+				"variable.other.readwrite.instance.ruby",
+				"variable.parameter.function.language.special",
+				"constant",
+				"variable.other.constant",
+				"support.function.magic",
+				"support.variable",
+				"variable.other.predefined",
+				"source.shell variable.other",
+				"support.constant"
+			],
+			"tags": [
+				"selection.background",
+				"inputOption.activeBorder",
+				"activityBar.activeBackground",
+				"editorGroup.border",
+				"editor.rangeHighlightBackground",
+				"editorBracketHighlight.foreground5",
+				"merge.incomingHeaderBackground",
+				"editorOverviewRuler.incomingContentForeground",
+				"panel.border",
+				"statusBarItem.remoteBackground",
+				"pickerGroup.border"
+			]
+		},
+		"baseColorJ": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"markup.deleted",
+				"invalid",
+				"markup.error",
+
+				"string.regexp punctuation.definition.string.begin",
+				"string.regexp punctuation.definition.string.end",
+				"punctuation.definition.group.assertion.regexp",
+				"keyword.operator.negation.regexp"
+			],
+			"tags": [
+				"errorForeground",
+				"inputValidation.errorBorder",
+				"list.errorForeground",
+				"editorBracketHighlight.unexpectedBracket.foreground",
+				"editorOverviewRuler.deletedForeground",
+				"editorOverviewRuler.errorForeground",
+				"editorError.foreground",
+				"editorGutter.deletedBackground",
+				"gitDecoration.deletedResourceForeground",
+				"diffEditor.removedTextBackground",
+				"statusBar.debuggingBackground",
+				"statusBarItem.prominentBackground",
+				"notification.errorBackground",
+				"listFilterWidget.noMatchesOutline"
+			]
+		},
+		"baseColorK": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"entity.name.filename",
+				"markup.italic",
+				"entity.name.directive.restructuredtext",
+				"markup.quote",
+
+				"markup.quote.markdown meta.paragraph.markdown punctuation.definition.string.begin",
+				"markup.quote.markdown meta.paragraph.markdown punctuation.definition.string.end",
+				"string.regexp",
+				"constant.other.character-class.set.regexp",
+				"constant.character.escape.backslash.regexp",
+				"string",
+				"meta.selectionset.graphql variable",
+				"meta.scope.prerequisites.makefile",
+				"meta.attribute-selector.scss"
+			],
+			"tags": ["peekViewEditor.matchHighlightBackground", "peekViewResult.matchHighlightBackground"]
+		}
+	},
+	"ansiColors": {
+		"ansiColorA": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": [
+				"terminal.ansiBrightRed",
+				"terminal.ansiBlack",
+				"sideBar.background",
+				"tab.inactiveBackground",
+				"editor.foldBackground",
+				"editorWidget.background",
+				"editorSuggestWidget.background",
+				"editorMarkerNavigation.background",
+				"peekViewResult.background",
+				"titleBar.activeBackground",
+				"debugToolBar.background",
+				"walkThrough.embeddedEditorBackground",
+				"settings.dropdownBackground",
+				"settings.checkboxBackground",
+				"settings.textInputBackground",
+				"settings.numberInputBackground"
+			]
+		},
+		"ansiColorB": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiRed"]
+		},
+		"ansiColorC": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiGreen"]
+		},
+		"ansiColorD": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiYellow"]
+		},
+		"ansiColorE": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiBlue"]
+		},
+		"ansiColorF": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiMagenta"]
+		},
+		"ansiColorG": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiCyan"]
+		},
+		"ansiColorH": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiWhite"]
+		},
+		"ansiColorI": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiBrightBlack"]
+		},
+		"ansiColorJ": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiBrightRed"]
+		},
+		"ansiColorK": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiBrightGreen"]
+		},
+		"ansiColorL": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiBrightYellow"]
+		},
+		"ansiColorM": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiBrightBlue"]
+		},
+		"ansiColorN": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiBrightMagenta"]
+		},
+		"ansiColorO": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["terminal.ansiBrightCyan"]
+		},
+		"ansiColorP": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": [
+				"terminal.ansiBrightWhite",
+				"editor.findMatchHighlightBackground",
+				"editorWhitespace.foreground",
+				"editorIndentGuide.background",
+				"editorIndentGuide.activeBackground",
+				"editorRuler.foreground"
+			]
+		}
+	},
+	"brightColors": {
+		"brightColorA": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": ["punctuation.definition.string.begin", "punctuation.definition.string.end"],
+			"tags": []
+		},
+		"brightColorB": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [
+				"punctuation.support.type.property-name.begin",
+				"punctuation.support.type.property-name.end"
+			],
+			"tags": []
+		}
+	},
+	"otherColors": {
+		"otherColorA": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": []
+		},
+		"otherColorB": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": []
+		},
+		"otherColorC": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": []
+		},
+		"otherColorD": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": []
+		},
+		"otherColorE": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": ["editor.selectionHighlightBackground", "listFilterWidget.outline"]
+		},
+		"otherColorF": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": [
+				"button.secondaryHoverBackground",
+				"dropdown.background",
+				"dropdown.border",
+				"input.border",
+				"activityBar.background",
+				"sideBarSectionHeader.border",
+				"editorGroupHeader.tabsBackground",
+				"tab.border",
+				"editorOverviewRuler.border",
+				"peekViewTitle.background",
+				"statusBar.background",
+				"statusBar.debuggingForeground",
+				"statusBar.noFolderBackground",
+				"titleBar.inactiveBackground",
+				"settings.dropdownBorder",
+				"settings.checkboxBorder",
+				"settings.textInputBorder",
+				"settings.numberInputBorder",
+				"breadcrumbPicker.background",
+				"listFilterWidget.background"
+			]
+		},
+		"otherColorG": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": []
+		},
+		"otherColorH": {
+			"name": "Background Color",
+			"description": "This color sets the background for your main IDE container",
+			"scopes": [],
+			"tags": []
+		}
+	}
+}

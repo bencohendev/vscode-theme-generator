@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
-	import template1 from '../../static/template1.json';
+	import template1 from '/static/template1.json';
+	import ColorSet from './components/ColorSet.svelte';
+	import CodeFrame from './components/CodeFrame.svelte';
 
 	let showVsCode = false;
 	let newTemplate = {
@@ -100,44 +102,109 @@
 		otherColorH: '#191A21'
 	};
 
-	const generateTheme = () => {
-		/*change editor colors*/
-		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
-			const replaceIfTrue = colorsArr.find((color) => {
-				return val.includes(color);
-			});
-			if (replaceIfTrue) {
-				const newColor = template1.colors[key].replace(
-					replaceIfTrue,
-					`${colorsObj[replaceIfTrue]}`
-				);
-				template1.colors[key] = newColor;
-			}
-		};
+	let output = {
+		baseColorA: [],
+		baseColorB: [],
+		baseColorC: [],
+		baseColorD: [],
+		baseColorE: [],
+		baseColorF: [],
+		baseColorG: [],
+		baseColorH: [],
+		baseColorI: [],
+		baseColorJ: [],
+		baseColorK: [],
+		ansiColorA: [],
+		ansiColorB: [],
+		ansiColorC: [],
+		ansiColorD: [],
+		ansiColorE: [],
+		ansiColorF: [],
+		ansiColorG: [],
+		ansiColorH: [],
+		ansiColorI: [],
+		ansiColorJ: [],
+		ansiColorK: [],
+		ansiColorL: [],
+		ansiColorM: [],
+		ansiColorN: [],
+		ansiColorO: [],
+		ansiColorP: [],
+		otherColorA: [],
+		otherColorB: [],
+		otherColorC: [],
+		otherColorD: [],
+		otherColorE: [],
+		otherColorF: [],
+		otherColorG: [],
+		otherColorH: [],
+		brightColorA: [],
+		brightColorB: []
+	};
 
+	const generateTheme = () => {
+		/*change colors functions*/
 		//base colors
-		Object.entries(template1.colors).forEach(([key, val]) => {
-			replaceEditorColors(baseColors, baseColorsArr, key, val);
-		});
+		// Object.entries(template1.colors).forEach(([key, val], i) => {
+		// 	const replaceThisColor = baseColorsArr.find((color) => {
+		// 		return val.includes(color);
+		// 	});
+		// 	if (replaceThisColor) {
+		// 		const newColor = template1.colors[key].replace(
+		// 			replaceThisColor,
+		// 			`${baseColors[replaceThisColor]}`
+		// 		);
+		// 		template1.colors[key] = newColor;
+
+		// 	}
+		// });
 		//ansi colors
-		Object.entries(template1.colors).forEach(([key, val]) => {
-			replaceEditorColors(ansiColors, ansiColorsArr, key, val);
-		});
-		//bright other colors
-		Object.entries(template1.colors).forEach(([key, val]) => {
-			replaceEditorColors(brightColors, brightColorsArr, key, val);
-		});
-		//other colors
-		Object.entries(template1.colors).forEach(([key, val]) => {
-			replaceEditorColors(otherColors, otherColorsArr, key, val);
-		});
-		/*end change editor colors*/
+		// Object.entries(template1.colors).forEach(([key, val], i) => {
+		// 	const replaceThisColor = ansiColorsArr.find((color) => {
+		// 		return val.includes(color);
+		// 	});
+		// 	if (replaceThisColor) {
+		// 		const newColor = template1.colors[key].replace(
+		// 			replaceThisColor,
+		// 			`${ansiColors[replaceThisColor]}`
+		// 		);
+		// 		template1.colors[key] = newColor;
+		// 	}
+		// });
+		// //bright other colors
+		// Object.entries(template1.colors).forEach(([key, val], i) => {
+		// 	const replaceThisColor = brightColorsArr.find((color) => {
+		// 		return val.includes(color);
+		// 	});
+		// 	if (replaceThisColor) {
+		// 		const newColor = template1.colors[key].replace(
+		// 			replaceThisColor,
+		// 			`${brightColors[replaceThisColor]}`
+		// 		);
+		// 		template1.colors[key] = newColor;
+		// 	}
+		// });
+		// //other colors
+		// Object.entries(template1.colors).forEach(([key, val], i) => {
+		// 	const replaceThisColor = otherColorsArr.find((color) => {
+		// 		return val.includes(color);
+		// 	});
+		// 	if (replaceThisColor) {
+		// 		const newColor = template1.colors[key].replace(
+		// 			replaceThisColor,
+		// 			`${otherColors[replaceThisColor]}`
+		// 		);
+		// 		template1.colors[key] = newColor;
+		// 	}
+		// });
+		/*end change colors*/
 
 		/*change tokenColors functions*/
 		template1.tokenColors.forEach((token) => {
 			const tokenKey = token.settings.foreground;
 			if (baseColors[tokenKey]) {
 				token.settings.foreground = baseColors[tokenKey];
+				output[tokenKey].push(token.scope);
 			}
 		});
 
@@ -145,6 +212,7 @@
 			const tokenKey = token.settings.foreground;
 			if (ansiColors[tokenKey]) {
 				token.settings.foreground = ansiColors[tokenKey];
+				output[tokenKey].push(token.scope);
 			}
 		});
 
@@ -152,6 +220,7 @@
 			const tokenKey = token.settings.foreground;
 			if (brightColors[tokenKey]) {
 				token.settings.foreground = brightColors[tokenKey];
+				output[tokenKey].push(token.scope);
 			}
 		});
 
@@ -159,48 +228,61 @@
 			const tokenKey = token.settings.foreground;
 			if (otherColors[tokenKey]) {
 				token.settings.foreground = otherColors[tokenKey];
+				output[tokenKey].push(token.scope);
 			}
 		});
 
 		newTemplate['workbench.colorCustomizations'] = template1.colors;
 		newTemplate['editor.tokenColorCustomizations']['textMateRules'] = template1.tokenColors;
-		console.log(newTemplate);
 		newTemplate = JSON.stringify(newTemplate);
-		console.log('after', newTemplate);
+		let filename = 'theme.json';
+		let blob = new Blob([JSON.stringify(newTemplate)], { type: 'application/json' });
+		let link = document.createElement('a');
+		link.download = filename;
+		link.innerHTML = 'Download Your Theme';
+		link.href = window.URL.createObjectURL(blob);
+		document.body.appendChild(link);
 	};
 
 	onMount(() => {
 		/**anonymous async function to allow normal onMount lifecycle*/
 		(async () => {
 			const Picker = (await import('vanilla-picker')).default;
-			/**
-			 * instantiates Picker library on input
-			 * @function instantiatePicker
-			 * @param divId Id of the div on which to instantiate Picker
-			 * @param inputVal value that will be bound to color picker
-			 */
-			const instantiatePicker = (divId, inputVal) => {
+			baseColorsArr.forEach((color, i) => {
 				new Picker({
-					parent: document.querySelector(divId),
-					color: inputVal,
+					parent: document.querySelector(`#base-color-${i}`),
+					color: baseColors[baseColorsArr[i]],
 					onChange: function (colorVal) {
-						inputVal = colorVal.hex;
+						baseColors[baseColorsArr[i]] = colorVal.hex;
 					}
 				});
-			};
-
-			baseColorsArr.forEach((color, i) => {
-				instantiatePicker(`#base-color-${i}`, baseColors[baseColorsArr[i]]);
 			});
-
 			ansiColorsArr.forEach((color, i) => {
-				instantiatePicker(`#ansi-color-${i}`, ansiColors[ansiColorsArr[i]]);
+				new Picker({
+					parent: document.querySelector(`#ansi-color-${i}`),
+					color: ansiColors[ansiColorsArr[i]],
+					onChange: function (colorVal) {
+						ansiColors[ansiColorsArr[i]] = colorVal.hex;
+					}
+				});
 			});
 			brightColorsArr.forEach((color, i) => {
-				instantiatePicker(`#bright-color-${i}`, brightColors[brightColorsArr[i]]);
+				new Picker({
+					parent: document.querySelector(`#bright-color-${i}`),
+					color: brightColors[brightColorsArr[i]],
+					onChange: function (colorVal) {
+						brightColors[brightColorsArr[i]] = colorVal.hex;
+					}
+				});
 			});
 			otherColorsArr.forEach((color, i) => {
-				instantiatePicker(`#other-color-${i}`, otherColors[otherColorsArr[i]]);
+				new Picker({
+					parent: document.querySelector(`#other-color-${i}`),
+					color: otherColors[otherColorsArr[i]],
+					onChange: function (colorVal) {
+						otherColors[otherColorsArr[i]] = colorVal.hex;
+					}
+				});
 			});
 		})();
 	});
@@ -213,84 +295,50 @@
 <div>
 	<span>
 		<h3>Base Colors</h3>
-		{#each baseColorsArr as color, i}
-			<div id="base-color-{i}">
-				<label>
-					color {i + 1}
-					<input
-						type="text"
-						bind:value={baseColors[color]}
-						style="background-color: {baseColors[color]}"
-					/>
-				</label>
-			</div>
-		{/each}
+		<div class="color-input-row">
+			{#each baseColorsArr as color, i}
+				<ColorSet colorObj={baseColors} colorCategory={'baseColors'} {color} {i} />
+			{/each}
+		</div>
 	</span>
 	<span>
 		<h3>ANSI Colors</h3>
-		{#each ansiColorsArr as color, i}
-			<div id="ansi-color-{i}">
-				<label>
-					color {i + 1}
-					<input
-						type="text"
-						bind:value={ansiColors[color]}
-						style="background-color: {ansiColors[color]}"
-					/>
-				</label>
-			</div>
-		{/each}
+		<div class="color-input-row">
+			{#each ansiColorsArr as color, i}
+				<ColorSet colorObj={ansiColors} colorCategory={'ansiColors'} {color} {i} />
+			{/each}
+		</div>
 	</span>
 	<span>
 		<h3>Bright Other Colors</h3>
-		{#each brightColorsArr as color, i}
-			<div id="bright-color-{i}">
-				<label>
-					color {i + 1}
-					<input
-						type="text"
-						bind:value={brightColors[color]}
-						style="background-color: {brightColors[color]}"
-					/>
-				</label>
-			</div>
-		{/each}
+		<div class="color-input-row">
+			{#each brightColorsArr as color, i}
+				<ColorSet colorObj={brightColors} colorCategory={'brightColors'} {color} {i} />
+			{/each}
+		</div>
 	</span>
 	<span>
 		<h3>Other Colors</h3>
-		{#each otherColorsArr as color, i}
-			<div id="other-color-{i}">
-				<label>
-					color {i + 1}
-					<input
-						type="text"
-						bind:value={otherColors[color]}
-						style="background-color: {otherColors[color]}"
-					/>
-				</label>
-			</div>
-		{/each}
+		<div class="color-input-row">
+			{#each otherColorsArr as color, i}
+				<ColorSet colorObj={otherColors} colorCategory={'otherColors'} {color} {i} />
+			{/each}
+		</div>
 	</span>
 </div>
 <div class="generate-btn-container">
 	<button on:click={generateTheme}>Generate Theme</button>
 </div>
 <div>
-	<button on:click={() => (showVsCode = !showVsCode)}>Show Vs Code</button>
+	<button on:click={() => (showVsCode = !showVsCode)}>{showVsCode ? 'Hide' : 'Show'} Vs Code</button
+	>
 </div>
 {#if showVsCode}
-	<div class="vscode-container">
-		<iframe
-			id="inlineFrameExample"
-			title="Inline Frame Example"
-			width="1000"
-			height="500"
-			src="https://www.vscode.dev"
-		/>
-	</div>
+	<CodeFrame />
 {/if}
 
 <style>
+	@import '/static/global.css';
 	span {
 		display: inline-block;
 	}
@@ -299,9 +347,12 @@
 		margin-top: 10rem;
 	}
 
-	.vscode-container {
+	.color-input-row {
 		display: flex;
-		justify-content: center;
-		margin-bottom: 20rem;
+		align-items: center;
+		justify-content: left;
+		padding: 2rem;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 </style>
