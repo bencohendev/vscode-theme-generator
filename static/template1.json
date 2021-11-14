@@ -842,7 +842,7 @@
 			"name": "String quotes (temporary vscode fix)",
 			"scope": ["punctuation.definition.string.begin", "punctuation.definition.string.end"],
 			"settings": {
-				"foreground": "brightColorA"
+				"foreground": "baseColorK"
 			}
 		},
 		{
@@ -852,7 +852,7 @@
 				"punctuation.support.type.property-name.end"
 			],
 			"settings": {
-				"foreground": "brightColorB"
+				"foreground": "baseColorE"
 			}
 		},
 		{
