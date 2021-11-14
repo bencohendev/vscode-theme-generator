@@ -154,9 +154,9 @@
 
 	let showColorCategory = {
 		base: true,
-		ansi: true,
-		bright: true,
-		other: true
+		ansi: false,
+		bright: false,
+		other: false
 	};
 
 	const showColorCategoryHandler = (category) => {
@@ -297,8 +297,8 @@
 		{#if showColorCategory.base}
 			<span class="base">
 				<div class="color-input-row">
-					{#each baseColorsArr as color, i}
-						<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {i} {Picker} />
+					{#each baseColorsArr as color}
+						<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {Picker} />
 					{/each}
 				</div>
 			</span>
@@ -314,8 +314,8 @@
 		{#if showColorCategory.ansi}
 			<span>
 				<div class="color-input-row">
-					{#each ansiColorsArr as color, i}
-						<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {i} {Picker} />
+					{#each ansiColorsArr as color}
+						<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {Picker} />
 					{/each}
 				</div>
 			</span>
@@ -333,8 +333,8 @@
 		{#if showColorCategory.bright}
 			<span>
 				<div class="color-input-row">
-					{#each brightColorsArr as color, i}
-						<ColorSet colorObj={brightColors} colorCategory={'bright'} {color} {i} {Picker} />
+					{#each brightColorsArr as color}
+						<ColorSet colorObj={brightColors} colorCategory={'bright'} {color} {Picker} />
 					{/each}
 				</div>
 			</span>
@@ -352,8 +352,8 @@
 		{#if showColorCategory.other}
 			<span>
 				<div class="color-input-row">
-					{#each otherColorsArr as color, i}
-						<ColorSet colorObj={otherColors} colorCategory={'other'} {color} {i} {Picker} />
+					{#each otherColorsArr as color}
+						<ColorSet colorObj={otherColors} colorCategory={'other'} {color} {Picker} />
 					{/each}
 				</div>
 			</span>

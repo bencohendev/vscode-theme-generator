@@ -8,7 +8,6 @@
 	export let colorObj;
 	export let colorCategory;
 	export let color;
-	export let i;
 	export let Picker;
 
 	let el;
@@ -26,6 +25,9 @@
 			}
 		});
 	};
+	onMount(() => {
+		if (Picker) instantiatePicker(Picker);
+	});
 	$: if (Picker) instantiatePicker(Picker);
 </script>
 
