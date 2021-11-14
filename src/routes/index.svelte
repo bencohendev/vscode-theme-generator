@@ -145,6 +145,15 @@
 		brightColorB: []
 	};
 
+	let showColorCategory = {
+		base: true,
+		ansi: false,
+		bright: false,
+		other: false
+	};
+	const showColorCategoryHandler = (category) => {
+		showColorCategory[category] = !showColorCategory[category];
+	};
 	const generateTheme = () => {
 		/*change editor colors*/
 		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
@@ -245,38 +254,78 @@
 			<input type="text" bind:value={themeName} />
 		</label>
 	</div>
-	<span>
-		<h3>Base Colors</h3>
-		<div class="color-input-row">
-			{#each baseColorsArr as color, i}
-				<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {i} {Picker} />
-			{/each}
+	<div>
+		<span><h3>Base Colors</h3></span>
+		<span>
+			<button on:click={() => showColorCategoryHandler('base')}
+				>{showColorCategory.base ? 'Hide' : 'Show'}</button
+			>
+		</span>
+		{#if showColorCategory.base}
+			<span class="base">
+				<div class="color-input-row">
+					{#each baseColorsArr as color, i}
+						<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {i} {Picker} />
+					{/each}
+				</div>
+			</span>
+		{/if}
+	</div>
+	<div>
+		<span><h3>ANSI Colors</h3></span>
+		<span>
+			<button on:click={() => showColorCategoryHandler('ansi')}
+				>{showColorCategory.ansi ? 'Hide' : 'Show'}</button
+			>
+		</span>
+		{#if showColorCategory.ansi}
+			<span>
+				<div class="color-input-row">
+					{#each ansiColorsArr as color, i}
+						<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {i} {Picker} />
+					{/each}
+				</div>
+			</span>
+		{/if}
+	</div>
+	<div>
+		<div>
+			<span><h3>Bright Colors</h3></span>
+			<span>
+				<button on:click={() => showColorCategoryHandler('bright')}
+					>{showColorCategory.bright ? 'Hide' : 'Show'}</button
+				>
+			</span>
 		</div>
-	</span>
-	<span>
-		<h3>ANSI Colors</h3>
-		<div class="color-input-row">
-			{#each ansiColorsArr as color, i}
-				<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {i} {Picker} />
-			{/each}
+		{#if showColorCategory.bright}
+			<span>
+				<div class="color-input-row">
+					{#each brightColorsArr as color, i}
+						<ColorSet colorObj={brightColors} colorCategory={'bright'} {color} {i} {Picker} />
+					{/each}
+				</div>
+			</span>
+		{/if}
+	</div>
+	<div>
+		<div>
+			<span><h3>Other Colors</h3></span>
+			<span>
+				<button on:click={() => showColorCategoryHandler('other')}
+					>{showColorCategory.other ? 'Hide' : 'Show'}</button
+				>
+			</span>
 		</div>
-	</span>
-	<span>
-		<h3>Bright Other Colors</h3>
-		<div class="color-input-row">
-			{#each brightColorsArr as color, i}
-				<ColorSet colorObj={brightColors} colorCategory={'bright'} {color} {i} {Picker} />
-			{/each}
-		</div>
-	</span>
-	<span>
-		<h3>Other Colors</h3>
-		<div class="color-input-row">
-			{#each otherColorsArr as color, i}
-				<ColorSet colorObj={otherColors} colorCategory={'other'} {color} {i} {Picker} />
-			{/each}
-		</div>
-	</span>
+		{#if showColorCategory.other}
+			<span>
+				<div class="color-input-row">
+					{#each otherColorsArr as color, i}
+						<ColorSet colorObj={otherColors} colorCategory={'other'} {color} {i} {Picker} />
+					{/each}
+				</div>
+			</span>
+		{/if}
+	</div>
 </div>
 <div class="generate-btn-container">
 	<button on:click={generateTheme}>Generate Theme</button>
