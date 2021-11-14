@@ -1,8 +1,8 @@
 {
 	"baseColors": {
 		"baseColorA": {
-			"name": "Primary Dark Background Color",
-			"description": "This color sets the background for your main IDE container and terminal as well as sets many other dark background colors across the theme",
+			"name": "Primary Dark Background",
+			"description": "Sets the background for your main IDE container and terminal as well as sets many other dark background colors across the theme",
 			"scopes": [],
 			"tags": [
 				"terminal.background",
@@ -24,8 +24,8 @@
 			]
 		},
 		"baseColorB": {
-			"name": "Primary Foreground Color",
-			"description": "This is meant to be the lightest color of the theme. It is the default variable color as well as foreground text on buttons and punctuations throughout the theme ",
+			"name": "Primary Foreground",
+			"description": "Meant to be the lightest color of the theme. It is the default variable color as well as foreground text on buttons and punctuations throughout the theme ",
 			"scopes": [
 				"invalid.deprecated",
 				"meta.paragraph.markdown punctuation.definition.string.begin",
@@ -110,8 +110,8 @@
 			]
 		},
 		"baseColorC": {
-			"name": "Secondary Dark Background Color",
-			"description": "This color sets the background for buttons and other minor dark backgrounds",
+			"name": "Secondary Dark Background",
+			"description": "Defines the background for buttons and other minor dark backgrounds",
 			"scopes": [],
 			"tags": [
 				"button.background",
@@ -133,8 +133,8 @@
 			]
 		},
 		"baseColorD": {
-			"name": "Secondary Foreground Color",
-			"description": "This color sets many secondary foregrounds that are not active or are meant to be more subtley shown within the theme",
+			"name": "Secondary Foreground",
+			"description": "Defines many secondary foregrounds that are not active or are meant to be more subtley shown within the theme",
 			"scopes": [
 				"meta.diff",
 				"meta.diff.header",
@@ -168,7 +168,7 @@
 		},
 		"baseColorE": {
 			"name": "Classes",
-			"description": "This color defines classes as well as JSON keys and CSS properties. It also defines modified files with no errors",
+			"description": "Defines classes as well as JSON keys and CSS properties. It also defines modified files with no errors",
 			"scopes": [
 				"beginning.punctuation.definition.list.markdown",
 				"beginning.punctuation.definition.quote.markdown",
@@ -225,8 +225,8 @@
 			]
 		},
 		"baseColorF": {
-			"name": "Functions Color",
-			"description": "This color defines functions and method calls as well as CSS class and ID selectors. It also defines newly added folders/files",
+			"name": "Functions",
+			"description": "Defines functions and method calls as well as CSS class and ID selectors. It also defines newly added folders/files",
 			"scopes": [
 				"markup.inserted",
 				"markup.inline.raw",
@@ -265,8 +265,8 @@
 			]
 		},
 		"baseColorG": {
-			"name": "Parameters Color",
-			"description": "This color defines function parameters as well as comment variables. It also defines modified files with 'errors'",
+			"name": "Parameters",
+			"description": "Defines function parameters as well as comment variables. It also defines modified files with 'errors'",
 			"scopes": [
 				"markup.changed",
 				"markup.bold",
@@ -302,8 +302,8 @@
 			]
 		},
 		"baseColorH": {
-			"name": "Keywords Color",
-			"description": "This color sets many keywords such as variable declarations, as well as html tags and CSS tag selectors. It also sets badge colors on the Active Bar",
+			"name": "Keywords",
+			"description": "Defines many keywords such as variable declarations, as well as html tags and CSS tag selectors. It also sets badge colors on the Active Bar",
 			"scopes": [
 				"meta.link.reference.def.restructuredtext",
 				"punctuation.definition.directive.restructuredtext",
@@ -373,8 +373,8 @@
 			]
 		},
 		"baseColorI": {
-			"name": "Variable Names Color",
-			"description": "This color defines variable names as well as constants and primitives (numbers and booleans). It also defines CSS values",
+			"name": "Variable Names",
+			"description": "Defines variable names as well as constants and primitives (numbers and booleans). It also defines CSS values",
 			"scopes": [
 				"header",
 				"markup.heading",
@@ -410,8 +410,8 @@
 			]
 		},
 		"baseColorJ": {
-			"name": "Error Color",
-			"description": "This color defines errors and invalid code",
+			"name": "Error",
+			"description": "Defines errors and invalid code",
 			"scopes": [
 				"markup.deleted",
 				"invalid",
@@ -439,8 +439,8 @@
 			]
 		},
 		"baseColorK": {
-			"name": "String Color",
-			"description": "This color defines strings",
+			"name": "String",
+			"description": "Defines strings",
 			"scopes": [
 				"entity.name.filename",
 				"markup.italic",
@@ -578,94 +578,6 @@
 				"editorIndentGuide.activeBackground",
 				"editorRuler.foreground"
 			]
-		}
-	},
-	"brightColors": {
-		"brightColorA": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": ["punctuation.definition.string.begin", "punctuation.definition.string.end"],
-			"tags": []
-		},
-		"brightColorB": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [
-				"punctuation.support.type.property-name.begin",
-				"punctuation.support.type.property-name.end"
-			],
-			"tags": []
-		}
-	},
-	"otherColors": {
-		"otherColorA": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [],
-			"tags": []
-		},
-		"otherColorB": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [],
-			"tags": []
-		},
-		"otherColorC": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [],
-			"tags": []
-		},
-		"otherColorD": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [],
-			"tags": []
-		},
-		"otherColorE": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [],
-			"tags": ["editor.selectionHighlightBackground", "listFilterWidget.outline"]
-		},
-		"otherColorF": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [],
-			"tags": [
-				"button.secondaryHoverBackground",
-				"dropdown.background",
-				"dropdown.border",
-				"input.border",
-				"activityBar.background",
-				"sideBarSectionHeader.border",
-				"editorGroupHeader.tabsBackground",
-				"tab.border",
-				"editorOverviewRuler.border",
-				"peekViewTitle.background",
-				"statusBar.background",
-				"statusBar.debuggingForeground",
-				"statusBar.noFolderBackground",
-				"titleBar.inactiveBackground",
-				"settings.dropdownBorder",
-				"settings.checkboxBorder",
-				"settings.textInputBorder",
-				"settings.numberInputBorder",
-				"breadcrumbPicker.background",
-				"listFilterWidget.background"
-			]
-		},
-		"otherColorG": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [],
-			"tags": []
-		},
-		"otherColorH": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
-			"scopes": [],
-			"tags": []
 		}
 	}
 }

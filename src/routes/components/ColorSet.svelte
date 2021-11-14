@@ -33,14 +33,17 @@
 
 <div class="color-input-column">
 	<div bind:this={el} class="input-container">
-		<span class="input-container_inner">
-			<label>
-				{name}
+		<div class="input-container_inner">
+			<span>
+				<label>
+					{name}
+				</label>
 				<input type="text" bind:value={colorObj[color]} style="border-color: {colorObj[color]}" />
-			</label>
-		</span>
-		<span class="color-box" style="background-color: {colorObj[color]}" />
+			</span>
+			<span class="color-box" style="background-color: {colorObj[color]}" />
+		</div>
 	</div>
+
 	<div use:clickOutside on:click_outside={() => (showMoreInfo = false)}>
 		<button on:click={() => (showMoreInfo = !showMoreInfo)} class="more-info"
 			>{showMoreInfo ? 'Hide' : 'Show'} More Info</button
@@ -58,20 +61,9 @@
 		flex: 0 0 25%;
 		margin-bottom: 1rem;
 	}
-	.input-container {
+
+	label {
 		display: flex;
-
-		align-items: center;
-	}
-
-	.input-container_inner {
-		flex-basis: min-content;
-	}
-
-	input {
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		margin: 0.25rem 0.5rem 0.5rem 0;
 	}
 	.color-box {
 		position: relative;
@@ -81,7 +73,19 @@
 		height: 25px;
 		border: solid 1px black;
 	}
-	.more-info {
-		margin-bottom: 0.5rem;
+	input {
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		margin: 0.25rem 0.5rem 0.5rem 0;
+	}
+	@media only screen and (max-width: 1000px) {
+		.color-input-column {
+			flex: 0 0 50%;
+		}
+	}
+	@media only screen and (max-width: 500px) {
+		.color-input-column {
+			flex: 0 0 100%;
+		}
 	}
 </style>

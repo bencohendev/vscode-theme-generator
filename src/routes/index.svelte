@@ -86,77 +86,10 @@
 		ansiColorO: '#A4FFFF',
 		ansiColorP: '#FFFFFF'
 	};
-	let brightColorsArr = ['brightColorA', 'brightColorB'];
-	let brightColors = {
-		brightColorA: '#E9F284',
-		brightColorB: '#8BE9FE'
-	};
-	let otherColorsArr = [
-		'otherColorA',
-		'otherColorB',
-		'otherColorC',
-		'otherColorD',
-		'otherColorE',
-		'otherColorF',
-		'otherColorG',
-		'otherColorH'
-	];
-	let otherColors = {
-		otherColorA: '#44475A75',
-		otherColorB: '#FFFFFF1A',
-		otherColorC: '#FFFFFF',
-		otherColorD: '#44475A70',
-		otherColorE: '#424450',
-		otherColorF: '#343746',
-		otherColorG: '#21222C',
-		otherColorH: '#191A21'
-	};
-
-	let output = {
-		baseColorA: [],
-		baseColorB: [],
-		baseColorC: [],
-		baseColorD: [],
-		baseColorE: [],
-		baseColorF: [],
-		baseColorG: [],
-		baseColorH: [],
-		baseColorI: [],
-		baseColorJ: [],
-		baseColorK: [],
-		ansiColorA: [],
-		ansiColorB: [],
-		ansiColorC: [],
-		ansiColorD: [],
-		ansiColorE: [],
-		ansiColorF: [],
-		ansiColorG: [],
-		ansiColorH: [],
-		ansiColorI: [],
-		ansiColorJ: [],
-		ansiColorK: [],
-		ansiColorL: [],
-		ansiColorM: [],
-		ansiColorN: [],
-		ansiColorO: [],
-		ansiColorP: [],
-		otherColorA: [],
-		otherColorB: [],
-		otherColorC: [],
-		otherColorD: [],
-		otherColorE: [],
-		otherColorF: [],
-		otherColorG: [],
-		otherColorH: [],
-		brightColorA: [],
-		brightColorB: []
-	};
 
 	let showColorCategory = {
 		base: true,
-		ansi: false,
-		bright: false,
-		other: false
+		ansi: false
 	};
 
 	const showColorCategoryHandler = (category) => {
@@ -200,14 +133,7 @@
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
 			replaceEditorColors(ansiColors, ansiColorsArr, key, val);
 		});
-		//bright other colors
-		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(brightColors, brightColorsArr, key, val);
-		});
-		//other colors
-		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(otherColors, otherColorsArr, key, val);
-		});
+
 		/*end change editor colors*/
 
 		/*change tokenColors functions*/
@@ -223,22 +149,6 @@
 			const tokenKey = token.settings.foreground;
 			if (ansiColors[tokenKey]) {
 				token.settings.foreground = ansiColors[tokenKey];
-				output[tokenKey].push(token.scope);
-			}
-		});
-
-		newTemplate.tokenColors.forEach((token) => {
-			const tokenKey = token.settings.foreground;
-			if (brightColors[tokenKey]) {
-				token.settings.foreground = brightColors[tokenKey];
-				output[tokenKey].push(token.scope);
-			}
-		});
-
-		newTemplate.tokenColors.forEach((token) => {
-			const tokenKey = token.settings.foreground;
-			if (otherColors[tokenKey]) {
-				token.settings.foreground = otherColors[tokenKey];
 				output[tokenKey].push(token.scope);
 			}
 		});
@@ -321,44 +231,6 @@
 			</span>
 		{/if}
 	</div>
-	<div>
-		<div>
-			<span><h3>Bright Colors</h3></span>
-			<span>
-				<button on:click={() => showColorCategoryHandler('bright')}
-					>{showColorCategory.bright ? 'Hide' : 'Show'}</button
-				>
-			</span>
-		</div>
-		{#if showColorCategory.bright}
-			<span>
-				<div class="color-input-row">
-					{#each brightColorsArr as color}
-						<ColorSet colorObj={brightColors} colorCategory={'bright'} {color} {Picker} />
-					{/each}
-				</div>
-			</span>
-		{/if}
-	</div>
-	<div>
-		<div>
-			<span><h3>Other Colors</h3></span>
-			<span>
-				<button on:click={() => showColorCategoryHandler('other')}
-					>{showColorCategory.other ? 'Hide' : 'Show'}</button
-				>
-			</span>
-		</div>
-		{#if showColorCategory.other}
-			<span>
-				<div class="color-input-row">
-					{#each otherColorsArr as color}
-						<ColorSet colorObj={otherColors} colorCategory={'other'} {color} {Picker} />
-					{/each}
-				</div>
-			</span>
-		{/if}
-	</div>
 </div>
 <div class="generate-btn-container">
 	<button on:click={generateTheme}>Generate Theme</button>
@@ -382,17 +254,12 @@
 	span {
 		display: inline-block;
 	}
-
 	.generate-btn-container {
 		margin-top: 10rem;
 	}
-
 	.color-input-row {
 		display: flex;
-		align-items: center;
-		justify-content: left;
 		padding: 2rem;
-		flex-direction: row;
 		flex-wrap: wrap;
 	}
 </style>
