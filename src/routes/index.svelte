@@ -6,6 +6,11 @@
 
 	let Picker;
 	let showVsCode = false;
+	let showDownload = false;
+	let showCopy = false;
+	let downloadButton;
+	let copyButton;
+
 	let themeName = '';
 
 	let newTemplate = {
@@ -222,19 +227,27 @@
 		newTemplate['workbench.colorCustomizations'] = template1.colors;
 		newTemplate['editor.tokenColorCustomizations']['textMateRules'] = template1.tokenColors;
 		newTemplate = JSON.stringify(newTemplate);
-		addDownloadButton(newTemplate);
+		showDownload = true;
+		showCopy = true;
 	};
 
-	const addDownloadButton = (template) => {
+	const downloadHandler = () => {
 		let filename = 'theme.json';
-		let blob = new Blob([template], { type: 'application/json' });
-		let link = document.createElement('a');
-		link.download = filename;
-		link.innerHTML = 'Download Your Theme';
-		link.href = window.URL.createObjectURL(blob);
-		document.body.appendChild(link);
+		let blob = new Blob([newTemplate], { type: 'application/json' });
+		downloadButton.download = filename;
+		downloadButton.innerHTML = 'Download Your Theme';
+		downloadButton.href = window.URL.createObjectURL(blob);
 	};
-
+	const copyHandler = () => {
+		navigator.clipboard.writeText(newTemplate).then(
+			function () {
+				alert('copied to clipboard');
+			},
+			function () {
+				alert('failed');
+			}
+		);
+	};
 	onMount(() => {
 		/**anonymous async function to allow normal onMount lifecycle*/
 		(async () => {
@@ -336,6 +349,12 @@
 </div>
 {#if showVsCode}
 	<CodeFrame />
+{/if}
+{#if showDownload}
+	<a href="" bind:this={downloadButton} on:click={() => downloadHandler()}>Download Your Theme</a>
+{/if}
+{#if showCopy}
+	<button bind:this={copyButton} on:click={() => copyHandler()}>Copy to Clipboard</button>
 {/if}
 
 <style>
