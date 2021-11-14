@@ -3,10 +3,7 @@
 	import template1 from '/static/template1.json';
 	import ColorSet from './components/ColorSet.svelte';
 	import CodeFrame from './components/CodeFrame.svelte';
-	import { text } from 'svelte/internal';
-	/**
-	 * @function xyz {}
-	 */
+
 	let Picker;
 	let showVsCode = false;
 	let showDownload = false;
@@ -33,7 +30,9 @@
 		'baseColorH',
 		'baseColorI',
 		'baseColorJ',
-		'baseColorK'
+		'baseColorK',
+		'baseColorL',
+		'baseColorM'
 	];
 	let baseColors = {
 		baseColorA: '#282A36',
@@ -46,7 +45,9 @@
 		baseColorH: '#FF79C6',
 		baseColorI: '#BD93F9',
 		baseColorJ: '#FF5555',
-		baseColorK: '#F1FA8C'
+		baseColorK: '#F1FA8C',
+		baseColorL: '#424450',
+		baseColorM: '#343746'
 	};
 
 	let ansiColorsArr = [
@@ -141,7 +142,6 @@
 			const tokenKey = token.settings.foreground;
 			if (baseColors[tokenKey]) {
 				token.settings.foreground = baseColors[tokenKey];
-				output[tokenKey].push(token.scope);
 			}
 		});
 
@@ -149,7 +149,6 @@
 			const tokenKey = token.settings.foreground;
 			if (ansiColors[tokenKey]) {
 				token.settings.foreground = ansiColors[tokenKey];
-				output[tokenKey].push(token.scope);
 			}
 		});
 

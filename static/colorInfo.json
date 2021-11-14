@@ -457,6 +457,39 @@
 				"meta.attribute-selector.scss"
 			],
 			"tags": ["peekViewEditor.matchHighlightBackground", "peekViewResult.matchHighlightBackground"]
+		},
+		"baseColorL": {
+			"name": "Selection Highlight",
+			"description": "Defines the color of selected/highlighted text",
+			"scopes": [],
+			"tags": ["editor.selectionHighlightBackground", "listFilterWidget.outline"]
+		},
+		"baseColorM": {
+			"name": "Secondary Backgrounds Color",
+			"description": "Defines the backgrounds of the activity bar and status bar as well as other backgrounds and borders",
+			"scopes": [],
+			"tags": [
+				"button.secondaryHoverBackground",
+				"dropdown.background",
+				"dropdown.border",
+				"input.border",
+				"activityBar.background",
+				"sideBarSectionHeader.border",
+				"editorGroupHeader.tabsBackground",
+				"tab.border",
+				"editorOverviewRuler.border",
+				"peekViewTitle.background",
+				"statusBar.background",
+				"statusBar.debuggingForeground",
+				"statusBar.noFolderBackground",
+				"titleBar.inactiveBackground",
+				"settings.dropdownBorder",
+				"settings.checkboxBorder",
+				"settings.textInputBorder",
+				"settings.numberInputBorder",
+				"breadcrumbPicker.background",
+				"listFilterWidget.background"
+			]
 		}
 	},
 	"ansiColors": {
