@@ -9,17 +9,16 @@
 	let showDownload = false;
 	let showCopy = false;
 	let downloadButton;
-	let copyButton;
 
 	let themeName = '';
 
-	let newTemplate = {
+	let generatedTemplate;
+	let generatedSettings = {
 		'workbench.colorCustomizations': {},
 		'editor.tokenColorCustomizations': {
 			textMateRules: []
 		}
 	};
-
 	let baseColorsArr = [
 		'baseColorA',
 		'baseColorB',
@@ -160,7 +159,8 @@
 		showColorCategory[category] = !showColorCategory[category];
 	};
 	const generateTheme = () => {
-		let newTemplate = template1;
+		let newTemplate = JSON.parse(JSON.stringify(template1));
+		console.log(newTemplate);
 		/*change editor colors*/
 		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
 			const replaceIfTrue = colorsArr.find((color) => {
@@ -225,20 +225,23 @@
 			}
 		});
 
-		newTemplate = JSON.stringify(newTemplate);
+		generatedSettings['workbench.colorCustomizations'] = newTemplate.colors;
+		generatedSettings['editor.tokenColorCustomizations']['textMateRules'] = newTemplate.tokenColors;
+		generatedSettings = JSON.stringify(generatedSettings);
+		generatedTemplate = JSON.stringify(newTemplate);
 		showDownload = true;
 		showCopy = true;
 	};
 
 	const downloadHandler = () => {
 		let filename = 'theme.json';
-		let blob = new Blob([newTemplate], { type: 'application/json' });
+		let blob = new Blob([generatedTemplate], { type: 'application/json' });
 		downloadButton.download = filename;
 		downloadButton.innerHTML = 'Download Your Theme';
 		downloadButton.href = window.URL.createObjectURL(blob);
 	};
 	const copyHandler = () => {
-		navigator.clipboard.writeText(newTemplate).then(
+		navigator.clipboard.writeText(generatedSettings).then(
 			function () {
 				alert('copied to clipboard');
 			},
@@ -353,7 +356,7 @@
 	<a href="" bind:this={downloadButton} on:click={() => downloadHandler()}>Download Your Theme</a>
 {/if}
 {#if showCopy}
-	<button bind:this={copyButton} on:click={() => copyHandler()}>Copy to Clipboard</button>
+	<button on:click={() => copyHandler()}>Copy to Clipboard</button>
 {/if}
 
 <style>

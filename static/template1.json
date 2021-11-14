@@ -1,54 +1,7 @@
 {
 	"$schema": "vscode://schemas/color-theme",
-	"name": "Dracula",
-	"author": "Zeno Rocha",
-	"maintainers": ["Derek P Sifford <dereksifford@gmail.com>"],
-	"semanticClass": "theme.dracula",
-	"semanticHighlighting": true,
-	"dracula": {
-		"base": [
-			"baseColorA",
-			"baseColorB",
-			"baseColorC",
-			"baseColorD",
-			"baseColorE",
-			"baseColorF",
-			"baseColorG",
-			"baseColorH",
-			"baseColorI",
-			"baseColorJ",
-			"baseColorK"
-		],
-		"ansi": [
-			"ansiColorA",
-			"ansiColorB",
-			"ansiColorC",
-			"ansiColorD",
-			"ansiColorE",
-			"ansiColorF",
-			"ansiColorG",
-			"ansiColorH",
-			"ansiColorI",
-			"ansiColorJ",
-			"ansiColorK",
-			"ansiColorL",
-			"ansiColorM",
-			"ansiColorN",
-			"ansiColorO",
-			"ansiColorP"
-		],
-		"brightOther": ["brightColorA", "brightColorB"],
-		"other": [
-			"baseColorC+75",
-			"ansiColorP+1A",
-			"ansiColorP",
-			"baseColorC+70",
-			"otherColorE",
-			"otherColorF",
-			"ansiColorA",
-			"otherColorH"
-		]
-	},
+	"name": "",
+	"author": "",
 	"colors": {
 		"terminal.background": "baseColorA",
 		"terminal.foreground": "baseColorB",
