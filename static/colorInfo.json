@@ -461,11 +461,10 @@
 	},
 	"ansiColors": {
 		"ansiColorA": {
-			"name": "Bright Red",
+			"name": "Black/Backgrounds",
 			"description": "",
 			"scopes": [],
 			"tags": [
-				"terminal.ansiBrightRed",
 				"terminal.ansiBlack",
 				"sideBar.background",
 				"tab.inactiveBackground",
@@ -485,91 +484,91 @@
 		},
 		"ansiColorB": {
 			"name": "Red",
-			"description": "This color sets the background for your main IDE container",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiRed"]
 		},
 		"ansiColorC": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Green",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiGreen"]
 		},
 		"ansiColorD": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Yellow",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiYellow"]
 		},
 		"ansiColorE": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Blue Color",
+			"description": "T",
 			"scopes": [],
 			"tags": ["terminal.ansiBlue"]
 		},
 		"ansiColorF": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Magenta Color",
+			"description": "T",
 			"scopes": [],
 			"tags": ["terminal.ansiMagenta"]
 		},
 		"ansiColorG": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Cyan",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiCyan"]
 		},
 		"ansiColorH": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "White",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiWhite"]
 		},
 		"ansiColorI": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Bright Black",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightBlack"]
 		},
 		"ansiColorJ": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Bright Red Color",
+			"description": "T",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightRed"]
 		},
 		"ansiColorK": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Bright Green",
+			"description": "T",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightGreen"]
 		},
 		"ansiColorL": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Bright Yellow",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightYellow"]
 		},
 		"ansiColorM": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Bright Blue",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightBlue"]
 		},
 		"ansiColorN": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Bright Magenta",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightMagenta"]
 		},
 		"ansiColorO": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Bright Cyan",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightCyan"]
 		},
 		"ansiColorP": {
-			"name": "Background Color",
-			"description": "This color sets the background for your main IDE container",
+			"name": "Bright White/Foregrounds",
+			"description": "",
 			"scopes": [],
 			"tags": [
 				"terminal.ansiBrightWhite",

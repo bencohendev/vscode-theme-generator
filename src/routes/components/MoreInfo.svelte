@@ -47,6 +47,7 @@
 		box-shadow: 2px 3px 5px 1px #a5a5a5;
 		padding: 0.5rem;
 		max-height: 30rem;
+		max-width: 30rem;
 		overflow-y: scroll;
 	}
 	.show-advanced {
