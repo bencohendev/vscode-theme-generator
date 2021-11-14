@@ -160,39 +160,40 @@
 		showColorCategory[category] = !showColorCategory[category];
 	};
 	const generateTheme = () => {
+		let newTemplate = template1;
 		/*change editor colors*/
 		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
 			const replaceIfTrue = colorsArr.find((color) => {
 				return val.includes(color);
 			});
 			if (replaceIfTrue) {
-				const newColor = template1.colors[key].replace(
+				const newColor = newTemplate.colors[key].replace(
 					replaceIfTrue,
 					`${colorsObj[replaceIfTrue]}`
 				);
-				template1.colors[key] = newColor;
+				newTemplate.colors[key] = newColor;
 			}
 		};
 		//base colors
-		Object.entries(template1.colors).forEach(([key, val]) => {
+		Object.entries(newTemplate.colors).forEach(([key, val]) => {
 			replaceEditorColors(baseColors, baseColorsArr, key, val);
 		});
 		//ansi colors
-		Object.entries(template1.colors).forEach(([key, val]) => {
+		Object.entries(newTemplate.colors).forEach(([key, val]) => {
 			replaceEditorColors(ansiColors, ansiColorsArr, key, val);
 		});
 		//bright other colors
-		Object.entries(template1.colors).forEach(([key, val]) => {
+		Object.entries(newTemplate.colors).forEach(([key, val]) => {
 			replaceEditorColors(brightColors, brightColorsArr, key, val);
 		});
 		//other colors
-		Object.entries(template1.colors).forEach(([key, val]) => {
+		Object.entries(newTemplate.colors).forEach(([key, val]) => {
 			replaceEditorColors(otherColors, otherColorsArr, key, val);
 		});
 		/*end change editor colors*/
 
 		/*change tokenColors functions*/
-		template1.tokenColors.forEach((token) => {
+		newTemplate.tokenColors.forEach((token) => {
 			const tokenKey = token.settings.foreground;
 			if (baseColors[tokenKey]) {
 				token.settings.foreground = baseColors[tokenKey];
@@ -200,7 +201,7 @@
 			}
 		});
 
-		template1.tokenColors.forEach((token) => {
+		newTemplate.tokenColors.forEach((token) => {
 			const tokenKey = token.settings.foreground;
 			if (ansiColors[tokenKey]) {
 				token.settings.foreground = ansiColors[tokenKey];
@@ -208,7 +209,7 @@
 			}
 		});
 
-		template1.tokenColors.forEach((token) => {
+		newTemplate.tokenColors.forEach((token) => {
 			const tokenKey = token.settings.foreground;
 			if (brightColors[tokenKey]) {
 				token.settings.foreground = brightColors[tokenKey];
@@ -216,7 +217,7 @@
 			}
 		});
 
-		template1.tokenColors.forEach((token) => {
+		newTemplate.tokenColors.forEach((token) => {
 			const tokenKey = token.settings.foreground;
 			if (otherColors[tokenKey]) {
 				token.settings.foreground = otherColors[tokenKey];
@@ -224,8 +225,6 @@
 			}
 		});
 
-		newTemplate['workbench.colorCustomizations'] = template1.colors;
-		newTemplate['editor.tokenColorCustomizations']['textMateRules'] = template1.tokenColors;
 		newTemplate = JSON.stringify(newTemplate);
 		showDownload = true;
 		showCopy = true;
