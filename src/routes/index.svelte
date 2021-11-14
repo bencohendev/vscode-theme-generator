@@ -143,61 +143,36 @@
 	};
 
 	const generateTheme = () => {
-		/*change colors functions*/
+		/*change editor colors*/
+		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
+			const replaceIfTrue = colorsArr.find((color) => {
+				return val.includes(color);
+			});
+			if (replaceIfTrue) {
+				const newColor = template1.colors[key].replace(
+					replaceIfTrue,
+					`${colorsObj[replaceIfTrue]}`
+				);
+				template1.colors[key] = newColor;
+			}
+		};
 		//base colors
-		// Object.entries(template1.colors).forEach(([key, val], i) => {
-		// 	const replaceThisColor = baseColorsArr.find((color) => {
-		// 		return val.includes(color);
-		// 	});
-		// 	if (replaceThisColor) {
-		// 		const newColor = template1.colors[key].replace(
-		// 			replaceThisColor,
-		// 			`${baseColors[replaceThisColor]}`
-		// 		);
-		// 		template1.colors[key] = newColor;
-
-		// 	}
-		// });
+		Object.entries(template1.colors).forEach(([key, val]) => {
+			replaceEditorColors(baseColors, baseColorsArr, key, val);
+		});
 		//ansi colors
-		// Object.entries(template1.colors).forEach(([key, val], i) => {
-		// 	const replaceThisColor = ansiColorsArr.find((color) => {
-		// 		return val.includes(color);
-		// 	});
-		// 	if (replaceThisColor) {
-		// 		const newColor = template1.colors[key].replace(
-		// 			replaceThisColor,
-		// 			`${ansiColors[replaceThisColor]}`
-		// 		);
-		// 		template1.colors[key] = newColor;
-		// 	}
-		// });
-		// //bright other colors
-		// Object.entries(template1.colors).forEach(([key, val], i) => {
-		// 	const replaceThisColor = brightColorsArr.find((color) => {
-		// 		return val.includes(color);
-		// 	});
-		// 	if (replaceThisColor) {
-		// 		const newColor = template1.colors[key].replace(
-		// 			replaceThisColor,
-		// 			`${brightColors[replaceThisColor]}`
-		// 		);
-		// 		template1.colors[key] = newColor;
-		// 	}
-		// });
-		// //other colors
-		// Object.entries(template1.colors).forEach(([key, val], i) => {
-		// 	const replaceThisColor = otherColorsArr.find((color) => {
-		// 		return val.includes(color);
-		// 	});
-		// 	if (replaceThisColor) {
-		// 		const newColor = template1.colors[key].replace(
-		// 			replaceThisColor,
-		// 			`${otherColors[replaceThisColor]}`
-		// 		);
-		// 		template1.colors[key] = newColor;
-		// 	}
-		// });
-		/*end change colors*/
+		Object.entries(template1.colors).forEach(([key, val]) => {
+			replaceEditorColors(ansiColors, ansiColorsArr, key, val);
+		});
+		//bright other colors
+		Object.entries(template1.colors).forEach(([key, val]) => {
+			replaceEditorColors(brightColors, brightColorsArr, key, val);
+		});
+		//other colors
+		Object.entries(template1.colors).forEach(([key, val]) => {
+			replaceEditorColors(otherColors, otherColorsArr, key, val);
+		});
+		/*end change editor colors*/
 
 		/*change tokenColors functions*/
 		template1.tokenColors.forEach((token) => {
