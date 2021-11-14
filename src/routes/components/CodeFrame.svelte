@@ -15,6 +15,6 @@
 	.vscode-container {
 		display: flex;
 		justify-content: center;
-		margin-bottom: 20rem;
+		margin: 2rem 0 20rem;
 	}
 </style>
