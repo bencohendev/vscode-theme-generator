@@ -1,5 +1,5 @@
 <script>
-	import { clickOutside, hexToRgb } from '../../helpers';
+	import { clickOutside, hexToRgb } from '../helpers';
 
 	import colorInfo from '/static/colorInfo.json';
 	import MoreInfo from './MoreInfo.svelte';

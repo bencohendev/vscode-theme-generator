@@ -1,10 +1,11 @@
+body {
+	margin: -20px 0;
+	font-family: Poppins;
+}
 .picker_wrapper {
 	position: absolute !important;
 	left: 75% !important;
 	top: 1.5rem !important;
-}
-body {
-	font-family: Roboto;
 }
 
 button {
@@ -13,6 +14,4 @@ button {
 	padding: 0.5rem;
 	box-shadow: 0px 0px 5px 0px #505050;
 	cursor: pointer;
-}
-button:hover {
 }

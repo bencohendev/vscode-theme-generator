@@ -1,8 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-
-	import { fade, slide } from 'svelte/transition';
-
 	import colorInfo from '/static/colorInfo.json';
 
 	export let colorCategory;

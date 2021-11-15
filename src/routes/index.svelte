@@ -3,8 +3,9 @@
 	import { fade, slide } from 'svelte/transition';
 
 	import template1 from '/static/template1.json';
-	import ColorSet from './components/ColorSet.svelte';
-	import CodeFrame from './components/CodeFrame.svelte';
+	import ColorSet from '../components/ColorSet.svelte';
+	import CodeFrame from '../components/CodeFrame.svelte';
+	import Header from '../components/Header.svelte';
 
 	let Picker; //color picker
 	let showVsCode = false;
@@ -215,6 +216,7 @@
 	});
 </script>
 
+<Header />
 <main>
 	<h1>Visual Studio Code Theme Generator</h1>
 	<p>
@@ -241,7 +243,7 @@
 				</span>
 			</div>
 			{#if showColorCategory.base}
-				<span class="base" transition:slide={{ delay: 250, duration: 300 }}>
+				<span class="base" transition:slide={{ duration: 300 }}>
 					<div class="color-input-row">
 						{#each baseColorsArr as color}
 							<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {Picker} />
@@ -260,7 +262,7 @@
 				</span>
 			</div>
 			{#if showColorCategory.ansi}
-				<span transition:slide={{ delay: 250, duration: 300 }}>
+				<span transition:slide={{ duration: 300 }}>
 					<div class="color-input-row">
 						{#each ansiColorsArr as color}
 							<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {Picker} />
@@ -327,7 +329,7 @@
 		margin-right: 1rem;
 	}
 	.generate-btn-row {
-		margin-top: 2rem;
+		margin: 2rem 0 4rem;
 		display: flex;
 		align-items: center;
 	}
