@@ -59,6 +59,7 @@
 				<MoreInfo
 					colorCategory={colorCategoryPlus}
 					colorKey={color}
+					color={colorObj[color]}
 					background={colorObj[color]}
 					buttonText={whiteOrBlack}
 				/>
