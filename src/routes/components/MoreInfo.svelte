@@ -29,7 +29,7 @@
 				>{showAdvancedInfo ? 'Hide' : 'Show'} Tags/Scopes</button
 			>
 			{#if showAdvancedInfo}
-				<div transition:slide={{ duration: 300 }}>
+				<div>
 					{#if tags.length > 0}
 						<div class="tag-heading" />
 						<h5 style="color: {buttonText}">Tags</h5>
