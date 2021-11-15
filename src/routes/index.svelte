@@ -1,5 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
+	import { fade, slide } from 'svelte/transition';
+
 	import template1 from '/static/template1.json';
 	import ColorSet from './components/ColorSet.svelte';
 	import CodeFrame from './components/CodeFrame.svelte';
@@ -8,6 +10,7 @@
 	let showVsCode = false;
 	let showDownload = false;
 	let showCopy = false;
+	let showSuccess = false;
 	let downloadButton;
 
 	let themeName = '';
@@ -176,6 +179,8 @@
 
 		showDownload = true;
 		showCopy = true;
+
+		generateSuccess();
 	};
 
 	const downloadHandler = () => {
@@ -194,6 +199,13 @@
 				alert('failed');
 			}
 		);
+	};
+
+	const generateSuccess = () => {
+		showSuccess = true;
+		setTimeout(() => {
+			showSuccess = false;
+		}, 3000);
 	};
 	onMount(() => {
 		/**anonymous async function to allow normal onMount lifecycle*/
@@ -229,7 +241,7 @@
 				</span>
 			</div>
 			{#if showColorCategory.base}
-				<span class="base">
+				<span class="base" transition:slide={{ delay: 250, duration: 300 }}>
 					<div class="color-input-row">
 						{#each baseColorsArr as color}
 							<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {Picker} />
@@ -248,7 +260,7 @@
 				</span>
 			</div>
 			{#if showColorCategory.ansi}
-				<span>
+				<span transition:slide={{ delay: 250, duration: 300 }}>
 					<div class="color-input-row">
 						{#each ansiColorsArr as color}
 							<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {Picker} />
@@ -259,9 +271,15 @@
 		</div>
 	</div>
 	<div class="generate-btn-row">
-		<div class="generate-btn-container">
-			<button class="generate-btn" on:click={generateTheme}>Generate Theme</button>
-		</div>
+		{#if showSuccess}
+			<div class="generate-btn-container">
+				<button class="generate-btn-success" on:click={generateTheme}>Theme Generated</button>
+			</div>
+		{:else}
+			<div class="generate-btn-container">
+				<button class="generate-btn" on:click={generateTheme}>Generate Theme</button>
+			</div>
+		{/if}
 		<div class="generate-btn-container">
 			<button on:click={() => (showVsCode = !showVsCode)}
 				>{showVsCode ? 'Hide' : 'Show'} Vs Code</button
@@ -320,7 +338,12 @@
 
 	.generate-btn {
 		padding: 1rem;
-		background-color: rgb(0, 185, 0);
+		background-color: rgb(115, 204, 255);
+		color: rgb(0, 0, 0);
+	}
+	.generate-btn-success {
+		padding: 1rem;
+		background-color: rgb(0, 212, 64);
 		color: rgb(0, 0, 0);
 	}
 	.color-input-row {

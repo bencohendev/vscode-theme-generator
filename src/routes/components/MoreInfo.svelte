@@ -1,4 +1,6 @@
 <script>
+	import { fade, slide } from 'svelte/transition';
+
 	import colorInfo from '/static/colorInfo.json';
 
 	export let colorCategory;
@@ -13,7 +15,7 @@
 	let showAdvancedInfo = false;
 </script>
 
-<div class="more-info">
+<div class="more-info" transition:slide={{ duration: 300 }}>
 	<div>{description}</div>
 	<button
 		class="show-advanced"
@@ -22,7 +24,7 @@
 		>{showAdvancedInfo ? 'Hide' : 'Show'} Tags/Scopes</button
 	>
 	{#if showAdvancedInfo}
-		<div>
+		<div transition:slide={{ duration: 300 }}>
 			{#if tags.length > 0}
 				<h5>tags</h5>
 				<ul>
@@ -48,12 +50,14 @@
 		z-index: 1;
 		background: white;
 		position: absolute;
-		border: solid 1px black;
+		border: solid 1px a5a5a5;
+		border-top: none;
 		box-shadow: 2px 3px 5px 1px #a5a5a5;
 		padding: 0.5rem;
 		max-height: 30rem;
 		max-width: 30rem;
 		overflow-y: scroll;
+		margin-top: 1rem;
 	}
 	.show-advanced {
 		margin-top: 0.5rem;

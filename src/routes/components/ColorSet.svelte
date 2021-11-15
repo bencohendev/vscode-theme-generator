@@ -55,12 +55,14 @@
 			>{showMoreInfo ? 'Hide' : 'Show'} More Info</button
 		>
 		{#if showMoreInfo}
-			<MoreInfo
-				colorCategory={colorCategoryPlus}
-				colorKey={color}
-				background={colorObj[color]}
-				buttonText={whiteOrBlack}
-			/>
+			<div class="more-info-outer">
+				<MoreInfo
+					colorCategory={colorCategoryPlus}
+					colorKey={color}
+					background={colorObj[color]}
+					buttonText={whiteOrBlack}
+				/>
+			</div>
 		{/if}
 	</div>
 </div>
@@ -84,11 +86,13 @@
 		height: 25px;
 		border: solid 1px black;
 	}
+
 	input {
 		padding: 0.5rem;
 		border-radius: 0.5rem;
 		margin: 0.25rem 0.5rem 0.5rem 0;
 	}
+
 	@media only screen and (max-width: 1000px) {
 		.color-input-column {
 			flex: 0 0 50%;
