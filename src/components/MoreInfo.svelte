@@ -36,7 +36,7 @@
 						</ul>
 					{/if}
 					{#if scopes.length > 0}
-						<span class="tag-heading" />
+						<div class="tag-heading" />
 						<h5 style="color: {buttonText}">Scopes</h5>
 						<ul>
 							{#each scopes as scope}
@@ -57,6 +57,7 @@
 	.more-info-inner {
 		overflow-y: scroll;
 		max-height: 25rem;
+		padding: 1rem;
 	}
 	.more-info-inner::-webkit-scrollbar {
 		display: none;
@@ -67,7 +68,6 @@
 		position: relative;
 		border: solid 1px var(--theme-color);
 		box-shadow: 2px 5px 25px 0px var(--theme-color);
-		padding: 1rem;
 		max-height: 30rem;
 		width: 30rem;
 		margin-top: 1rem;
@@ -76,8 +76,9 @@
 	}
 
 	.tag-heading {
-		position: absolute;
-		right: 0rem;
+		margin-top: 0.5rem;
+		position: relative;
+		right: 2rem;
 		background: linear-gradient(to left, #ffffff, var(--theme-color));
 		width: 32rem;
 		height: 1rem;
@@ -112,7 +113,8 @@
 	}
 	h5 {
 		position: relative;
-		margin: 1rem 0 0 1rem;
+		margin: 0;
+		bottom: 17px;
 	}
 	ul {
 		margin-top: 0.25rem;
