@@ -2,6 +2,12 @@
 	import { onMount } from 'svelte';
 	import { fade, slide } from 'svelte/transition';
 
+	import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
+	import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
+	import cssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker';
+	import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
+	import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
+
 	import template1 from '/static/template1.json';
 	import ColorSet from '../components/ColorSet.svelte';
 	import CodeFrame from '../components/CodeFrame.svelte';
@@ -15,6 +21,10 @@
 	let downloadButton;
 
 	let themeName = '';
+
+	let divEl = null;
+	let editor;
+	let Monaco;
 
 	/**
 	 * @param generatedTemplate downloadable template for creating/publishing a theme
@@ -212,6 +222,35 @@
 		/**anonymous async function to allow normal onMount lifecycle*/
 		(async () => {
 			Picker = (await import('vanilla-picker')).default;
+
+			// @ts-ignore
+			self.MonacoEnvironment = {
+				getWorker: function (_moduleId, label) {
+					if (label === 'json') {
+						return new jsonWorker();
+					}
+					if (label === 'css' || label === 'scss' || label === 'less') {
+						return new cssWorker();
+					}
+					if (label === 'html' || label === 'handlebars' || label === 'razor') {
+						return new htmlWorker();
+					}
+					if (label === 'typescript' || label === 'javascript') {
+						return new tsWorker();
+					}
+					return new editorWorker();
+				}
+			};
+
+			Monaco = await import('monaco-editor');
+			editor = Monaco.editor.create(divEl, {
+				value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
+				language: 'javascript'
+			});
+
+			return () => {
+				editor.dispose();
+			};
 		})();
 	});
 </script>
@@ -303,10 +342,15 @@
 	{#if showVsCode}
 		<CodeFrame />
 	{/if}
+	<div bind:this={divEl} class="h-screen" />
 </main>
 
 <style>
 	@import '/static/global.css';
+
+	.h-screen {
+		height: 500px;
+	}
 	main {
 		max-width: 1280px;
 		margin: auto;
