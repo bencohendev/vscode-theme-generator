@@ -15,7 +15,15 @@
 	<div>
 		<h3>Resources</h3>
 		<ul>
-			<li><a href="https://code.visualstudio.com/docs/getstarted/themes">Basic Theming Info</a></li>
+			<li>
+				<a href="https://code.visualstudio.com/docs/getstarted/themes">Vs Code Basic Theming Info</a
+				>
+			</li>
+			<li>
+				<a href="https://code.visualstudio.com/api/references/theme-color"
+					>Vs Code Theme Colors Reference</a
+				>
+			</li>
 		</ul>
 	</div>
 </div>

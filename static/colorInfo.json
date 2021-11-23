@@ -27,6 +27,8 @@
 			"name": "Primary Foreground",
 			"description": "Meant to be the lightest color of the theme. It is the default variable color as well as foreground text on buttons and punctuations throughout the theme ",
 			"scopes": [
+				"editorIndentGuide.activeBackground",
+				"editorIndentGuide.background (50% opacity)",
 				"invalid.deprecated",
 				"meta.paragraph.markdown punctuation.definition.string.begin",
 				"meta.paragraph.markdown punctuation.definition.string.end",
@@ -46,12 +48,6 @@
 				"storage.type.generic.java",
 				"string.template meta.brace",
 				"string.template punctuation.accessor",
-				"variable",
-				"constant.other.key.perl",
-				"support.variable.property",
-				"variable.other.constant.js",
-				"variable.other.constant.ts",
-				"variable.other.constant.tsx",
 				"meta.import variable.other.readwrite.alias",
 				"meta.export variable.other.readwrite.alias",
 				"meta.variable.assignment.destructured.object.coffee variable variable",
@@ -111,7 +107,7 @@
 		},
 		"baseColorC": {
 			"name": "Secondary Background",
-			"description": "Defines the background for buttons and other minor backgrounds",
+			"description": "Defines the background for buttons and other minor backgrounds. It also includes many highlighted selection colors",
 			"scopes": [],
 			"tags": [
 				"button.background",
@@ -122,7 +118,7 @@
 				"list.hoverBackground",
 				"list.inactiveSelectionBackground",
 				"editorGroup.dropBackground",
-				"editor.selectionBackground",
+
 				"editor.findRangeHighlightBackground",
 				"editor.lineHighlightBorder",
 				"editorSuggestWidget.selectedBackground",
@@ -163,7 +159,9 @@
 				"peekViewTitleDescription.foreground",
 				"panelTitle.inactiveForeground",
 				"titleBar.inactiveForeground",
-				"breadcrumb.foreground"
+				"breadcrumb.foreground",
+				"editor.findMatchBackground",
+				"editor.findMatchHighlightBackground (50% opacity)"
 			]
 		},
 		"baseColorE": {
@@ -290,7 +288,6 @@
 			"tags": [
 				"inputValidation.warningBorder",
 				"list.warningForeground",
-				"editor.findMatchBackground",
 				"editorBracketHighlight.foreground6",
 				"editorOverviewRuler.selectionHighlightForeground",
 				"editorOverviewRuler.warningForeground",
@@ -383,6 +380,12 @@
 				"markup.heading.markdown punctuation.definition.string.end",
 				"keyword.expressions-and-types.swift",
 				"keyword.other.this",
+				"variable",
+				"constant.other.key.perl",
+				"support.variable.property",
+				"variable.other.constant.js",
+				"variable.other.constant.ts",
+				"variable.other.constant.tsx",
 				"variable.language",
 				"variable.language punctuation.definition.variable.php",
 				"variable.other.readwrite.instance.ruby",
@@ -462,7 +465,11 @@
 			"name": "Selection Highlight",
 			"description": "Defines the color of selected/highlighted text",
 			"scopes": [],
-			"tags": ["editor.selectionHighlightBackground", "listFilterWidget.outline"]
+			"tags": [
+				"editor.selectionBackground",
+				"editor.selectionHighlightBackground (50% opactiy)",
+				"listFilterWidget.outline"
+			]
 		},
 		"baseColorM": {
 			"name": "Activity Bar Backgrounds",
@@ -603,14 +610,7 @@
 			"name": "Bright White/Foregrounds",
 			"description": "",
 			"scopes": [],
-			"tags": [
-				"terminal.ansiBrightWhite",
-				"editor.findMatchHighlightBackground",
-				"editorWhitespace.foreground",
-				"editorIndentGuide.background",
-				"editorIndentGuide.activeBackground",
-				"editorRuler.foreground"
-			]
+			"tags": ["terminal.ansiBrightWhite", "editorWhitespace.foreground", "editorRuler.foreground"]
 		}
 	}
 }

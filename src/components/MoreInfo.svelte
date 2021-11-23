@@ -47,6 +47,7 @@
 				</div>
 			{/if}
 		</div>
+		<div class="more-info-fuzz" />
 	</div>
 </div>
 
@@ -75,6 +76,13 @@
 		top: 1.5rem;
 	}
 
+	.more-info-fuzz {
+		background: linear-gradient(to top, #ffffff, #ffffff91);
+		position: relative;
+		width: 100%;
+		height: 1rem;
+		top: -1rem;
+	}
 	.tag-heading {
 		margin-top: 0.5rem;
 		position: relative;

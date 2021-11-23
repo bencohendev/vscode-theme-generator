@@ -76,13 +76,13 @@
 		"editor.foreground": "baseColorB",
 		"editor.background": "baseColorA",
 		"editorLineNumber.foreground": "baseColorD",
-		"editor.selectionBackground": "baseColorC",
-		"editor.selectionHighlightBackground": "baseColorL",
+		"editor.selectionBackground": "baseColorL",
+		"editor.selectionHighlightBackground": "baseColorL50",
 		"editor.foldBackground": "ansiColorA",
 		"editor.wordHighlightBackground": "baseColorE50",
 		"editor.wordHighlightStrongBackground": "baseColorF50",
-		"editor.findMatchBackground": "baseColorG80",
-		"editor.findMatchHighlightBackground": "ansiColorP40",
+		"editor.findMatchBackground": "baseColorD",
+		"editor.findMatchHighlightBackground": "baseColorD50",
 		"editor.findRangeHighlightBackground": "baseColorC75",
 		"editor.hoverHighlightBackground": "baseColorE50",
 		"editor.lineHighlightBorder": "baseColorC",
@@ -93,8 +93,8 @@
 		"editor.snippetFinalTabstopHighlightBackground": "baseColorA",
 		"editor.snippetFinalTabstopHighlightBorder": "baseColorF",
 		"editorWhitespace.foreground": "ansiColorP1A",
-		"editorIndentGuide.background": "ansiColorP1A",
-		"editorIndentGuide.activeBackground": "ansiColorP45",
+		"editorIndentGuide.background": "baseColorB50",
+		"editorIndentGuide.activeBackground": "baseColorB",
 		"editorRuler.foreground": "ansiColorP1A",
 		"editorCodeLens.foreground": "baseColorD",
 		"editorBracketHighlight.foreground1": "baseColorB",
@@ -878,7 +878,7 @@
 				"variable.other.constant.tsx"
 			],
 			"settings": {
-				"foreground": "baseColorB"
+				"foreground": "baseColorI"
 			}
 		},
 		{
