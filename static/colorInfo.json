@@ -1,6 +1,6 @@
 {
 	"baseColors": {
-		"baseColorA": {
+		"primaryBackground": {
 			"name": "Primary Background",
 			"description": "Sets the background for your main IDE container and terminal as well as sets many other background colors across the theme",
 			"scopes": [],
@@ -23,7 +23,7 @@
 				"breadcrumb.background"
 			]
 		},
-		"baseColorB": {
+		"primaryForeground": {
 			"name": "Primary Foreground",
 			"description": "Meant to be the lightest color of the theme. It is the default variable color as well as foreground text on buttons and punctuations throughout the theme ",
 			"scopes": [
@@ -105,7 +105,7 @@
 				"breadcrumb.activeSelectionForeground"
 			]
 		},
-		"baseColorC": {
+		"secondaryBackground": {
 			"name": "Secondary Background",
 			"description": "Defines the background for buttons and other minor backgrounds. It also includes many highlighted selection colors",
 			"scopes": [],
@@ -128,7 +128,7 @@
 				"notification.buttonHoverBackground"
 			]
 		},
-		"baseColorD": {
+		"secondaryForeground": {
 			"name": "Secondary Foreground",
 			"description": "Defines many secondary foregrounds that are not active or are meant to be more subtley shown within the theme",
 			"scopes": [
@@ -164,7 +164,7 @@
 				"editor.findMatchHighlightBackground (50% opacity)"
 			]
 		},
-		"baseColorE": {
+		"classes": {
 			"name": "Classes",
 			"description": "Defines classes as well as JSON keys and CSS properties. It also defines modified files with no errors",
 			"scopes": [
@@ -222,7 +222,7 @@
 				"pickerGroup.foreground"
 			]
 		},
-		"baseColorF": {
+		"functions": {
 			"name": "Functions",
 			"description": "Defines functions and method calls as well as CSS class and ID selectors. It also defines newly added folders/files",
 			"scopes": [
@@ -262,7 +262,7 @@
 				"extensionButton.prominentHoverBackground"
 			]
 		},
-		"baseColorG": {
+		"parameters": {
 			"name": "Parameters",
 			"description": "Defines function parameters as well as comment variables. It also defines modified files with 'errors'",
 			"scopes": [
@@ -298,7 +298,7 @@
 				"settings.modifiedItemIndicator"
 			]
 		},
-		"baseColorH": {
+		"keywords": {
 			"name": "Keywords",
 			"description": "Defines many keywords such as variable declarations, as well as html tags and CSS tag selectors. It also sets badge colors on the Active Bar",
 			"scopes": [
@@ -369,7 +369,7 @@
 				"panelTitle.activeBorder"
 			]
 		},
-		"baseColorI": {
+		"variables": {
 			"name": "Variable Names",
 			"description": "Defines variable names as well as constants and primitives (numbers and booleans). It also defines CSS values",
 			"scopes": [
@@ -412,7 +412,7 @@
 				"pickerGroup.border"
 			]
 		},
-		"baseColorJ": {
+		"errors": {
 			"name": "Error",
 			"description": "Defines errors and invalid code",
 			"scopes": [
@@ -441,7 +441,7 @@
 				"listFilterWidget.noMatchesOutline"
 			]
 		},
-		"baseColorK": {
+		"strings": {
 			"name": "String",
 			"description": "Defines strings",
 			"scopes": [
@@ -461,7 +461,7 @@
 			],
 			"tags": ["peekViewEditor.matchHighlightBackground", "peekViewResult.matchHighlightBackground"]
 		},
-		"baseColorL": {
+		"selectionHighlight": {
 			"name": "Selection Highlight",
 			"description": "Defines the color of selected/highlighted text",
 			"scopes": [],
@@ -471,7 +471,7 @@
 				"listFilterWidget.outline"
 			]
 		},
-		"baseColorM": {
+		"activityBarBackground": {
 			"name": "Activity Bar Backgrounds",
 			"description": "Defines the backgrounds of the activity bar and status bar as well as other backgrounds and borders",
 			"scopes": [],
@@ -500,7 +500,7 @@
 		}
 	},
 	"ansiColors": {
-		"ansiColorA": {
+		"ansiBlack": {
 			"name": "Black/Backgrounds",
 			"description": "",
 			"scopes": [],
@@ -522,91 +522,91 @@
 				"settings.numberInputBackground"
 			]
 		},
-		"ansiColorB": {
+		"ansiRed": {
 			"name": "Red",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiRed"]
 		},
-		"ansiColorC": {
+		"ansiGreen": {
 			"name": "Green",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiGreen"]
 		},
-		"ansiColorD": {
+		"ansiYellow": {
 			"name": "Yellow",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiYellow"]
 		},
-		"ansiColorE": {
+		"ansiBlue": {
 			"name": "Blue Color",
 			"description": "T",
 			"scopes": [],
 			"tags": ["terminal.ansiBlue"]
 		},
-		"ansiColorF": {
+		"ansiMagenta": {
 			"name": "Magenta Color",
 			"description": "T",
 			"scopes": [],
 			"tags": ["terminal.ansiMagenta"]
 		},
-		"ansiColorG": {
+		"ansiCyan": {
 			"name": "Cyan",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiCyan"]
 		},
-		"ansiColorH": {
+		"ansiWhite": {
 			"name": "White",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiWhite"]
 		},
-		"ansiColorI": {
+		"ansiBrightestBlack": {
 			"name": "Bright Black",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightBlack"]
 		},
-		"ansiColorJ": {
+		"ansiBrightestRed": {
 			"name": "Bright Red Color",
 			"description": "T",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightRed"]
 		},
-		"ansiColorK": {
+		"ansiBrightestGreen": {
 			"name": "Bright Green",
 			"description": "T",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightGreen"]
 		},
-		"ansiColorL": {
+		"ansiBrightestYellow": {
 			"name": "Bright Yellow",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightYellow"]
 		},
-		"ansiColorM": {
+		"ansiBrightestBlue": {
 			"name": "Bright Blue",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightBlue"]
 		},
-		"ansiColorN": {
+		"ansiBrightestMagenta": {
 			"name": "Bright Magenta",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightMagenta"]
 		},
-		"ansiColorO": {
+		"ansiBrightestCyan": {
 			"name": "Bright Cyan",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightCyan"]
 		},
-		"ansiColorP": {
+		"ansiBrightestWhite": {
 			"name": "Bright White/Foregrounds",
 			"description": "",
 			"scopes": [],

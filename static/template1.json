@@ -3,212 +3,212 @@
 	"name": "",
 	"author": "",
 	"colors": {
-		"terminal.background": "baseColorA",
-		"terminal.foreground": "baseColorB",
-		"terminal.ansiBrightBlack": "ansiColorI",
-		"terminal.ansiBrightRed": "ansiColorJ",
-		"terminal.ansiBrightGreen": "ansiColorK",
-		"terminal.ansiBrightYellow": "ansiColorL",
-		"terminal.ansiBrightBlue": "ansiColorM",
-		"terminal.ansiBrightMagenta": "ansiColorN",
-		"terminal.ansiBrightCyan": "ansiColorO",
-		"terminal.ansiBrightWhite": "ansiColorP",
-		"terminal.ansiBlack": "ansiColorA",
-		"terminal.ansiRed": "ansiColorB",
-		"terminal.ansiGreen": "ansiColorC",
-		"terminal.ansiYellow": "ansiColorD",
-		"terminal.ansiBlue": "ansiColorE",
-		"terminal.ansiMagenta": "ansiColorF",
-		"terminal.ansiCyan": "ansiColorG",
-		"terminal.ansiWhite": "ansiColorH",
-		"focusBorder": "baseColorD",
-		"foreground": "baseColorB",
-		"selection.background": "baseColorD50",
-		"errorForeground": "baseColorJ",
-		"button.background": "baseColorC",
-		"button.foreground": "baseColorB",
-		"button.secondaryBackground": "baseColorA",
-		"button.secondaryForeground": "baseColorB",
-		"button.secondaryHoverBackground": "baseColorM",
-		"dropdown.background": "baseColorM",
-		"dropdown.border": "baseColorM",
-		"dropdown.foreground": "baseColorB",
-		"input.background": "baseColorA",
-		"input.foreground": "baseColorB",
-		"input.border": "baseColorM",
-		"input.placeholderForeground": "baseColorD",
-		"inputOption.activeBorder": "baseColorI",
-		"inputValidation.infoBorder": "baseColorH",
-		"inputValidation.warningBorder": "baseColorG",
-		"inputValidation.errorBorder": "baseColorJ",
-		"badge.foreground": "baseColorB",
-		"badge.background": "baseColorC",
-		"progressBar.background": "baseColorH",
-		"list.activeSelectionBackground": "baseColorC",
-		"list.activeSelectionForeground": "baseColorB",
-		"list.dropBackground": "baseColorC",
-		"list.focusBackground": "baseColorC75",
-		"list.highlightForeground": "baseColorE",
-		"list.hoverBackground": "baseColorC75",
-		"list.inactiveSelectionBackground": "baseColorC75",
-		"list.warningForeground": "baseColorG",
-		"list.errorForeground": "baseColorJ",
-		"activityBar.background": "baseColorM",
-		"activityBar.inactiveForeground": "baseColorD",
-		"activityBar.foreground": "baseColorB",
-		"activityBar.activeBorder": "baseColorH80",
-		"activityBar.activeBackground": "baseColorI10",
-		"activityBarBadge.background": "baseColorH",
-		"activityBarBadge.foreground": "baseColorB",
-		"sideBar.background": "ansiColorA",
-		"sideBarTitle.foreground": "baseColorB",
-		"sideBarSectionHeader.background": "baseColorA",
-		"sideBarSectionHeader.border": "baseColorM",
-		"editorGroup.border": "baseColorI",
-		"editorGroup.dropBackground": "baseColorC70",
-		"editorGroupHeader.tabsBackground": "baseColorM",
-		"tab.activeBackground": "baseColorA",
-		"tab.activeForeground": "baseColorB",
-		"tab.border": "baseColorM",
-		"tab.activeBorderTop": "baseColorH80",
-		"tab.inactiveBackground": "ansiColorA",
-		"tab.inactiveForeground": "baseColorD",
-		"editor.foreground": "baseColorB",
-		"editor.background": "baseColorA",
-		"editorLineNumber.foreground": "baseColorD",
-		"editor.selectionBackground": "baseColorL",
-		"editor.selectionHighlightBackground": "baseColorL50",
-		"editor.foldBackground": "ansiColorA",
-		"editor.wordHighlightBackground": "baseColorE50",
-		"editor.wordHighlightStrongBackground": "baseColorF50",
-		"editor.findMatchBackground": "baseColorD",
-		"editor.findMatchHighlightBackground": "baseColorD50",
-		"editor.findRangeHighlightBackground": "baseColorC75",
-		"editor.hoverHighlightBackground": "baseColorE50",
-		"editor.lineHighlightBorder": "baseColorC",
-		"editorLink.activeForeground": "baseColorE",
-		"editor.rangeHighlightBackground": "baseColorI15",
-		"editor.snippetTabstopHighlightBackground": "baseColorA",
-		"editor.snippetTabstopHighlightBorder": "baseColorD",
-		"editor.snippetFinalTabstopHighlightBackground": "baseColorA",
-		"editor.snippetFinalTabstopHighlightBorder": "baseColorF",
-		"editorWhitespace.foreground": "ansiColorP1A",
-		"editorIndentGuide.background": "baseColorB50",
-		"editorIndentGuide.activeBackground": "baseColorB",
-		"editorRuler.foreground": "ansiColorP1A",
-		"editorCodeLens.foreground": "baseColorD",
-		"editorBracketHighlight.foreground1": "baseColorB",
-		"editorBracketHighlight.foreground2": "baseColorH",
-		"editorBracketHighlight.foreground3": "baseColorE",
-		"editorBracketHighlight.foreground4": "baseColorF",
-		"editorBracketHighlight.foreground5": "baseColorI",
-		"editorBracketHighlight.foreground6": "baseColorG",
-		"editorBracketHighlight.unexpectedBracket.foreground": "baseColorJ",
-		"editorOverviewRuler.border": "baseColorM",
-		"editorOverviewRuler.selectionHighlightForeground": "baseColorG",
-		"editorOverviewRuler.wordHighlightForeground": "baseColorE",
-		"editorOverviewRuler.wordHighlightStrongForeground": "baseColorF",
-		"editorOverviewRuler.modifiedForeground": "baseColorE80",
-		"editorOverviewRuler.addedForeground": "baseColorF80",
-		"editorOverviewRuler.deletedForeground": "baseColorJ80",
-		"editorOverviewRuler.errorForeground": "baseColorJ80",
-		"editorOverviewRuler.warningForeground": "baseColorG80",
-		"editorOverviewRuler.infoForeground": "baseColorE80",
-		"editorError.foreground": "baseColorJ",
-		"editorWarning.foreground": "baseColorE",
-		"editorGutter.modifiedBackground": "baseColorE80",
-		"editorGutter.addedBackground": "baseColorF80",
-		"editorGutter.deletedBackground": "baseColorJ80",
-		"gitDecoration.modifiedResourceForeground": "baseColorE",
-		"gitDecoration.deletedResourceForeground": "baseColorJ",
-		"gitDecoration.untrackedResourceForeground": "baseColorF",
-		"gitDecoration.ignoredResourceForeground": "baseColorD",
-		"gitDecoration.conflictingResourceForeground": "baseColorG",
-		"diffEditor.insertedTextBackground": "baseColorF20",
-		"diffEditor.removedTextBackground": "baseColorJ50",
-		"editorWidget.background": "ansiColorA",
-		"editorSuggestWidget.background": "ansiColorA",
-		"editorSuggestWidget.foreground": "baseColorB",
-		"editorSuggestWidget.selectedBackground": "baseColorC",
-		"editorHoverWidget.background": "baseColorA",
-		"editorHoverWidget.border": "baseColorD",
-		"editorMarkerNavigation.background": "ansiColorA",
-		"peekView.border": "baseColorC",
-		"peekViewEditor.background": "baseColorA",
-		"peekViewEditor.matchHighlightBackground": "baseColorK80",
-		"peekViewResult.background": "ansiColorA",
-		"peekViewResult.fileForeground": "baseColorB",
-		"peekViewResult.lineForeground": "baseColorB",
-		"peekViewResult.matchHighlightBackground": "baseColorK80",
-		"peekViewResult.selectionBackground": "baseColorC",
-		"peekViewResult.selectionForeground": "baseColorB",
-		"peekViewTitle.background": "baseColorM",
-		"peekViewTitleDescription.foreground": "baseColorD",
-		"peekViewTitleLabel.foreground": "baseColorB",
-		"merge.currentHeaderBackground": "baseColorF90",
-		"merge.incomingHeaderBackground": "baseColorI90",
-		"editorOverviewRuler.currentContentForeground": "baseColorF",
-		"editorOverviewRuler.incomingContentForeground": "baseColorI",
-		"panel.background": "baseColorA",
-		"panel.border": "baseColorI",
-		"panelTitle.activeBorder": "baseColorH",
-		"panelTitle.activeForeground": "baseColorB",
-		"panelTitle.inactiveForeground": "baseColorD",
-		"statusBar.background": "baseColorM",
-		"statusBar.foreground": "baseColorB",
-		"statusBar.debuggingBackground": "baseColorJ",
-		"statusBar.debuggingForeground": "baseColorM",
-		"statusBar.noFolderBackground": "baseColorM",
-		"statusBar.noFolderForeground": "baseColorB",
-		"statusBarItem.prominentBackground": "baseColorJ",
-		"statusBarItem.prominentHoverBackground": "baseColorG",
-		"statusBarItem.remoteForeground": "baseColorA",
-		"statusBarItem.remoteBackground": "baseColorI",
-		"titleBar.activeBackground": "ansiColorA",
-		"titleBar.activeForeground": "baseColorB",
-		"titleBar.inactiveBackground": "baseColorM",
-		"titleBar.inactiveForeground": "baseColorD",
-		"notification.background": "baseColorA",
-		"notification.foreground": "baseColorB",
-		"notification.buttonBackground": "baseColorC",
-		"notification.buttonForeground": "baseColorB",
-		"notification.buttonHoverBackground": "baseColorC75",
-		"notification.errorBackground": "baseColorJ",
-		"notification.errorForeground": "baseColorB",
-		"notification.infoBackground": "baseColorE",
-		"notification.infoForeground": "baseColorA",
-		"notification.warningBackground": "baseColorG",
-		"notification.warningForeground": "baseColorA",
-		"extensionButton.prominentForeground": "baseColorB",
-		"extensionButton.prominentBackground": "baseColorF90",
-		"extensionButton.prominentHoverBackground": "baseColorF60",
-		"pickerGroup.border": "baseColorI",
-		"pickerGroup.foreground": "baseColorE",
-		"debugToolBar.background": "ansiColorA",
-		"walkThrough.embeddedEditorBackground": "ansiColorA",
-		"settings.headerForeground": "baseColorB",
-		"settings.modifiedItemForeground": "baseColorG",
-		"settings.modifiedItemIndicator": "baseColorG",
-		"settings.dropdownBackground": "ansiColorA",
-		"settings.dropdownForeground": "baseColorB",
-		"settings.dropdownBorder": "baseColorM",
-		"settings.checkboxBackground": "ansiColorA",
-		"settings.checkboxForeground": "baseColorB",
-		"settings.checkboxBorder": "baseColorM",
-		"settings.textInputBackground": "ansiColorA",
-		"settings.textInputForeground": "baseColorB",
-		"settings.textInputBorder": "baseColorM",
-		"settings.numberInputBackground": "ansiColorA",
-		"settings.numberInputForeground": "baseColorB",
-		"settings.numberInputBorder": "baseColorM",
-		"breadcrumb.foreground": "baseColorD",
-		"breadcrumb.background": "baseColorA",
-		"breadcrumb.focusForeground": "baseColorB",
-		"breadcrumb.activeSelectionForeground": "baseColorB",
-		"breadcrumbPicker.background": "baseColorM",
-		"listFilterWidget.background": "baseColorM",
-		"listFilterWidget.outline": "baseColorL",
-		"listFilterWidget.noMatchesOutline": "baseColorJ"
+		"terminal.background": "primaryBackground",
+		"terminal.foreground": "primaryForeground",
+		"terminal.ansiBrightBlack": "ansiBrightestBlack",
+		"terminal.ansiBrightRed": "ansiBrightestRed",
+		"terminal.ansiBrightGreen": "ansiBrightestGreen",
+		"terminal.ansiBrightYellow": "ansiBrightestYellow",
+		"terminal.ansiBrightBlue": "ansiBrightestBlue",
+		"terminal.ansiBrightMagenta": "ansiBrightestMagenta",
+		"terminal.ansiBrightCyan": "ansiBrightestCyan",
+		"terminal.ansiBrightWhite": "ansiBrightestWhite",
+		"terminal.ansiBlack": "ansiBlack",
+		"terminal.ansiRed": "ansiRed",
+		"terminal.ansiGreen": "ansiGreen",
+		"terminal.ansiYellow": "ansiYellow",
+		"terminal.ansiBlue": "ansiBlue",
+		"terminal.ansiMagenta": "ansiMagenta",
+		"terminal.ansiCyan": "ansiCyan",
+		"terminal.ansiWhite": "ansiWhite",
+		"focusBorder": "secondaryForeground",
+		"foreground": "primaryForeground",
+		"selection.background": "secondaryForeground50",
+		"errorForeground": "errors",
+		"button.background": "secondaryBackground",
+		"button.foreground": "primaryForeground",
+		"button.secondaryBackground": "primaryBackground",
+		"button.secondaryForeground": "primaryForeground",
+		"button.secondaryHoverBackground": "activityBarBackground",
+		"dropdown.background": "activityBarBackground",
+		"dropdown.border": "activityBarBackground",
+		"dropdown.foreground": "primaryForeground",
+		"input.background": "primaryBackground",
+		"input.foreground": "primaryForeground",
+		"input.border": "activityBarBackground",
+		"input.placeholderForeground": "secondaryForeground",
+		"inputOption.activeBorder": "variables",
+		"inputValidation.infoBorder": "keywords",
+		"inputValidation.warningBorder": "parameters",
+		"inputValidation.errorBorder": "errors",
+		"badge.foreground": "primaryForeground",
+		"badge.background": "secondaryBackground",
+		"progressBar.background": "keywords",
+		"list.activeSelectionBackground": "secondaryBackground",
+		"list.activeSelectionForeground": "primaryForeground",
+		"list.dropBackground": "secondaryBackground",
+		"list.focusBackground": "secondaryBackground75",
+		"list.highlightForeground": "classes",
+		"list.hoverBackground": "secondaryBackground75",
+		"list.inactiveSelectionBackground": "secondaryBackground75",
+		"list.warningForeground": "parameters",
+		"list.errorForeground": "errors",
+		"activityBar.background": "activityBarBackground",
+		"activityBar.inactiveForeground": "secondaryForeground",
+		"activityBar.foreground": "primaryForeground",
+		"activityBar.activeBorder": "keywords80",
+		"activityBar.activeBackground": "variables10",
+		"activityBarBadge.background": "keywords",
+		"activityBarBadge.foreground": "primaryForeground",
+		"sideBar.background": "ansiBlack",
+		"sideBarTitle.foreground": "primaryForeground",
+		"sideBarSectionHeader.background": "primaryBackground",
+		"sideBarSectionHeader.border": "activityBarBackground",
+		"editorGroup.border": "variables",
+		"editorGroup.dropBackground": "secondaryBackground70",
+		"editorGroupHeader.tabsBackground": "activityBarBackground",
+		"tab.activeBackground": "primaryBackground",
+		"tab.activeForeground": "primaryForeground",
+		"tab.border": "activityBarBackground",
+		"tab.activeBorderTop": "keywords80",
+		"tab.inactiveBackground": "ansiBlack",
+		"tab.inactiveForeground": "secondaryForeground",
+		"editor.foreground": "primaryForeground",
+		"editor.background": "primaryBackground",
+		"editorLineNumber.foreground": "secondaryForeground",
+		"editor.selectionBackground": "selectionHighlight",
+		"editor.selectionHighlightBackground": "selectionHighlight50",
+		"editor.foldBackground": "ansiBlack",
+		"editor.wordHighlightBackground": "classes50",
+		"editor.wordHighlightStrongBackground": "functions50",
+		"editor.findMatchBackground": "secondaryForeground",
+		"editor.findMatchHighlightBackground": "secondaryForeground50",
+		"editor.findRangeHighlightBackground": "secondaryBackground75",
+		"editor.hoverHighlightBackground": "classes50",
+		"editor.lineHighlightBorder": "secondaryBackground",
+		"editorLink.activeForeground": "classes",
+		"editor.rangeHighlightBackground": "variables15",
+		"editor.snippetTabstopHighlightBackground": "primaryBackground",
+		"editor.snippetTabstopHighlightBorder": "secondaryForeground",
+		"editor.snippetFinalTabstopHighlightBackground": "primaryBackground",
+		"editor.snippetFinalTabstopHighlightBorder": "functions",
+		"editorWhitespace.foreground": "ansiBrightestWhite1A",
+		"editorIndentGuide.background": "primaryForeground50",
+		"editorIndentGuide.activeBackground": "primaryForeground",
+		"editorRuler.foreground": "ansiBrightestWhite1A",
+		"editorCodeLens.foreground": "secondaryForeground",
+		"editorBracketHighlight.foreground1": "primaryForeground",
+		"editorBracketHighlight.foreground2": "keywords",
+		"editorBracketHighlight.foreground3": "classes",
+		"editorBracketHighlight.foreground4": "functions",
+		"editorBracketHighlight.foreground5": "variables",
+		"editorBracketHighlight.foreground6": "parameters",
+		"editorBracketHighlight.unexpectedBracket.foreground": "errors",
+		"editorOverviewRuler.border": "activityBarBackground",
+		"editorOverviewRuler.selectionHighlightForeground": "parameters",
+		"editorOverviewRuler.wordHighlightForeground": "classes",
+		"editorOverviewRuler.wordHighlightStrongForeground": "functions",
+		"editorOverviewRuler.modifiedForeground": "classes80",
+		"editorOverviewRuler.addedForeground": "functions80",
+		"editorOverviewRuler.deletedForeground": "errors80",
+		"editorOverviewRuler.errorForeground": "errors80",
+		"editorOverviewRuler.warningForeground": "parameters80",
+		"editorOverviewRuler.infoForeground": "classes80",
+		"editorError.foreground": "errors",
+		"editorWarning.foreground": "classes",
+		"editorGutter.modifiedBackground": "classes80",
+		"editorGutter.addedBackground": "functions80",
+		"editorGutter.deletedBackground": "errors80",
+		"gitDecoration.modifiedResourceForeground": "classes",
+		"gitDecoration.deletedResourceForeground": "errors",
+		"gitDecoration.untrackedResourceForeground": "functions",
+		"gitDecoration.ignoredResourceForeground": "secondaryForeground",
+		"gitDecoration.conflictingResourceForeground": "parameters",
+		"diffEditor.insertedTextBackground": "functions20",
+		"diffEditor.removedTextBackground": "errors50",
+		"editorWidget.background": "ansiBlack",
+		"editorSuggestWidget.background": "ansiBlack",
+		"editorSuggestWidget.foreground": "primaryForeground",
+		"editorSuggestWidget.selectedBackground": "secondaryBackground",
+		"editorHoverWidget.background": "primaryBackground",
+		"editorHoverWidget.border": "secondaryForeground",
+		"editorMarkerNavigation.background": "ansiBlack",
+		"peekView.border": "secondaryBackground",
+		"peekViewEditor.background": "primaryBackground",
+		"peekViewEditor.matchHighlightBackground": "strings80",
+		"peekViewResult.background": "ansiBlack",
+		"peekViewResult.fileForeground": "primaryForeground",
+		"peekViewResult.lineForeground": "primaryForeground",
+		"peekViewResult.matchHighlightBackground": "strings80",
+		"peekViewResult.selectionBackground": "secondaryBackground",
+		"peekViewResult.selectionForeground": "primaryForeground",
+		"peekViewTitle.background": "activityBarBackground",
+		"peekViewTitleDescription.foreground": "secondaryForeground",
+		"peekViewTitleLabel.foreground": "primaryForeground",
+		"merge.currentHeaderBackground": "functions90",
+		"merge.incomingHeaderBackground": "variables90",
+		"editorOverviewRuler.currentContentForeground": "functions",
+		"editorOverviewRuler.incomingContentForeground": "variables",
+		"panel.background": "primaryBackground",
+		"panel.border": "variables",
+		"panelTitle.activeBorder": "keywords",
+		"panelTitle.activeForeground": "primaryForeground",
+		"panelTitle.inactiveForeground": "secondaryForeground",
+		"statusBar.background": "activityBarBackground",
+		"statusBar.foreground": "primaryForeground",
+		"statusBar.debuggingBackground": "errors",
+		"statusBar.debuggingForeground": "activityBarBackground",
+		"statusBar.noFolderBackground": "activityBarBackground",
+		"statusBar.noFolderForeground": "primaryForeground",
+		"statusBarItem.prominentBackground": "errors",
+		"statusBarItem.prominentHoverBackground": "parameters",
+		"statusBarItem.remoteForeground": "primaryBackground",
+		"statusBarItem.remoteBackground": "variables",
+		"titleBar.activeBackground": "ansiBlack",
+		"titleBar.activeForeground": "primaryForeground",
+		"titleBar.inactiveBackground": "activityBarBackground",
+		"titleBar.inactiveForeground": "secondaryForeground",
+		"notification.background": "primaryBackground",
+		"notification.foreground": "primaryForeground",
+		"notification.buttonBackground": "secondaryBackground",
+		"notification.buttonForeground": "primaryForeground",
+		"notification.buttonHoverBackground": "secondaryBackground75",
+		"notification.errorBackground": "errors",
+		"notification.errorForeground": "primaryForeground",
+		"notification.infoBackground": "classes",
+		"notification.infoForeground": "primaryBackground",
+		"notification.warningBackground": "parameters",
+		"notification.warningForeground": "primaryBackground",
+		"extensionButton.prominentForeground": "primaryForeground",
+		"extensionButton.prominentBackground": "functions90",
+		"extensionButton.prominentHoverBackground": "functions60",
+		"pickerGroup.border": "variables",
+		"pickerGroup.foreground": "classes",
+		"debugToolBar.background": "ansiBlack",
+		"walkThrough.embeddedEditorBackground": "ansiBlack",
+		"settings.headerForeground": "primaryForeground",
+		"settings.modifiedItemForeground": "parameters",
+		"settings.modifiedItemIndicator": "parameters",
+		"settings.dropdownBackground": "ansiBlack",
+		"settings.dropdownForeground": "primaryForeground",
+		"settings.dropdownBorder": "activityBarBackground",
+		"settings.checkboxBackground": "ansiBlack",
+		"settings.checkboxForeground": "primaryForeground",
+		"settings.checkboxBorder": "activityBarBackground",
+		"settings.textInputBackground": "ansiBlack",
+		"settings.textInputForeground": "primaryForeground",
+		"settings.textInputBorder": "activityBarBackground",
+		"settings.numberInputBackground": "ansiBlack",
+		"settings.numberInputForeground": "primaryForeground",
+		"settings.numberInputBorder": "activityBarBackground",
+		"breadcrumb.foreground": "secondaryForeground",
+		"breadcrumb.background": "primaryBackground",
+		"breadcrumb.focusForeground": "primaryForeground",
+		"breadcrumb.activeSelectionForeground": "primaryForeground",
+		"breadcrumbPicker.background": "activityBarBackground",
+		"listFilterWidget.background": "activityBarBackground",
+		"listFilterWidget.outline": "selectionHighlight",
+		"listFilterWidget.noMatchesOutline": "errors"
 	},
 	"tokenColors": [
 		{
@@ -226,57 +226,57 @@
 		{
 			"scope": ["header"],
 			"settings": {
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
 			"scope": ["meta.diff", "meta.diff.header"],
 			"settings": {
-				"foreground": "baseColorD"
+				"foreground": "secondaryForeground"
 			}
 		},
 		{
 			"scope": ["markup.inserted"],
 			"settings": {
-				"foreground": "baseColorF"
+				"foreground": "functions"
 			}
 		},
 		{
 			"scope": ["markup.deleted"],
 			"settings": {
-				"foreground": "baseColorJ"
+				"foreground": "errors"
 			}
 		},
 		{
 			"scope": ["markup.changed"],
 			"settings": {
-				"foreground": "baseColorG"
+				"foreground": "parameters"
 			}
 		},
 		{
 			"scope": ["invalid"],
 			"settings": {
-				"foreground": "baseColorJ",
+				"foreground": "errors",
 				"fontStyle": "underline italic"
 			}
 		},
 		{
 			"scope": ["invalid.deprecated"],
 			"settings": {
-				"foreground": "baseColorB",
+				"foreground": "primaryForeground",
 				"fontStyle": "underline italic"
 			}
 		},
 		{
 			"scope": ["entity.name.filename"],
 			"settings": {
-				"foreground": "baseColorK"
+				"foreground": "strings"
 			}
 		},
 		{
 			"scope": ["markup.error"],
 			"settings": {
-				"foreground": "baseColorJ"
+				"foreground": "errors"
 			}
 		},
 		{
@@ -291,7 +291,7 @@
 			"scope": ["markup.bold"],
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": "baseColorG"
+				"foreground": "parameters"
 			}
 		},
 		{
@@ -299,14 +299,14 @@
 			"scope": ["markup.heading"],
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
 			"name": "Markup italic",
 			"scope": ["markup.italic"],
 			"settings": {
-				"foreground": "baseColorK",
+				"foreground": "strings",
 				"fontStyle": "italic"
 			}
 		},
@@ -318,21 +318,21 @@
 				"punctuation.definition.link.restructuredtext"
 			],
 			"settings": {
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
 			"name": "Inline code (prose)",
 			"scope": ["markup.inline.raw", "markup.raw.restructuredtext"],
 			"settings": {
-				"foreground": "baseColorF"
+				"foreground": "functions"
 			}
 		},
 		{
 			"name": "Links (prose)",
 			"scope": ["markup.underline.link", "markup.underline.link.image"],
 			"settings": {
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
@@ -344,14 +344,14 @@
 				"string.other.link.title"
 			],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
 			"name": "Blockquotes (prose)",
 			"scope": ["entity.name.directive.restructuredtext", "markup.quote"],
 			"settings": {
-				"foreground": "baseColorK",
+				"foreground": "strings",
 				"fontStyle": "italic"
 			}
 		},
@@ -359,7 +359,7 @@
 			"name": "Horizontal rule (prose)",
 			"scope": ["meta.separator.markdown"],
 			"settings": {
-				"foreground": "baseColorD"
+				"foreground": "secondaryForeground"
 			}
 		},
 		{
@@ -370,14 +370,14 @@
 				"markup.fenced_code.block.markdown punctuation.definition.markdown"
 			],
 			"settings": {
-				"foreground": "baseColorF"
+				"foreground": "functions"
 			}
 		},
 		{
 			"name": "Prose constants",
 			"scope": ["punctuation.definition.constant.restructuredtext"],
 			"settings": {
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
@@ -387,7 +387,7 @@
 				"markup.heading.markdown punctuation.definition.string.end"
 			],
 			"settings": {
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
@@ -397,7 +397,7 @@
 				"meta.paragraph.markdown punctuation.definition.string.end"
 			],
 			"settings": {
-				"foreground": "baseColorB"
+				"foreground": "primaryForeground"
 			}
 		},
 		{
@@ -407,14 +407,14 @@
 				"markup.quote.markdown meta.paragraph.markdown punctuation.definition.string.end"
 			],
 			"settings": {
-				"foreground": "baseColorK"
+				"foreground": "strings"
 			}
 		},
 		{
 			"name": "User-defined class names",
 			"scope": ["entity.name.type.class", "entity.name.class"],
 			"settings": {
-				"foreground": "baseColorE",
+				"foreground": "classes",
 				"fontStyle": "normal"
 			}
 		},
@@ -429,7 +429,7 @@
 				"variable.parameter.function.language.special"
 			],
 			"settings": {
-				"foreground": "baseColorI",
+				"foreground": "variables",
 				"fontStyle": "italic"
 			}
 		},
@@ -438,14 +438,14 @@
 			"scope": ["entity.other.inherited-class"],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
 			"name": "Comments",
 			"scope": ["comment", "punctuation.definition.comment", "unused.comment", "wildcard.comment"],
 			"settings": {
-				"foreground": "baseColorD"
+				"foreground": "secondaryForeground"
 			}
 		},
 		{
@@ -456,14 +456,14 @@
 				"comment.block.documentation storage.type.class"
 			],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
 			"name": "JSDoc-style types",
 			"scope": ["comment.block.documentation entity.name.type"],
 			"settings": {
-				"foreground": "baseColorE",
+				"foreground": "classes",
 				"fontStyle": "italic"
 			}
 		},
@@ -471,14 +471,14 @@
 			"name": "JSDoc-style type brackets",
 			"scope": ["comment.block.documentation entity.name.type punctuation.definition.bracket"],
 			"settings": {
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
 			"name": "JSDoc-style comment parameters",
 			"scope": ["comment.block.documentation variable"],
 			"settings": {
-				"foreground": "baseColorG",
+				"foreground": "parameters",
 				"fontStyle": "italic"
 			}
 		},
@@ -486,35 +486,35 @@
 			"name": "Constants",
 			"scope": ["constant", "variable.other.constant"],
 			"settings": {
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
 			"name": "Constant escape sequences",
 			"scope": ["constant.character.escape", "constant.character.string.escape", "constant.regexp"],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
 			"name": "HTML tags",
 			"scope": ["entity.name.tag"],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
 			"name": "CSS attribute parent selectors ('&')",
 			"scope": ["entity.other.attribute-name.parent-selector"],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
 			"name": "HTML/CSS attribute names",
 			"scope": ["entity.other.attribute-name"],
 			"settings": {
-				"foreground": "baseColorF",
+				"foreground": "functions",
 				"fontStyle": "italic"
 			}
 		},
@@ -531,7 +531,7 @@
 				"keyword.operator.function.infix"
 			],
 			"settings": {
-				"foreground": "baseColorF"
+				"foreground": "functions"
 			}
 		},
 		{
@@ -546,7 +546,7 @@
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "baseColorG"
+				"foreground": "parameters"
 			}
 		},
 		{
@@ -556,7 +556,7 @@
 				"meta.decorator variable.other.property"
 			],
 			"settings": {
-				"foreground": "baseColorF",
+				"foreground": "functions",
 				"fontStyle": "italic"
 			}
 		},
@@ -564,14 +564,14 @@
 			"name": "Decorator Objects",
 			"scope": ["meta.decorator variable.other.object"],
 			"settings": {
-				"foreground": "baseColorF"
+				"foreground": "functions"
 			}
 		},
 		{
 			"name": "Keywords",
 			"scope": ["keyword", "punctuation.definition.keyword"],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
@@ -585,7 +585,7 @@
 			"name": "Generic selectors (CSS/SCSS/Less/Stylus)",
 			"scope": ["meta.selector"],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
@@ -593,7 +593,7 @@
 			"scope": ["support"],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
@@ -601,7 +601,7 @@
 			"scope": ["support.function.magic", "support.variable", "variable.other.predefined"],
 			"settings": {
 				"fontStyle": "regular",
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
@@ -640,7 +640,7 @@
 				"punctuation.separator.annotation"
 			],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
@@ -664,7 +664,7 @@
 				"string.template punctuation.accessor"
 			],
 			"settings": {
-				"foreground": "baseColorB"
+				"foreground": "primaryForeground"
 			}
 		},
 		{
@@ -683,7 +683,7 @@
 				"punctuation.definition.variable.makefile"
 			],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
@@ -695,14 +695,14 @@
 				"variable.other.key.toml"
 			],
 			"settings": {
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
 			"name": "Dates / timestamps (serializable languages)",
 			"scope": ["constant.other.date", "constant.other.timestamp"],
 			"settings": {
-				"foreground": "baseColorG"
+				"foreground": "parameters"
 			}
 		},
 		{
@@ -710,7 +710,7 @@
 			"scope": ["variable.other.alias.yaml"],
 			"settings": {
 				"fontStyle": "italic underline",
-				"foreground": "baseColorF"
+				"foreground": "functions"
 			}
 		},
 		{
@@ -723,7 +723,7 @@
 			],
 			"settings": {
 				"fontStyle": "regular",
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
@@ -751,7 +751,7 @@
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
@@ -762,14 +762,14 @@
 				"meta.type.parameters entity.name.type"
 			],
 			"settings": {
-				"foreground": "baseColorG"
+				"foreground": "parameters"
 			}
 		},
 		{
 			"name": "Modifiers",
 			"scope": ["storage.modifier"],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
@@ -780,14 +780,14 @@
 				"constant.character.escape.backslash.regexp"
 			],
 			"settings": {
-				"foreground": "baseColorK"
+				"foreground": "strings"
 			}
 		},
 		{
 			"name": "Non-capture operators",
 			"scope": ["punctuation.definition.group.capture.regexp"],
 			"settings": {
-				"foreground": "baseColorH"
+				"foreground": "keywords"
 			}
 		},
 		{
@@ -797,21 +797,21 @@
 				"string.regexp punctuation.definition.string.end"
 			],
 			"settings": {
-				"foreground": "baseColorJ"
+				"foreground": "errors"
 			}
 		},
 		{
 			"name": "Character group",
 			"scope": ["punctuation.definition.character-class.regexp"],
 			"settings": {
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
 			"name": "Capture groups",
 			"scope": ["punctuation.definition.group.regexp"],
 			"settings": {
-				"foreground": "baseColorG"
+				"foreground": "parameters"
 			}
 		},
 		{
@@ -821,28 +821,28 @@
 				"keyword.operator.negation.regexp"
 			],
 			"settings": {
-				"foreground": "baseColorJ"
+				"foreground": "errors"
 			}
 		},
 		{
 			"name": "Positive lookaheads",
 			"scope": ["meta.assertion.look-ahead.regexp"],
 			"settings": {
-				"foreground": "baseColorF"
+				"foreground": "functions"
 			}
 		},
 		{
 			"name": "Strings",
 			"scope": ["string"],
 			"settings": {
-				"foreground": "baseColorK"
+				"foreground": "strings"
 			}
 		},
 		{
 			"name": "String quotes (temporary vscode fix)",
 			"scope": ["punctuation.definition.string.begin", "punctuation.definition.string.end"],
 			"settings": {
-				"foreground": "baseColorK"
+				"foreground": "strings"
 			}
 		},
 		{
@@ -852,7 +852,7 @@
 				"punctuation.support.type.property-name.end"
 			],
 			"settings": {
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
@@ -864,7 +864,7 @@
 				"string.quoted.docstring.multi.python constant.character.escape"
 			],
 			"settings": {
-				"foreground": "baseColorD"
+				"foreground": "secondaryForeground"
 			}
 		},
 		{
@@ -878,7 +878,7 @@
 				"variable.other.constant.tsx"
 			],
 			"settings": {
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
@@ -890,7 +890,7 @@
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "baseColorG"
+				"foreground": "parameters"
 			}
 		},
 		{
@@ -902,28 +902,28 @@
 			],
 			"settings": {
 				"fontStyle": "normal",
-				"foreground": "baseColorB"
+				"foreground": "primaryForeground"
 			}
 		},
 		{
 			"name": "GraphQL keys",
 			"scope": ["meta.selectionset.graphql variable"],
 			"settings": {
-				"foreground": "baseColorK"
+				"foreground": "strings"
 			}
 		},
 		{
 			"name": "GraphQL function arguments",
 			"scope": ["meta.selectionset.graphql meta.arguments variable"],
 			"settings": {
-				"foreground": "baseColorB"
+				"foreground": "primaryForeground"
 			}
 		},
 		{
 			"name": "GraphQL fragment name (definition)",
 			"scope": ["entity.name.fragment.graphql", "variable.fragment.graphql"],
 			"settings": {
-				"foreground": "baseColorE"
+				"foreground": "classes"
 			}
 		},
 		{
@@ -944,14 +944,14 @@
 				"constant.language.empty-list.haskell"
 			],
 			"settings": {
-				"foreground": "baseColorB"
+				"foreground": "primaryForeground"
 			}
 		},
 		{
 			"name": "Shell variables prefixed with \"$\" (edge case)",
 			"scope": ["source.shell variable.other"],
 			"settings": {
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
@@ -959,21 +959,21 @@
 			"scope": ["support.constant"],
 			"settings": {
 				"fontStyle": "normal",
-				"foreground": "baseColorI"
+				"foreground": "variables"
 			}
 		},
 		{
 			"name": "Makefile prerequisite names",
 			"scope": ["meta.scope.prerequisites.makefile"],
 			"settings": {
-				"foreground": "baseColorK"
+				"foreground": "strings"
 			}
 		},
 		{
 			"name": "SCSS attibute selector strings",
 			"scope": ["meta.attribute-selector.scss"],
 			"settings": {
-				"foreground": "baseColorK"
+				"foreground": "strings"
 			}
 		},
 		{
@@ -983,14 +983,14 @@
 				"punctuation.definition.attribute-selector.begin.bracket.square.scss"
 			],
 			"settings": {
-				"foreground": "baseColorB"
+				"foreground": "primaryForeground"
 			}
 		},
 		{
 			"name": "Haskell Pragmas",
 			"scope": ["meta.preprocessor.haskell"],
 			"settings": {
-				"foreground": "baseColorD"
+				"foreground": "secondaryForeground"
 			}
 		}
 	]
