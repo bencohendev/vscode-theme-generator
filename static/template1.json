@@ -23,7 +23,7 @@
 		"terminal.ansiWhite": "ansiColorH",
 		"focusBorder": "baseColorD",
 		"foreground": "baseColorB",
-		"selection.background": "baseColorI",
+		"selection.background": "baseColorD50",
 		"errorForeground": "baseColorJ",
 		"button.background": "baseColorC",
 		"button.foreground": "baseColorB",
