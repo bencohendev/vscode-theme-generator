@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { fade, slide } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 
 	import template1 from '/static/template1.json';
 	import ColorSet from '../components/ColorSet.svelte';
@@ -10,9 +10,11 @@
 	let Picker; //color picker
 	let showVsCode = false;
 	let showDownload = false;
+	let showDownloadList = false
 	let showCopy = false;
 	let showSuccess = false;
 	let downloadButton;
+	let downloadListButton
 
 	let themeName = '';
 
@@ -30,6 +32,9 @@
 			textMateRules: []
 		}
 	};
+
+	let generatedList = {}
+
 	let baseColorsArr = [
 		'primaryBackground',
 		'secondaryBackground',
@@ -116,43 +121,52 @@
 		};
 		generatedTemplate = {};
 		let newTemplate = JSON.parse(JSON.stringify(template1));
-		/*change editor colors*/
-		const replaceEditorColors = (colorsObj, colorsArr, key, val) => {
+		const replaceEditorColors = (colorsObj, colorsArr, templateObj, key, val) => {
 			const replacementKey = colorsArr.find((color) => {
 				return val.includes(color);
 			});
 			if (replacementKey) {
 				let newColor;
 				//if hardcoded opacity in template, replace set opacity
-				if (newTemplate.colors[key].length > replacementKey.length) {
-					const opacityVal = newTemplate.colors[key].substring(
-						newTemplate.colors[key].length - 2,
-						newTemplate.colors[key].length
+				if (templateObj[key].length > replacementKey.length) {
+					const opacityVal = templateObj[key].substring(
+						templateObj[key].length - 2,
+						templateObj[key].length
 					);
 					const replacementVal = colorsObj[replacementKey].substring(
 						0,
 						colorsObj[replacementKey].length - 2
-					);
-					newColor = replacementVal + opacityVal;
-				} else {
-					//set new color with opacity
-					newColor = newTemplate.colors[key].replace(
-						replacementKey,
-						`${colorsObj[replacementKey]}`
-					);
+						);
+						newColor = replacementVal + opacityVal;
+					} else {
+						//set new color with opacity
+						newColor = templateObj[key].replace(
+							replacementKey,
+							`${colorsObj[replacementKey]}`
+							);
 				}
-				newTemplate.colors[key] = newColor;
+				templateObj[key] = newColor;
 			}
 		};
+		/*set theme guide*/
+		//base colors
+		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
+			replaceEditorColors(baseColors, baseColorsArr, newTemplate.colorList,key, val);
+		});
+		//ansi colors
+		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
+			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colorList,key, val);
+		});
+		/*end set theme guide*/
+		/*change editor colors*/
 		//base colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(baseColors, baseColorsArr, key, val);
+			replaceEditorColors(baseColors, baseColorsArr, newTemplate.colors,key, val);
 		});
 		//ansi colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(ansiColors, ansiColorsArr, key, val);
+			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colors,key, val);
 		});
-
 		/*end change editor colors*/
 
 		/*change tokenColors functions*/
@@ -178,19 +192,29 @@
 		generatedTemplate.name = themeName;
 		generatedTemplate = JSON.stringify(generatedTemplate);
 
+		generatedList = JSON.stringify(newTemplate.colorList)
+
 		showDownload = true;
 		showCopy = true;
+		showDownloadList = true
 
 		generateSuccess();
 	};
 
-	const downloadHandler = () => {
+	const downloadThemeHandler = () => {
 		let filename = 'theme.json';
 		let blob = new Blob([generatedTemplate], { type: 'application/json' });
 		downloadButton.download = filename;
-		downloadButton.innerHTML = 'Download Your Theme';
+		downloadButton.innerHTML = 'Theme Downloaded';
 		downloadButton.href = window.URL.createObjectURL(blob);
 	};
+	const downloadListHandler = () => {
+		let filename = 'list.json';
+		let blob = new Blob([generatedList], { type: 'application/json' });
+		downloadListButton.download = filename;
+		downloadListButton.innerHTML = 'Color List Downloaded';
+		downloadListButton.href = window.URL.createObjectURL(blob);
+	}
 	const copyHandler = () => {
 		navigator.clipboard.writeText(generatedSettings).then(
 			function () {
@@ -243,7 +267,7 @@
 				</span>
 			</div>
 			{#if showColorCategory.base}
-				<span class="base" transition:slide={{ duration: 300 }}>
+				<span class="base" in:slide={{ duration: 500 }}>
 					<div class="color-input-row">
 						{#each baseColorsArr as color}
 							<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {Picker} />
@@ -262,7 +286,7 @@
 				</span>
 			</div>
 			{#if showColorCategory.ansi}
-				<span transition:slide={{ duration: 300 }}>
+				<span in:slide={{ duration: 500 }}>
 					<div class="color-input-row">
 						{#each ansiColorsArr as color}
 							<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {Picker} />
@@ -289,7 +313,7 @@
 		</div>
 		{#if showDownload}
 			<div>
-				<a href="" bind:this={downloadButton} on:click={() => downloadHandler()}
+				<a href="" bind:this={downloadButton} on:click={() => downloadThemeHandler()}
 					>Download Your Theme</a
 				>
 			</div>
@@ -299,7 +323,13 @@
 				<button on:click={() => copyHandler()}>Copy to Clipboard</button>
 			</div>
 		{/if}
+		{#if showDownloadList}
+		<div class="generate-btn-container">
+			<a href="" bind:this={downloadListButton} on:click={() => downloadListHandler()}>Download List of Selected Colors</a>
+		</div>
+	{/if}
 	</div>
+	
 	{#if showVsCode}
 		<CodeFrame />
 	{/if}

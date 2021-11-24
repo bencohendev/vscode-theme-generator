@@ -541,14 +541,14 @@
 			"tags": ["terminal.ansiYellow"]
 		},
 		"ansiBlue": {
-			"name": "Blue Color",
-			"description": "T",
+			"name": "Blue",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBlue"]
 		},
 		"ansiMagenta": {
-			"name": "Magenta Color",
-			"description": "T",
+			"name": "Magenta ",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiMagenta"]
 		},
@@ -565,49 +565,49 @@
 			"tags": ["terminal.ansiWhite"]
 		},
 		"ansiBrightestBlack": {
-			"name": "Bright Black",
+			"name": "Brightest Black",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightBlack"]
 		},
 		"ansiBrightestRed": {
-			"name": "Bright Red Color",
-			"description": "T",
+			"name": "Brightest Red",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightRed"]
 		},
 		"ansiBrightestGreen": {
-			"name": "Bright Green",
-			"description": "T",
+			"name": "Brightest Green",
+			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightGreen"]
 		},
 		"ansiBrightestYellow": {
-			"name": "Bright Yellow",
+			"name": "Brightest Yellow",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightYellow"]
 		},
 		"ansiBrightestBlue": {
-			"name": "Bright Blue",
+			"name": "Brightest Blue",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightBlue"]
 		},
 		"ansiBrightestMagenta": {
-			"name": "Bright Magenta",
+			"name": "Brightest Magenta",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightMagenta"]
 		},
 		"ansiBrightestCyan": {
-			"name": "Bright Cyan",
+			"name": "Brightest Cyan",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightCyan"]
 		},
 		"ansiBrightestWhite": {
-			"name": "Bright White/Foregrounds",
+			"name": "Brightest White/Foregrounds",
 			"description": "",
 			"scopes": [],
 			"tags": ["terminal.ansiBrightWhite", "editorWhitespace.foreground", "editorRuler.foreground"]
