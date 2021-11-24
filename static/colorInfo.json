@@ -610,7 +610,27 @@
 			"name": "Brightest White/Foregrounds",
 			"description": "",
 			"scopes": [],
-			"tags": ["terminal.ansiBrightWhite", "editorWhitespace.foreground", "editorRuler.foreground"]
+			"tags": ["terminal.ansiBrightWhite"]
+		}
+	},
+	"advancedColors": {
+		"pureBlack": {
+			"name": "Pure Black",
+			"description": "This is used in a couple of places that pure black is needed CHANGE AT YOUR OWN PERIL",
+			"scopes": ["statusBar.background"],
+			"tags": []
+		},
+		"pureWhite": {
+			"name": "Pure White",
+			"description": "This is used in a couple of places that pure white is needed CHANGE AT YOUR OWN PERIL",
+			"scopes": ["statusBar.background"],
+			"tags": ["editorWhitespace.foreground", "editorRuler.foreground"]
+		},
+		"statusBar": {
+			"name": "Status Bar",
+			"description": "",
+			"scopes": ["statusBar.background"],
+			"tags": []
 		}
 	}
 }

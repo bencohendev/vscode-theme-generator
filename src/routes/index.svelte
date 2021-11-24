@@ -104,9 +104,22 @@
 		ansiBrightestWhite: '#FFFFFF'
 	};
 
+	let advancedColors = {
+		pureBlack: "#000000ff",
+		pureWhite: "#FFFFFFff",
+		statusBar: '#c7c7c7ff'
+	}
+
+	let advancedColorsArr = [
+		'pureBlack',
+		'pureWhite',
+		'statusBar'
+	]
+
 	let showColorCategory = {
 		base: true,
-		ansi: false
+		ansi: false,
+		advanced: false
 	};
 
 	const showColorCategoryHandler = (category) => {
@@ -138,12 +151,12 @@
 						colorsObj[replacementKey].length - 2
 						);
 						newColor = replacementVal + opacityVal;
-					} else {
-						//set new color with opacity
-						newColor = templateObj[key].replace(
-							replacementKey,
-							`${colorsObj[replacementKey]}`
-							);
+				} else {
+					//set new color with opacity
+					newColor = templateObj[key].replace(
+						replacementKey,
+						`${colorsObj[replacementKey]}`
+						);
 				}
 				templateObj[key] = newColor;
 			}
@@ -157,6 +170,10 @@
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
 			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colorList,key, val);
 		});
+		//advanced colors
+		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
+			replaceEditorColors(advancedColors, advancedColorsArr, newTemplate.colorList,key, val);
+		});
 		/*end set theme guide*/
 		/*change editor colors*/
 		//base colors
@@ -166,6 +183,10 @@
 		//ansi colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
 			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colors,key, val);
+		});
+		//advanced colors
+		Object.entries(newTemplate.colors).forEach(([key, val]) => {
+			replaceEditorColors(advancedColors, advancedColorsArr, newTemplate.colors,key, val);
 		});
 		/*end change editor colors*/
 
@@ -181,6 +202,13 @@
 			const tokenKey = token.settings.foreground;
 			if (ansiColors[tokenKey]) {
 				token.settings.foreground = ansiColors[tokenKey];
+			}
+		});
+
+		newTemplate.tokenColors.forEach((token) => {
+			const tokenKey = token.settings.foreground;
+			if (advancedColors[tokenKey]) {
+				token.settings.foreground = advancedColors[tokenKey];
 			}
 		});
 
@@ -290,6 +318,25 @@
 					<div class="color-input-row">
 						{#each ansiColorsArr as color}
 							<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {Picker} />
+						{/each}
+					</div>
+				</span>
+			{/if}
+		</div>
+		<div>
+			<div class="color-header">
+				<span><h3>Advanced Colors</h3></span>
+				<span>
+					<button on:click={() => showColorCategoryHandler('advanced')}
+						>{showColorCategory.advanced ? 'Hide' : 'Show'}</button
+					>
+				</span>
+			</div>
+			{#if showColorCategory.advanced}
+				<span in:slide={{ duration: 500 }}>
+					<div class="color-input-row">
+						{#each advancedColorsArr as color}
+							<ColorSet colorObj={advancedColors} colorCategory={'advanced'} {color} {Picker} />
 						{/each}
 					</div>
 				</span>
