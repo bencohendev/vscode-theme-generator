@@ -36,15 +36,13 @@
 
 <div class="color-input-column">
 	<div bind:this={el} class="input-container">
-		<div class="input-container_inner">
 			<span>
 				<label>
 					{name}
+					<input type="text" bind:value={colorObj[color]} style="border-color: {colorObj[color]}" />
 				</label>
-				<input type="text" bind:value={colorObj[color]} style="border-color: {colorObj[color]}" />
+				<span class="color-box" style="background-color: {colorObj[color]}" />
 			</span>
-			<span class="color-box" style="background-color: {colorObj[color]}" />
-		</div>
 	</div>
 
 	<div use:clickOutside on:click_outside={() => (showMoreInfo = false)}>
@@ -75,17 +73,21 @@
 		flex: 0 0 25%;
 		margin-bottom: 1rem;
 	}
-
+	.input-container span {
+		display: flex;
+	}
 	label {
 		display: flex;
+		flex-direction: column;
 	}
 	.color-box {
 		position: relative;
-		top: 7px;
+		top: 2.05rem;
 		display: inline-block;
-		width: 25px;
-		height: 25px;
+		width: 1.5rem;
+		height:1.5rem;
 		border: solid 1px black;
+		margin-left: 1rem
 	}
 
 	input {

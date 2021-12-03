@@ -388,10 +388,6 @@
 		max-width: 1280px;
 		margin: auto;
 	}
-	span {
-		display: inline-block;
-	}
-
 	input {
 		padding: 0.5rem;
 		border-radius: 0.5rem;
