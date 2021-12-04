@@ -411,25 +411,15 @@
 		</div>
 	</div>
 	<div class="generate-btn-row">
-		{#if showSuccess}
 			<div class="generate-btn-container">
 				<button 
-					class="generate-btn-success" 
+					class="{showSuccess ? "generate-btn-success" : "generate-btn" }"
 					on:click={generateTheme}
 				>
-						Theme Generated
+					{showSuccess ? 'Theme Generated' : 'Generate Theme'}
 				</button>
 			</div>
-		{:else}
-			<div class="generate-btn-container">
-				<button 
-					class="generate-btn" 
-					on:click={generateTheme}
-				>
-					Generate Theme
-			</button>
-			</div>
-		{/if}
+
 		<div class="generate-btn-container">
 			<button on:click={() => (showVsCode = !showVsCode)}
 				>{showVsCode ? 'Hide' : 'Show'} Vs Code</button
