@@ -16,7 +16,6 @@
 	let showDownloadList = false
 	let showCopy = false;
 	let showSuccess = false;
-	let showExamples = false;
 	let downloadButton;
 	let downloadListButton
 
@@ -480,21 +479,16 @@
 		{/if}
 	</div>
 	<div class="example-btn-row">
-		<div>Try an example theme</div>
-		<div>
-			<button on:click={()=>showExamples = !showExamples}>
-				{showExamples ? 'Hide' : 'Show'} Examples
-			</button>
+		<h3>Try an example theme</h3>
+		<div class="example-theme-container">
+			<div>
+				<button on:click={()=>applyExampleTheme('joker')}>Joker</button>
+			</div>
+			<div>
+				<button on:click={()=>applyExampleTheme('batman')}>Batman</button>
+			</div>
 		</div>
-	</div>
-	{#if showExamples}
-		<div>
-			<button on:click={()=>applyExampleTheme('joker')}>Joker</button>
-		</div>
-		<div>
-			<button on:click={()=>applyExampleTheme('batman')}>Batman</button>
-		</div>
-	{/if}
+
 	{#if showVsCode}
 		<CodeFrame />
 	{/if}
@@ -544,5 +538,14 @@
 		display: flex;
 		padding: 0.5rem 2rem 2rem;
 		flex-wrap: wrap;
+	}
+	.example-btn-row h3{
+		margin-top: .5rem;
+	}
+	.example-theme-container {
+		display: flex;
+	}
+	.example-theme-container div {
+		margin: 0 1rem 0 0;
 	}
 </style>
