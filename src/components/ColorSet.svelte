@@ -118,9 +118,9 @@ on:change={handleChecked}
 <style>
 	.color-input-column {
 		display: flex;
-		flex-direction: column;
-		flex: 0 0 25%;
-		margin-bottom: 1rem;
+    flex-direction: column;
+    flex: 1 0 20%;
+    margin: 1rem;
 	}
 	.input-container span {
 		display: flex;
