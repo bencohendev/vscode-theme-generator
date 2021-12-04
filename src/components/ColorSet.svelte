@@ -62,6 +62,7 @@ on:change={handleChecked}
 			<span>
 				<label>
 					{name}
+
 					<input 
 						type="text" 
 						bind:value={colorObj[color]} 
@@ -89,6 +90,9 @@ on:change={handleChecked}
 	</div>
 	{/if}
 	<div use:clickOutside on:click_outside={() => (showMoreInfo = false)}>
+		{#if colorCategoryPlus == "advancedColors"}
+		<div>child of: {advancedColorsStatus[color].associatedBase}</div>
+		{/if}
 		<button
 			on:click={() => (showMoreInfo = !showMoreInfo)}
 			class="more-info"
