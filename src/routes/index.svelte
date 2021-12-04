@@ -123,16 +123,21 @@
 	let advancedColorsStatus = {
 		statusBar: {
 			associatedBase: "activityBarBackground",
+			associatedBaseTitle: "Activity Bar Background",
 			decoupledFromBase: false,
 			whiteOrBlack: '#ffffff'
 		},
 		pureBlack: {
 			associatedBase: "none",
+			associatedBaseTitle: "none",
+
 			decoupledFromBase: false,
 			whiteOrBlack: '#ffffff'
 		},
 		pureWhite: {
 			associatedBase: "none",
+			associatedBaseTitle: "none",
+
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		}
@@ -171,9 +176,11 @@
 		switch (themeName) {
 			case 'joker':
 				chosenTheme = joker
+				themeName = "Joker"
 				break;
 				case 'batman':
 				chosenTheme = batman
+				themeName = "Batman"
 				break;
 		
 			default:

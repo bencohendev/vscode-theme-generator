@@ -91,7 +91,7 @@ on:change={handleChecked}
 	{/if}
 	<div use:clickOutside on:click_outside={() => (showMoreInfo = false)}>
 		{#if colorCategoryPlus == "advancedColors"}
-		<div>child of: {advancedColorsStatus[color].associatedBase}</div>
+		<div>child of: {advancedColorsStatus[color].associatedBaseTitle}</div>
 		{/if}
 		<button
 			on:click={() => (showMoreInfo = !showMoreInfo)}
