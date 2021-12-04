@@ -6,9 +6,10 @@
 	import joker from "../theme-templates/joker.json"
 	import batman from "../theme-templates/batman.json"
 
+	import Header from '../components/Header.svelte';
 	import ColorSet from '../components/ColorSet.svelte';
 	import CodeFrame from '../components/CodeFrame.svelte';
-	import Header from '../components/Header.svelte';
+	import Search from '../components/Search.svelte'
 
 	let Picker; //color picker
 	let showVsCode = false;
@@ -444,6 +445,9 @@
 				</span>
 			{/if}
 		</div>
+	</div>
+	<div>
+		<Search/>
 	</div>
 	<div class="generate-btn-row">
 		<div class="generate-btn-container">
