@@ -268,14 +268,14 @@
 	};
 
 	const downloadThemeHandler = () => {
-		let filename = 'theme.json';
+		let filename =themeName ? `${themeName}.json` : 'theme.json';
 		let blob = new Blob([generatedTemplate], { type: 'application/json' });
 		downloadButton.download = filename;
 		downloadButton.innerHTML = 'Theme Downloaded';
 		downloadButton.href = window.URL.createObjectURL(blob);
 	};
 	const downloadListHandler = () => {
-		let filename = 'list.json';
+		let filename = themeName ? `${themeName}-list.json` : 'list.json';
 		let blob = new Blob([generatedList], { type: 'application/json' });
 		downloadListButton.download = filename;
 		downloadListButton.innerHTML = 'Color List Downloaded';

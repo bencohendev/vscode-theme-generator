@@ -113,7 +113,7 @@
 		"editor.foldBackground": "pureBlack",
 		"editor.wordHighlightBackground": "classes50",
 		"editor.wordHighlightStrongBackground": "functions50",
-		"editor.findMatchBackground": "secondaryForeground",
+		"editor.findMatchBackground": "secondaryForeground75",
 		"editor.findMatchHighlightBackground": "secondaryForeground50",
 		"editor.findRangeHighlightBackground": "secondaryBackground75",
 		"editor.hoverHighlightBackground": "classes50",
@@ -477,7 +477,7 @@
 			"name": "Comments",
 			"scope": ["comment", "punctuation.definition.comment", "unused.comment", "wildcard.comment"],
 			"settings": {
-				"foreground": "secondaryForeground"
+				"foreground": "secondaryForeground75"
 			}
 		},
 		{
