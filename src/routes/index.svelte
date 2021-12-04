@@ -116,6 +116,24 @@
 		'statusBar'
 	]
 
+	let advancedColorsStatus = {
+		statusBar: {
+			associatedBase: "activityBarBackground",
+			decoupledFromBase: false,
+			whiteOrBlack: '#ffffff'
+		},
+		pureBlack: {
+			associatedBase: "none",
+			decoupledFromBase: false,
+			whiteOrBlack: '#ffffff'
+		},
+		pureWhite: {
+			associatedBase: "none",
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		}
+	}
+
 	let showColorCategory = {
 		base: true,
 		ansi: false,
@@ -125,6 +143,26 @@
 	const showColorCategoryHandler = (category) => {
 		showColorCategory[category] = !showColorCategory[category];
 	};
+
+	const checkAdvancedColors = (e) => {
+		const advancedColorKey = e.detail.color
+		const advancedColorVal = e.detail.advancedColor
+		if(!advancedColorVal.decoupledFromBase) {
+			advancedColors[advancedColorKey] = baseColors[advancedColorVal.associatedBase]
+		}
+	}
+
+	const setAdvancedColors = (e) => {
+		Object.entries(advancedColorsStatus).forEach((advancedColor) => {
+			if (e.detail.name == advancedColor[1].associatedBase && !advancedColor[1].decoupledFromBase) {
+				advancedColors[advancedColor[0]] = e.detail.newColorVal
+				advancedColor[1].whiteOrBlack = e.detail.whiteOrBlack
+			}
+		})
+		advancedColorsStatus = advancedColorsStatus
+//		console.log(advancedColorsStatus);
+	}
+
 	const generateTheme = () => {
 		generatedSettings = {
 			'workbench.colorCustomizations': {},
@@ -266,6 +304,13 @@
 			Picker = (await import('vanilla-picker')).default;
 		})();
 	});
+
+	/**
+	 * base color changes
+	 * find associated advanced colors
+	 * check if associated advanced colors have been checked
+	 * if no, change advanced colors
+	*/
 </script>
 
 <Header />
@@ -298,7 +343,13 @@
 				<span class="base" in:slide={{ duration: 500 }}>
 					<div class="color-input-row">
 						{#each baseColorsArr as color}
-							<ColorSet colorObj={baseColors} colorCategory={'base'} {color} {Picker} />
+							<ColorSet 
+								bind:colorObj={baseColors} 
+								colorCategory={'base'} 
+								{color} 
+								{Picker}
+								on:changeColor={(e)=>setAdvancedColors(e)}
+							/>
 						{/each}
 					</div>
 				</span>
@@ -317,7 +368,12 @@
 				<span in:slide={{ duration: 500 }}>
 					<div class="color-input-row">
 						{#each ansiColorsArr as color}
-							<ColorSet colorObj={ansiColors} colorCategory={'ansi'} {color} {Picker} />
+							<ColorSet 
+								colorObj={ansiColors} 
+								colorCategory={'ansi'} 
+								{color} 
+								{Picker} 
+							/>
 						{/each}
 					</div>
 				</span>
@@ -329,14 +385,25 @@
 				<span>
 					<button on:click={() => showColorCategoryHandler('advanced')}
 						>{showColorCategory.advanced ? 'Hide' : 'Show'}</button
-					>
-				</span>
-			</div>
-			{#if showColorCategory.advanced}
+						>
+					</span>
+				</div>
+				{#if showColorCategory.advanced}
+				<div>Check any box to individually set an advanced color. Otherwise they will be set according
+					to their associated parent color
+				</div>
 				<span in:slide={{ duration: 500 }}>
 					<div class="color-input-row">
 						{#each advancedColorsArr as color}
-							<ColorSet colorObj={advancedColors} colorCategory={'advanced'} {color} {Picker} />
+							<ColorSet 
+								colorObj={advancedColors} 
+								colorCategory={'advanced'}
+								on:changeChecked={(e)=>checkAdvancedColors(e)}
+								bind:advancedColorsStatus
+								{color} 
+								{Picker}
+								whiteOrBlack={advancedColorsStatus[color].whiteOrBlack} 
+							/>
 						{/each}
 					</div>
 				</span>
@@ -346,11 +413,21 @@
 	<div class="generate-btn-row">
 		{#if showSuccess}
 			<div class="generate-btn-container">
-				<button class="generate-btn-success" on:click={generateTheme}>Theme Generated</button>
+				<button 
+					class="generate-btn-success" 
+					on:click={generateTheme}
+				>
+						Theme Generated
+				</button>
 			</div>
 		{:else}
 			<div class="generate-btn-container">
-				<button class="generate-btn" on:click={generateTheme}>Generate Theme</button>
+				<button 
+					class="generate-btn" 
+					on:click={generateTheme}
+				>
+					Generate Theme
+			</button>
 			</div>
 		{/if}
 		<div class="generate-btn-container">

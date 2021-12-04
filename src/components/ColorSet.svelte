@@ -3,21 +3,31 @@
 
 	import colorInfo from '/static/colorInfo.json';
 	import MoreInfo from './MoreInfo.svelte';
-	import { onMount } from 'svelte';
+	import { onMount, createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher()
 
 	export let colorObj;
 	export let colorCategory;
 	export let color;
+	export let advancedColorsStatus = undefined
 	export let Picker;
 
 	let el;
 	let colorCategoryPlus = colorCategory + 'Colors';
 	let name = colorInfo[colorCategoryPlus][color].name;
+	let isChecked
 
 	let showMoreInfo = false;
 
-	let whiteOrBlack;
+export	let whiteOrBlack;
 
+	const handleChecked = () => {
+		const advancedColor = advancedColorsStatus[color]
+		advancedColor.decoupledFromBase = isChecked
+		if (Picker && advancedColor.decoupledFromBase) instantiatePicker(Picker)
+		dispatch('changeChecked', {color, advancedColor})
+	}
 	const instantiatePicker = (Picker) => {
 		new Picker({
 			parent: el,
@@ -25,6 +35,7 @@
 			onChange: function (colorVal) {
 				colorObj[color] = colorVal.hex;
 				whiteOrBlack = hexToRgb(colorVal.hex);
+				dispatch('changeColor', {name: color, newColorVal: colorVal.hex, whiteOrBlack})
 			}
 		});
 	};
@@ -32,25 +43,59 @@
 		if (Picker) instantiatePicker(Picker);
 	});
 	$: if (Picker) instantiatePicker(Picker);
+  $: if (colorCategoryPlus == "advancedColors") whiteOrBlack= hexToRgb(colorObj[color]) 
 </script>
 
+{#if colorCategoryPlus == "advancedColors"}
+<input 
+type="checkbox" 
+name="" 
+id="" 
+bind:checked={isChecked} 
+on:change={handleChecked}
+>
+{/if}
 <div class="color-input-column">
-	<div bind:this={el} class="input-container">
+	{#if colorCategoryPlus == "advancedColors" && (!isChecked)}
+	<div class="input-container" 
+	>
 			<span>
 				<label>
 					{name}
-					<input type="text" bind:value={colorObj[color]} style="border-color: {colorObj[color]}" />
+					<input 
+						type="text" 
+						bind:value={colorObj[color]} 
+						style="border-color: {colorObj[color]}"
+						disabled
+					/>
 				</label>
 				<span class="color-box" style="background-color: {colorObj[color]}" />
 			</span>
 	</div>
-
+	{:else}
+	<div bind:this={el} class="input-container" 
+	>
+			<span>
+				<label>
+					{name}
+					<input 
+						type="text" 
+						bind:value={colorObj[color]} 
+						style="border-color: {colorObj[color]}"
+					/>
+				</label>
+				<span class="color-box" style="background-color: {colorObj[color]}" />
+			</span>
+	</div>
+	{/if}
 	<div use:clickOutside on:click_outside={() => (showMoreInfo = false)}>
 		<button
 			on:click={() => (showMoreInfo = !showMoreInfo)}
 			class="more-info"
 			style="background-color:{colorObj[color]}; color:{whiteOrBlack}"
-			>{showMoreInfo ? 'Hide' : 'Show'} More Info</button
+		>
+			{showMoreInfo ? 'Hide' : 'Show'} More Info
+		</button
 		>
 		{#if showMoreInfo}
 			<div class="more-info-outer">
