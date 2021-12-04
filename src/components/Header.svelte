@@ -27,8 +27,7 @@
 
 	.links {
 		display: flex;
-		width: 80%;
-		justify-content: right;
+		margin-left: auto;
 	}
 
 	a {
