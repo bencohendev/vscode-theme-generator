@@ -627,7 +627,7 @@
 		},
 		"statusBar": {
 			"name": "Status Bar",
-			"description": "",
+			"description": "Controls the color of the status bar at the bottom of the screen",
 			"scopes": ["statusBar.background"],
 			"tags": []
 		}

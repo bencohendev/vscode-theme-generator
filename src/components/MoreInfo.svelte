@@ -54,6 +54,7 @@
 <style>
 	.more-info-container {
 		position: absolute;
+		width: 0px;
 	}
 	.more-info-inner {
 		overflow-y: scroll;
@@ -72,7 +73,7 @@
 		max-height: 30rem;
 		width: 30rem;
 		margin-top: 1rem;
-		left: -12.8rem;
+		left: -7.8rem;
 		top: 1.5rem;
 	}
 
@@ -98,7 +99,7 @@
 	.more-info:after,
 	.more-info:before {
 		bottom: 100%;
-		left: 50%;
+		left: 37%;
 		border: solid 1px white;
 		content: '';
 		height: 0;

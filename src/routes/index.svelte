@@ -464,6 +464,7 @@
 	main {
 		max-width: 1280px;
 		margin: auto;
+		padding: 8rem
 	}
 	input {
 		padding: 0.5rem;
