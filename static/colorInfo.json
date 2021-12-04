@@ -504,23 +504,7 @@
 			"name": "Black/Backgrounds",
 			"description": "",
 			"scopes": [],
-			"tags": [
-				"terminal.ansiBlack",
-				"sideBar.background",
-				"tab.inactiveBackground",
-				"editor.foldBackground",
-				"editorWidget.background",
-				"editorSuggestWidget.background",
-				"editorMarkerNavigation.background",
-				"peekViewResult.background",
-				"titleBar.activeBackground",
-				"debugToolBar.background",
-				"walkThrough.embeddedEditorBackground",
-				"settings.dropdownBackground",
-				"settings.checkboxBackground",
-				"settings.textInputBackground",
-				"settings.numberInputBackground"
-			]
+			"tags": ["terminal.ansiBlack"]
 		},
 		"ansiRed": {
 			"name": "Red",
@@ -617,7 +601,22 @@
 		"pureBlack": {
 			"name": "Pure Black",
 			"description": "This is used in a couple of places that pure black is needed CHANGE AT YOUR OWN PERIL",
-			"scopes": ["statusBar.background"],
+			"scopes": [
+				"statusBar.background",
+				"sideBar.background",
+				"tab.inactiveBackground",
+				"editor.foldBackground",
+				"editorWidget.background",
+				"editorSuggestWidget.background",
+				"editorMarkerNavigation.background",
+				"peekViewResult.background",
+				"titleBar.activeBackground",
+				"debugToolBar.background",
+				"walkThrough.embeddedEditorBackground",
+				"settings.dropdownBackground",
+				"settings.checkboxBackground",
+				"settings.textInputBackground",
+				"settings.numberInputBackground"],
 			"tags": []
 		},
 		"pureWhite": {

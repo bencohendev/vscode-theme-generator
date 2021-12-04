@@ -107,7 +107,7 @@
 	let advancedColors = {
 		pureBlack: "#000000ff",
 		pureWhite: "#FFFFFFff",
-		statusBar: '#c7c7c7ff'
+		statusBar: '#343746ff'
 	}
 
 	let advancedColorsArr = [
