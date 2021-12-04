@@ -3,6 +3,9 @@
 	import { slide } from 'svelte/transition';
 
 	import template1 from '/static/template1.json';
+	import joker from "../theme-templates/joker.json"
+	import batman from "../theme-templates/batman.json"
+
 	import ColorSet from '../components/ColorSet.svelte';
 	import CodeFrame from '../components/CodeFrame.svelte';
 	import Header from '../components/Header.svelte';
@@ -13,6 +16,7 @@
 	let showDownloadList = false
 	let showCopy = false;
 	let showSuccess = false;
+	let showExamples = false;
 	let downloadButton;
 	let downloadListButton
 
@@ -160,7 +164,32 @@
 			}
 		})
 		advancedColorsStatus = advancedColorsStatus
-//		console.log(advancedColorsStatus);
+	}
+
+	const applyExampleTheme = (themeName) => {
+		let chosenTheme
+		switch (themeName) {
+			case 'joker':
+				chosenTheme = joker
+				break;
+				case 'batman':
+				chosenTheme = batman
+				break;
+		
+			default:
+				break;
+		}
+		Object.entries(chosenTheme).forEach(([key, val])=> {
+			baseColors[key] = val
+			const e = {
+				detail: {
+					name: key,
+					newColorVal: val,
+					whiteOrBlack: "#000000" 
+				}
+			}
+			setAdvancedColors(e)
+		})
 	}
 
 	const generateTheme = () => {
@@ -411,25 +440,15 @@
 		</div>
 	</div>
 	<div class="generate-btn-row">
-		{#if showSuccess}
-			<div class="generate-btn-container">
-				<button 
-					class="generate-btn-success" 
-					on:click={generateTheme}
-				>
-						Theme Generated
-				</button>
-			</div>
-		{:else}
-			<div class="generate-btn-container">
-				<button 
-					class="generate-btn" 
-					on:click={generateTheme}
-				>
-					Generate Theme
+		<div class="generate-btn-container">
+			<button 
+				class="{showSuccess ? "generate-btn-success" : "generate-btn" }"
+				on:click={generateTheme}
+			>
+				{showSuccess ? 'Theme Generated' : 'Generate Theme'}
 			</button>
-			</div>
-		{/if}
+		</div>
+
 		<div class="generate-btn-container">
 			<button on:click={() => (showVsCode = !showVsCode)}
 				>{showVsCode ? 'Hide' : 'Show'} Vs Code</button
@@ -451,9 +470,24 @@
 		<div class="generate-btn-container">
 			<a href="" bind:this={downloadListButton} on:click={() => downloadListHandler()}>Download List of Selected Colors</a>
 		</div>
-	{/if}
+		{/if}
 	</div>
-	
+	<div class="example-btn-row">
+		<div>Try an example theme</div>
+		<div>
+			<button on:click={()=>showExamples = !showExamples}>
+				{showExamples ? 'Hide' : 'Show'} Examples
+			</button>
+		</div>
+	</div>
+	{#if showExamples}
+		<div>
+			<button on:click={()=>applyExampleTheme('joker')}>Joker</button>
+		</div>
+		<div>
+			<button on:click={()=>applyExampleTheme('batman')}>Batman</button>
+		</div>
+	{/if}
 	{#if showVsCode}
 		<CodeFrame />
 	{/if}
