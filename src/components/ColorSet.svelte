@@ -26,7 +26,6 @@
 		const advancedColor = advancedColorsStatus[color]
 		advancedColor.decoupledFromBase = isChecked
 		if (Picker && advancedColor.decoupledFromBase) instantiatePicker(Picker)
-		console.log(color, advancedColor);
 		dispatch('changeChecked', {color, advancedColor})
 	}
 
@@ -49,16 +48,19 @@
   $: if (colorCategoryPlus == "advancedColors") whiteOrBlack= hexToRgb(colorObj[color]) 
 </script>
 
-{#if colorCategoryPlus == "advancedColors"}
-<input 
-type="checkbox" 
-name="" 
-id="" 
-bind:checked={isChecked} 
-on:change={handleChecked}
->
-{/if}
 <div class="color-input-column">
+	{#if colorCategoryPlus == "advancedColors"}
+		<label for="advanced-check">
+			Click to control advanced color
+			<input
+			type="checkbox"
+			name="advanced-check"
+			id=""
+			bind:checked={isChecked}
+			on:change={handleChecked}
+			>
+		</label>
+	{/if}
 	{#if colorCategoryPlus == "advancedColors" && (!isChecked)}
 	<div class="input-container" 
 	>
