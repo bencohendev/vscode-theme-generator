@@ -10,6 +10,7 @@
 				"input.background",
 				"sideBarSectionHeader.background",
 				"tab.activeBackground",
+				"tab.inactiveBackground (50% opactiy)",
 				"editor.background",
 				"editor.snippetTabstopHighlightBackground",
 				"editor.snippetFinalTabstopHighlightBackground",
@@ -602,9 +603,7 @@
 			"name": "Pure Black",
 			"description": "This is used in a couple of places that pure black is needed CHANGE AT YOUR OWN PERIL",
 			"scopes": [
-				"statusBar.background",
 				"sideBar.background",
-				"tab.inactiveBackground",
 				"editor.foldBackground",
 				"editorWidget.background",
 				"editorSuggestWidget.background",
@@ -622,14 +621,20 @@
 		"pureWhite": {
 			"name": "Pure White",
 			"description": "This is used in a couple of places that pure white is needed CHANGE AT YOUR OWN PERIL",
-			"scopes": ["statusBar.background"],
+			"scopes": [],
 			"tags": ["editorWhitespace.foreground", "editorRuler.foreground"]
 		},
 		"statusBar": {
 			"name": "Status Bar",
 			"description": "Controls the color of the status bar at the bottom of the screen",
-			"scopes": ["statusBar.background"],
-			"tags": []
+			"scopes": [],
+			"tags": ["statusBar.background"]
+		},
+		"activeTab": {
+			"name": "Active Tab",
+			"description": "Controls the color of the active editor tab",
+			"scopes": [],
+			"tags": ["tab.activeBackground"]
 		}
 	}
 }

@@ -103,7 +103,7 @@
 		"tab.activeForeground": "primaryForeground",
 		"tab.border": "activityBarBackground",
 		"tab.activeBorderTop": "keywords80",
-		"tab.inactiveBackground": "pureBlack",
+		"tab.inactiveBackground": "primaryBackground50",
 		"tab.inactiveForeground": "secondaryForeground",
 		"editor.foreground": "primaryForeground",
 		"editor.background": "primaryBackground",
