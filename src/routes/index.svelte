@@ -67,7 +67,8 @@
 		errors: '#FF5555',
 		strings: '#F1FA8C',
 		selectionHighlight: '#424450',
-		activityBarBackground: '#343746'
+		activityBarBackground: '#343746',
+
 	};
 
 	let ansiColorsArr = [
@@ -188,13 +189,17 @@
 		}
 		Object.entries(chosenTheme).forEach(([key, val])=> {
 			baseColors[key] = val
+			ansiColors[key] = val
 			const e = {				
 					name: key,
 					newColorVal: val,
 					whiteOrBlack: "#000000" 				
 			}
 			setAdvancedColors(e)
+
 		})
+		baseColorsArr = [...baseColorsArr]
+		ansiColorsArr = [...ansiColorsArr]
 	}
 
 	const generateTheme = () => {
@@ -339,12 +344,6 @@
 		})();
 	});
 
-	/**
-	 * base color changes
-	 * find associated advanced colors
-	 * check if associated advanced colors have been checked
-	 * if no, change advanced colors
-	*/
 </script>
 
 <Header />
@@ -377,13 +376,15 @@
 				<span class="base" in:slide={{ duration: 500 }}>
 					<div class="color-input-row">
 						{#each baseColorsArr as color}
-							<ColorSet 
-								bind:colorObj={baseColors} 
-								colorCategory={'base'} 
-								{color} 
-								{Picker}
-								on:changeColor={(e)=>setAdvancedColors(e.detail)}
-							/>
+							{#key baseColorsArr}
+									<ColorSet 
+										bind:colorObj={baseColors} 
+										colorCategory={'base'} 
+										{color} 
+										{Picker}
+										on:changeColor={(e)=>setAdvancedColors(e.detail)}
+									/>
+								{/key}
 						{/each}
 					</div>
 				</span>
@@ -402,12 +403,14 @@
 				<span in:slide={{ duration: 500 }}>
 					<div class="color-input-row">
 						{#each ansiColorsArr as color}
-							<ColorSet 
-								colorObj={ansiColors} 
-								colorCategory={'ansi'} 
-								{color} 
-								{Picker} 
-							/>
+							{#key ansiColorsArr}
+								<ColorSet 
+									colorObj={ansiColors} 
+									colorCategory={'ansi'} 
+									{color} 
+									{Picker} 
+								/>
+							{/key}
 						{/each}
 					</div>
 				</span>
@@ -429,15 +432,17 @@
 				<span in:slide={{ duration: 500 }}>
 					<div class="color-input-row">
 						{#each advancedColorsArr as color}
-							<ColorSet 
-								colorObj={advancedColors} 
-								colorCategory={'advanced'}
-								on:changeChecked={(e)=>checkAdvancedColors(e)}
-								bind:advancedColorsStatus
-								{color} 
-								{Picker}
-								whiteOrBlack={advancedColorsStatus[color].whiteOrBlack} 
-							/>
+							{#key advancedColorsArr}
+								<ColorSet 
+									colorObj={advancedColors} 
+									colorCategory={'advanced'}
+									on:changeChecked={(e)=>checkAdvancedColors(e)}
+									bind:advancedColorsStatus
+									{color} 
+									{Picker}
+									whiteOrBlack={advancedColorsStatus[color].whiteOrBlack} 
+								/>
+							{/key}
 						{/each}
 					</div>
 				</span>
