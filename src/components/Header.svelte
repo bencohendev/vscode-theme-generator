@@ -38,4 +38,13 @@
 	span {
 		color: #ff6a3d;
 	}
+	@media only screen and (max-width: 768px ) {
+		h3 a{
+			font-size: 1rem;
+		}
+		.links a {
+			font-size: .5rem;
+			align-items: center;
+		}
+	}
 </style>

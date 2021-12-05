@@ -552,4 +552,10 @@
 	.example-theme-container div {
 		margin: 0 1rem 0 0;
 	}
+	@media only screen and (max-width: 768px ) {
+		main {
+			padding: 1rem;
+			margin-bottom: 3rem;
+		}
+	}
 </style>
