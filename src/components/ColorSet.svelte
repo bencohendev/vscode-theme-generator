@@ -150,6 +150,10 @@
 		margin: 0.25rem 0.5rem 0.5rem 0;
 	}
 
+	input:disabled {
+		background-color: darkgray;
+	}
+
 	@media only screen and (max-width: 1000px) {
 		.color-input-column {
 			flex: 0 0 50%;
