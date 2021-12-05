@@ -105,7 +105,7 @@
 		ansiBrightestBlue: '#D6ACFF',
 		ansiBrightestMagenta: '#FF92DF',
 		ansiBrightestCyan: '#A4FFFF',
-		ansiBrightestWhite: '#FFFFFF'
+		ansiBrightestWhite: '#FFFFFF',
 	};
 
 	let advancedColors = {
@@ -161,11 +161,11 @@
 		}
 	}
 
-	const setAdvancedColors = (e) => {
+	const setAdvancedColors = (advColor) => {
 		Object.entries(advancedColorsStatus).forEach((advancedColor) => {
-			if (e.detail.name == advancedColor[1].associatedBase && !advancedColor[1].decoupledFromBase) {
-				advancedColors[advancedColor[0]] = e.detail.newColorVal
-				advancedColor[1].whiteOrBlack = e.detail.whiteOrBlack
+			if (advColor.name == advancedColor[1].associatedBase && !advancedColor[1].decoupledFromBase) {
+				advancedColors[advancedColor[0]] = advColor.newColorVal
+				advancedColor[1].whiteOrBlack = advColor.whiteOrBlack
 			}
 		})
 		advancedColorsStatus = advancedColorsStatus
@@ -188,12 +188,10 @@
 		}
 		Object.entries(chosenTheme).forEach(([key, val])=> {
 			baseColors[key] = val
-			const e = {
-				detail: {
+			const e = {				
 					name: key,
 					newColorVal: val,
-					whiteOrBlack: "#000000" 
-				}
+					whiteOrBlack: "#000000" 				
 			}
 			setAdvancedColors(e)
 		})
@@ -384,7 +382,7 @@
 								colorCategory={'base'} 
 								{color} 
 								{Picker}
-								on:changeColor={(e)=>setAdvancedColors(e)}
+								on:changeColor={(e)=>setAdvancedColors(e.detail)}
 							/>
 						{/each}
 					</div>

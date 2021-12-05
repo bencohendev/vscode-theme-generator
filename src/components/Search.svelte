@@ -44,15 +44,19 @@
 </script>
 
 <div>
-  <div class="search-text">Search for a tag or scope to find what color is associated with it</div>
+  <div class="search-text">
+    Search for a tag or scope to find what 
+    color is associated with it
+  </div>
   <input type="text" name="search" id="" bind:value>
   <button on:click={()=>handleSearch()}>Search</button>
 </div>
 {#if showResults}
+  {#if searchReturn.length > 0}
   <h4>Try looking at the following colors</h4>
   <ul>  
     {#each searchReturn as result, i}
-      <li on:click={(e)=>showMatches(e,i)}>{result.name}</li>
+      <li class="search-result" on:click={(e)=>showMatches(e,i)}>{result.name}</li>
       {#if result.showMatches == true}
         <ul>
           {#each result.matches as match}
@@ -62,10 +66,16 @@
       {/if}
     {/each}
   </ul>
+  {:else}
+  <h4>Your search didn't return any results. Try again</h4>
+{/if}
 {/if}
 
 <style>
-  .search-text {
+.search-result {
+  cursor: pointer;
+}
+.search-text {
     margin-bottom: 1rem;
   }
 </style>
