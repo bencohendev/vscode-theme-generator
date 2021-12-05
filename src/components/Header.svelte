@@ -42,9 +42,13 @@
 		h3 a{
 			font-size: 1rem;
 		}
+
+		.links {
+			align-items: center;
+
+		}
 		.links a {
 			font-size: .5rem;
-			align-items: center;
 		}
 	}
 </style>
