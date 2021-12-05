@@ -349,8 +349,6 @@
 
 </script>
 
-<Header />
-<main>
 	<h1>Visual Studio Code Theme Generator</h1>
 	<p>
 		Select colors using the following inputs and click generate to download your custom theme json.
@@ -498,19 +496,13 @@
 				<button on:click={()=>applyExampleTheme('batman')}>Batman</button>
 			</div>
 		</div>
-
+	</div>
 	{#if showVsCode}
 		<CodeFrame />
 	{/if}
-</main>
 
 <style>
-	@import '/static/global.css';
-	main {
-		max-width: 1280px;
-		margin: auto;
-		padding: 8rem
-	}
+
 	input {
 		padding: 0.5rem;
 		border-radius: 0.5rem;
@@ -558,10 +550,5 @@
 	.example-theme-container div {
 		margin: 0 1rem 0 0;
 	}
-	@media only screen and (max-width: 768px ) {
-		main {
-			padding: 1rem;
-			margin-bottom: 3rem;
-		}
-	}
+
 </style>
