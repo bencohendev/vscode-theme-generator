@@ -110,10 +110,10 @@
 	};
 
 	let advancedColors = {
-		pureBlack: "#000000ff",
-		pureWhite: "#FFFFFFff",
-		statusBar: '#343746ff',
-		activeTab: '282A36'
+		pureBlack: "#000000",
+		pureWhite: "#FFFFFF",
+		statusBar: '#343746',
+		activeTab: '#282A36'
 	}
 
 	let advancedColorsArr = [
@@ -171,7 +171,7 @@
 	const setAdvancedColors = (advColor) => {
 		Object.entries(advancedColorsStatus).forEach((advancedColor) => {
 			if (advColor.name == advancedColor[1].associatedBase && !advancedColor[1].decoupledFromBase) {
-				advancedColors[advancedColor[0]] = advColor.newColorVal
+				advancedColors[advancedColor[0]] = advColor.newColorVal.substring(0,7)
 				advancedColor[1].whiteOrBlack = advColor.whiteOrBlack
 			}
 		})
@@ -229,11 +229,8 @@
 						templateObj[key].length - 2,
 						templateObj[key].length
 					);
-					const replacementVal = colorsObj[replacementKey].substring(
-						0,
-						colorsObj[replacementKey].length - 2
-						);
-						newColor = replacementVal + opacityVal;
+
+						newColor = colorsObj[replacementKey] + opacityVal;
 				} else {
 					//set new color with opacity
 					newColor = templateObj[key].replace(

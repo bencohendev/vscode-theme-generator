@@ -20,20 +20,23 @@
 
 	let showMoreInfo = false;
 
-export	let whiteOrBlack;
+	export let whiteOrBlack;
 
 	const handleChecked = () => {
 		const advancedColor = advancedColorsStatus[color]
 		advancedColor.decoupledFromBase = isChecked
 		if (Picker && advancedColor.decoupledFromBase) instantiatePicker(Picker)
+		console.log(color, advancedColor);
 		dispatch('changeChecked', {color, advancedColor})
 	}
+
 	const instantiatePicker = (Picker) => {
 		new Picker({
 			parent: el,
 			color: colorObj[color],
+			alpha: false,
 			onChange: function (colorVal) {
-				colorObj[color] = colorVal.hex;
+				colorObj[color] = colorVal.hex.substring(0, 7);
 				whiteOrBlack = hexToRgb(colorVal.hex);
 				dispatch('changeColor', {name: color, newColorVal: colorVal.hex, whiteOrBlack})
 			}
