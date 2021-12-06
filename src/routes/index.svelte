@@ -397,7 +397,7 @@
 				<span>
 					<button on:click={() => showColorCategoryHandler('ansi')}
 						>{showColorCategory.ansi ? 'Hide' : 'Show'}</button
-					>
+					> 
 				</span>
 			</div>
 			{#if showColorCategory.ansi}
