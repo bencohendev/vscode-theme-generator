@@ -2,11 +2,10 @@
 	import { onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
 
-	import template1 from '/static/template1.json';
+	import template from '/static/template.json';
 	import joker from "../theme-templates/joker.json"
 	import batman from "../theme-templates/batman.json"
 
-	import Header from '../components/Header.svelte';
 	import ColorSet from '../components/ColorSet.svelte';
 	import CodeFrame from '../components/CodeFrame.svelte';
 	import Search from '../components/Search.svelte'
@@ -216,7 +215,7 @@
 			}
 		};
 		generatedTemplate = {};
-		let newTemplate = JSON.parse(JSON.stringify(template1));
+		let newTemplate = JSON.parse(JSON.stringify(template));
 		const replaceEditorColors = (colorsObj, colorsArr, templateObj, key, val) => {
 			const replacementKey = colorsArr.find((color) => {
 				return val.includes(color);
