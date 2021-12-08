@@ -119,7 +119,7 @@
 				"list.hoverBackground",
 				"list.inactiveSelectionBackground",
 				"editorGroup.dropBackground",
-
+				"sideBarSectionHeader.border",
 				"editor.findRangeHighlightBackground",
 				"editor.lineHighlightBorder",
 				"editorSuggestWidget.selectedBackground",
@@ -477,12 +477,12 @@
 			"description": "Defines the backgrounds of the activity bar and status bar as well as other backgrounds and borders",
 			"scopes": [],
 			"tags": [
+				"sideBar.background (50% opacity)",
 				"button.secondaryHoverBackground",
 				"dropdown.background",
 				"dropdown.border",
 				"input.border",
 				"activityBar.background",
-				"sideBarSectionHeader.border",
 				"editorGroupHeader.tabsBackground",
 				"tab.border",
 				"editorOverviewRuler.border",
@@ -603,7 +603,6 @@
 			"name": "Pure Black",
 			"description": "This is used in a couple of places that pure black is needed CHANGE AT YOUR OWN PERIL",
 			"scopes": [
-				"sideBar.background",
 				"editor.foldBackground",
 				"editorWidget.background",
 				"editorSuggestWidget.background",
