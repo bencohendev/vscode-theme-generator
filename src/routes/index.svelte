@@ -110,14 +110,12 @@
 
 	let advancedColors = {
 		pureBlack: "#000000",
-		pureWhite: "#FFFFFF",
 		statusBar: '#343746',
 		activeTab: '#282A36'
 	}
 
 	let advancedColorsArr = [
 		'pureBlack',
-		'pureWhite',
 		'statusBar',
 		'activeTab'
 	]
@@ -128,12 +126,6 @@
 			associatedBaseTitle: "none",
 			decoupledFromBase: false,
 			whiteOrBlack: '#ffffff'
-		},
-		pureWhite: {
-			associatedBase: "none",
-			associatedBaseTitle: "none",
-			decoupledFromBase: false,
-			whiteOrBlack: '#000000'
 		},
 		statusBar: {
 			associatedBase: "activityBarBackground",

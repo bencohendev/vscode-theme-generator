@@ -124,7 +124,7 @@
 		"editor.snippetTabstopHighlightBorder": "secondaryForeground",
 		"editor.snippetFinalTabstopHighlightBackground": "primaryBackground",
 		"editor.snippetFinalTabstopHighlightBorder": "functions",
-		"editorWhitespace.foreground": "pureWhite1A",
+		"editorWhitespace.foreground": "primaryForeground",
 		"editorIndentGuide.background": "primaryForeground50",
 		"editorIndentGuide.activeBackground": "primaryForeground",
 		"editorRuler.foreground": "secondaryForeground",

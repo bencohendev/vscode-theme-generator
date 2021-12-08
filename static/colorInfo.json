@@ -28,6 +28,7 @@
 			"name": "Primary Foreground",
 			"description": "Meant to be the lightest color of the theme. It is the default variable color as well as foreground text on buttons and punctuations throughout the theme ",
 			"scopes": [
+				"editorWhitespace.foreground",
 				"editorIndentGuide.activeBackground",
 				"editorIndentGuide.background (50% opacity)",
 				"invalid.deprecated",
@@ -617,12 +618,7 @@
 				"settings.numberInputBackground"],
 			"tags": []
 		},
-		"pureWhite": {
-			"name": "Pure White",
-			"description": "This is used in a couple of places that pure white is needed CHANGE AT YOUR OWN PERIL",
-			"scopes": [],
-			"tags": ["editorWhitespace.foreground"]
-		},
+
 		"statusBar": {
 			"name": "Status Bar",
 			"description": "Controls the color of the status bar at the bottom of the screen",
