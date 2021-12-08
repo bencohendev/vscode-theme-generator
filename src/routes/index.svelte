@@ -3,8 +3,8 @@
 	import { slide } from 'svelte/transition';
 
 	import template from '/static/template.json';
-	import joker from "../theme-templates/joker.json"
-	import batman from "../theme-templates/batman.json"
+	import joker from "../themes/joker.json"
+	import batman from "../themes/batman.json"
 
 	import ColorSet from '../components/ColorSet.svelte';
 	import CodeFrame from '../components/CodeFrame.svelte';
