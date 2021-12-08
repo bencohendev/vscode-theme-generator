@@ -136,7 +136,6 @@
 				"meta.diff",
 				"meta.diff.header",
 				"meta.separator.markdown",
-
 				"comment",
 				"punctuation.definition.comment",
 				"unused.comment",
@@ -155,6 +154,7 @@
 				"editorLineNumber.foreground",
 				"editor.snippetTabstopHighlightBorder",
 				"editorCodeLens.foreground",
+				"editorRuler.foreground",
 				"gitDecoration.ignoredResourceForeground",
 				"editorHoverWidget.border",
 				"peekViewTitleDescription.foreground",
@@ -621,7 +621,7 @@
 			"name": "Pure White",
 			"description": "This is used in a couple of places that pure white is needed CHANGE AT YOUR OWN PERIL",
 			"scopes": [],
-			"tags": ["editorWhitespace.foreground", "editorRuler.foreground"]
+			"tags": ["editorWhitespace.foreground"]
 		},
 		"statusBar": {
 			"name": "Status Bar",

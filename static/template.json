@@ -127,7 +127,7 @@
 		"editorWhitespace.foreground": "pureWhite1A",
 		"editorIndentGuide.background": "primaryForeground50",
 		"editorIndentGuide.activeBackground": "primaryForeground",
-		"editorRuler.foreground": "pureWhite1A",
+		"editorRuler.foreground": "secondaryForeground",
 		"editorCodeLens.foreground": "secondaryForeground",
 		"editorBracketHighlight.foreground1": "primaryForeground",
 		"editorBracketHighlight.foreground2": "keywords",
