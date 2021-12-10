@@ -119,7 +119,8 @@
 		'statusBar',
 		'activeTab',
 		'sidebarBackground',
-		'terminalBackground'
+		'terminalBackground',
+		'buttonBackground'
 	]
 
 	let advancedColorsStatus = {
@@ -150,6 +151,12 @@
 		terminalBackground : {
 			associatedBase: "primaryBackground",
 			associatedBaseTitle: "Primary Background",
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		buttonBackground : {
+			associatedBase: "secondaryBackground",
+			associatedBaseTitle: "Button Background",
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		}

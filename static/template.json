@@ -57,7 +57,7 @@
 		"foreground": "primaryForeground",
 		"selection.background": "secondaryForeground50",
 		"errorForeground": "errors",
-		"button.background": "secondaryBackground",
+		"button.background": "buttonBackground",
 		"button.foreground": "primaryForeground",
 		"button.secondaryBackground": "primaryBackground",
 		"button.secondaryForeground": "primaryForeground",
