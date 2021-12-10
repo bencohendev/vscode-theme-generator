@@ -630,6 +630,12 @@
 			"description": "Controls the color of the active editor tab",
 			"scopes": [],
 			"tags": ["tab.activeBackground"]
+		},
+		"sidebarBackground": {
+			"name": "Sidebar Background",
+			"description": "Controls the color of the sidebar background. While the default is 50% opacity of the active bar background, if you set this color manually, it will be 100% opacity",
+			"scopes": [],
+			"tags": ["tab.activeBackground"]
 		}
 	}
 }

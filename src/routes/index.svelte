@@ -117,7 +117,8 @@
 	let advancedColorsArr = [
 		'pureBlack',
 		'statusBar',
-		'activeTab'
+		'activeTab',
+		'sidebarBackground'
 	]
 
 	let advancedColorsStatus = {
@@ -136,6 +137,12 @@
 		activeTab : {
 			associatedBase: "primaryBackground",
 			associatedBaseTitle: "Primary Background",
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		sidebarBackground : {
+			associatedBase: "activityBarBackground",
+			associatedBaseTitle: "Activity Bar Background (50% opacity)",
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		}
