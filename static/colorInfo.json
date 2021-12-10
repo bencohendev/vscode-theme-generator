@@ -30,7 +30,7 @@
 			"scopes": [
 				"editorWhitespace.foreground",
 				"editorIndentGuide.activeBackground",
-				"editorIndentGuide.background (50% opacity)",
+				"editorIndentGuide.background (30% opacity)",
 				"invalid.deprecated",
 				"meta.paragraph.markdown punctuation.definition.string.begin",
 				"meta.paragraph.markdown punctuation.definition.string.end",
@@ -163,7 +163,7 @@
 				"titleBar.inactiveForeground",
 				"breadcrumb.foreground",
 				"editor.findMatchBackground",
-				"editor.findMatchHighlightBackground (50% opacity)"
+				"editor.findMatchHighlightBackground (30% opacity)"
 			]
 		},
 		"classes": {
@@ -478,7 +478,7 @@
 			"description": "Defines the backgrounds of the activity bar and status bar as well as other backgrounds and borders",
 			"scopes": [],
 			"tags": [
-				"sideBar.background (50% opacity)",
+				"sideBar.background (30% opacity)",
 				"button.secondaryHoverBackground",
 				"dropdown.background",
 				"dropdown.border",
@@ -633,7 +633,7 @@
 		},
 		"sidebarBackground": {
 			"name": "Sidebar Background",
-			"description": "Controls the color of the sidebar background. Selection will be used at 50% opacity",
+			"description": "Controls the color of the sidebar background. Selection will be used at 30% opacity",
 			"scopes": [],
 			"tags": ["sidebar.background"]
 		},
@@ -651,7 +651,7 @@
 		},
 		"findMatchBackground": {
 			"name": "Find Match Background",
-			"description": "Controls the highlight color of matches in ctrl+f find mode. This will set the active match at 75% opacity and and inactive matches at %50",
+			"description": "Controls the highlight color of matches in ctrl+f find mode. This will set the active match at 45% opacity and and inactive matches at %50",
 			"scopes": [],
 			"tags": ["button.activeBackground"]
 		}

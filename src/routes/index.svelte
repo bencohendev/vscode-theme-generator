@@ -145,7 +145,7 @@
 		},
 		sidebarBackground : {
 			associatedBase: "activityBarBackground",
-			associatedBaseTitle: "Activity Bar Background (50% opacity)",
+			associatedBaseTitle: "Activity Bar Background",
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
