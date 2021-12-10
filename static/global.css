@@ -4,7 +4,7 @@ body {
 }
 .picker_wrapper {
 	position: absolute !important;
-	left: 80% !important;
+	left: 248px !important;
 	top: 1.5rem !important;
 }
 
