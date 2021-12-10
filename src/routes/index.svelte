@@ -236,6 +236,7 @@
 		};
 		generatedTemplate = {};
 		let newTemplate = JSON.parse(JSON.stringify(template));
+
 		const replaceEditorColors = (colorsObj, colorsArr, templateObj, key, val) => {
 			const replacementKey = colorsArr.find((color) => {
 				return val.includes(color);
@@ -260,10 +261,11 @@
 				templateObj[key] = newColor;
 			}
 		};
+
 		/*set theme guide*/
 		//base colors
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			replaceEditorColors(baseColors, baseColorsArr, newTemplate.colorList,key, val);
+			replaceEditorColors(baseColors, baseColorsArr, newTemplate.colorList, key, val);
 		});
 		//ansi colors
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
@@ -292,8 +294,31 @@
 		/*change tokenColors functions*/
 		newTemplate.tokenColors.forEach((token) => {
 			const tokenKey = token.settings.foreground;
-			if (baseColors[tokenKey]) {
+			let replacementKey
+			if (tokenKey) {
+			 replacementKey = baseColorsArr.find((color) => {
+					return tokenKey.includes(color);
+				});
+			}
+			if (replacementKey) {
 				token.settings.foreground = baseColors[tokenKey];
+				/**this is the only color that is set manually as it is the 
+				 * only token color with opacity*/
+
+				let newColor;
+				//if hardcoded opacity in template, replace set opacity
+
+				if (tokenKey.length > replacementKey.length) {
+					const opacityVal = tokenKey.substring(
+						tokenKey.length - 2,
+						tokenKey.length
+					);
+					newColor = baseColors[replacementKey] + opacityVal;
+				} else {
+					//set new color with opacity
+					newColor = baseColors[tokenKey]
+				}
+				token.settings.foreground = newColor;
 			}
 		});
 
