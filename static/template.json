@@ -35,7 +35,7 @@
 		"ansiWhite":"ansiWhite"
 	},
 	"colors": {
-		"terminal.background": "primaryBackground",
+		"terminal.background": "terminalBackground",
 		"terminal.foreground": "primaryForeground",
 		"terminal.ansiBrightBlack": "ansiBrightestBlack",
 		"terminal.ansiBrightRed": "ansiBrightestRed",

@@ -57,7 +57,7 @@
 			bind:checked={isChecked}
 			on:change={handleChecked}
 			>
-			Control advanced color
+			{isChecked ? "Deactivate" : "Activate"} advanced color
 		</label>
 	{/if}
 	{#if colorCategoryPlus == "advancedColors" && (!isChecked)}
@@ -66,7 +66,6 @@
 			<span>
 				<label>
 					{name}
-
 					<input 
 						type="text" 
 						bind:value={colorObj[color]} 

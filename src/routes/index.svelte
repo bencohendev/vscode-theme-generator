@@ -118,7 +118,8 @@
 		'pureBlack',
 		'statusBar',
 		'activeTab',
-		'sidebarBackground'
+		'sidebarBackground',
+		'terminalBackground'
 	]
 
 	let advancedColorsStatus = {
@@ -143,6 +144,12 @@
 		sidebarBackground : {
 			associatedBase: "activityBarBackground",
 			associatedBaseTitle: "Activity Bar Background (50% opacity)",
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		terminalBackground : {
+			associatedBase: "primaryBackground",
+			associatedBaseTitle: "Primary Background",
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		}
