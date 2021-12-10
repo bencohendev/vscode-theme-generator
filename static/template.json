@@ -92,7 +92,7 @@
 		"activityBar.activeBackground": "variables10",
 		"activityBarBadge.background": "keywords",
 		"activityBarBadge.foreground": "primaryForeground",
-		"sideBar.background": "sidebarBackground",
+		"sideBar.background": "sidebarBackground50",
 		"sideBarTitle.foreground": "primaryForeground",
 		"sideBarSectionHeader.background": "activityBarBackground",
 		"sideBarSectionHeader.border": "secondaryBackground",
