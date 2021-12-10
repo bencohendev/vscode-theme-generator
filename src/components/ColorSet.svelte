@@ -50,15 +50,14 @@
 
 <div class="color-input-column">
 	{#if colorCategoryPlus == "advancedColors"}
-		<label for="advanced-check">
-			Click to control advanced color
+		<label for="advanced-check" class="advanced-check">
 			<input
 			type="checkbox"
-			name="advanced-check"
-			id=""
+			name="advanced-check"			
 			bind:checked={isChecked}
 			on:change={handleChecked}
 			>
+			Control advanced color
 		</label>
 	{/if}
 	{#if colorCategoryPlus == "advancedColors" && (!isChecked)}
@@ -152,6 +151,10 @@
 
 	input:disabled {
 		background-color: darkgray;
+	}
+
+	.advanced-check {
+		display: block;
 	}
 
 	@media only screen and (max-width: 1000px) {
