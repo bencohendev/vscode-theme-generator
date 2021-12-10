@@ -252,13 +252,11 @@
 
 						newColor = colorsObj[replacementKey] + opacityVal;
 				} else {
-					//set new color with opacity
-					newColor = templateObj[key].replace(
-						replacementKey,
-						`${colorsObj[replacementKey]}`
-						);
+
+					newColor = colorsObj[replacementKey]
 				}
 				templateObj[key] = newColor;
+				console.log(templateObj[key]);
 			}
 		};
 
@@ -301,7 +299,6 @@
 				});
 			}
 			if (replacementKey) {
-				token.settings.foreground = baseColors[tokenKey];
 				/**this is the only color that is set manually as it is the 
 				 * only token color with opacity*/
 
