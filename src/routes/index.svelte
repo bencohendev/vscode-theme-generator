@@ -120,7 +120,8 @@
 		'activeTab',
 		'sidebarBackground',
 		'terminalBackground',
-		'buttonBackground'
+		'buttonBackground',
+		'findMatchBackground'
 	]
 
 	let advancedColorsStatus = {
@@ -157,6 +158,12 @@
 		buttonBackground : {
 			associatedBase: "secondaryBackground",
 			associatedBaseTitle: "Button Background",
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		findMatchBackground: {
+			associatedBase: "secondaryForeground",
+			associatedBaseTitle: "Secondary Foreground",
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		}

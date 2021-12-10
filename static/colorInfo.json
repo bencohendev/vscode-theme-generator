@@ -648,6 +648,12 @@
 			"description": "Controls the background of buttons in the activity bar",
 			"scopes": [],
 			"tags": ["button.activeBackground"]
+		},
+		"findMatchBackground": {
+			"name": "Find Match Background",
+			"description": "Controls the highlight color of matches in ctrl+f find mode. This will set the active match at 75% opacity and and inactive matches at %50",
+			"scopes": [],
+			"tags": ["button.activeBackground"]
 		}
 	}
 }
