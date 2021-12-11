@@ -477,7 +477,7 @@
 			"name": "Comments",
 			"scope": ["comment", "punctuation.definition.comment", "unused.comment", "wildcard.comment"],
 			"settings": {
-				"foreground": "secondaryForegroundbc"
+				"foreground": "commentbc"
 			}
 		},
 		{

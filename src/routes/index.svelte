@@ -121,7 +121,8 @@
 		'sidebarBackground',
 		'terminalBackground',
 		'buttonBackground',
-		'findMatchBackground'
+		'findMatchBackground',
+		'comment'
 	]
 
 	let advancedColorsStatus = {
@@ -162,6 +163,12 @@
 			whiteOrBlack: '#000000'
 		},
 		findMatchBackground: {
+			associatedBase: "secondaryForeground",
+			associatedBaseTitle: "Secondary Foreground",
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		comment: {
 			associatedBase: "secondaryForeground",
 			associatedBaseTitle: "Secondary Foreground",
 			decoupledFromBase: false,

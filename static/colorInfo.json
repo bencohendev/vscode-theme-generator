@@ -654,6 +654,12 @@
 			"description": "Controls the highlight color of matches in ctrl+f find mode. This will set the active match at 45% opacity and and inactive matches at %50",
 			"scopes": [],
 			"tags": ["button.activeBackground"]
+		},
+		"comment": {
+			"name": "Comments",
+			"description": "Controls the color of comments in code. Your color choice will be set at 70% opacity",
+			"scopes": ["comment", "punctuation.definition.comment", "unused.comment", "wildcard.comment"],
+			"tags": []
 		}
 	}
 }
