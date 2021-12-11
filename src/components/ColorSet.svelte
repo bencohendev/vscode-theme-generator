@@ -157,6 +157,7 @@
 	}
 
 	.advanced-check {
+		font-size: 14px;
 		display: block;
 	}
 
