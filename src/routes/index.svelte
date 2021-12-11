@@ -256,36 +256,67 @@
 					newColor = colorsObj[replacementKey]
 				}
 				templateObj[key] = newColor;
-				console.log(templateObj[key]);
+			//	console.log(templateObj[key]);
 			}
 		};
+
+		const checkForOpacity = (colorsObj, templateVal, replacementKey) => {
+			if (templateVal.length > replacementKey.length) {
+					const opacityVal = templateVal.substring(
+						templateVal.length - 2,
+						templateVal.length
+					);
+					return colorsObj[replacementKey] + opacityVal;
+				} else {
+					return colorsObj[replacementKey]
+				}
+		}
 
 		/*set theme guide*/
 		//base colors
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			replaceEditorColors(baseColors, baseColorsArr, newTemplate.colorList, key, val);
+			console.log(key, val);
+			let newColor
+			const replacementKey = baseColorsArr.find((color) => {
+				return val.includes(color);
+			});
+			if (replacementKey) {
+			//	console.log(key);
+		//		newTemplate.colorlist[key] = checkForOpacity(baseColors, newTemplate.colorlist[key], replacementKey)
+			}
+		//	console.log(newTemplate.colorlist[key])
+		//	replaceEditorColors(baseColors, baseColorsArr, newTemplate.colorList, key, val);
 		});
 		//ansi colors
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colorList,key, val);
+			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colorList, key, val);
 		});
 		//advanced colors
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			replaceEditorColors(advancedColors, advancedColorsArr, newTemplate.colorList,key, val);
+			replaceEditorColors(advancedColors, advancedColorsArr, newTemplate.colorList, key, val);
 		});
 		/*end set theme guide*/
+
 		/*change editor colors*/
 		//base colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(baseColors, baseColorsArr, newTemplate.colors,key, val);
+			let newColor
+			const replacementKey = baseColorsArr.find((color) => {
+				return val.includes(color);
+			});
+			if (replacementKey) {
+			console.log(replacementKey)
+		  newTemplate.colors[key] = checkForOpacity(baseColors, newTemplate.colors[key], replacementKey)
+			}
+		//	replaceEditorColors(baseColors, baseColorsArr, newTemplate.colors, key, val);
 		});
 		//ansi colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colors,key, val);
+			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colors, key, val);
 		});
 		//advanced colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(advancedColors, advancedColorsArr, newTemplate.colors,key, val);
+			replaceEditorColors(advancedColors, advancedColorsArr, newTemplate.colors, key, val);
 		});
 		/*end change editor colors*/
 

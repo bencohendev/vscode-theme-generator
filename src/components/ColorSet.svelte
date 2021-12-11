@@ -65,7 +65,9 @@
 	>
 			<span>
 				<label>
-					{name}
+					<h5>
+						{name}
+					</h5>
 					<input 
 						type="text" 
 						bind:value={colorObj[color]} 
@@ -81,7 +83,9 @@
 	>
 			<span>
 				<label>
-					{name}
+					<h5>
+						{name}
+					</h5>
 					<input 
 						type="text" 
 						bind:value={colorObj[color]} 
@@ -122,7 +126,7 @@
 	.color-input-column {
 		display: flex;
     flex-direction: column;
-    flex: 1 0 20%;
+    flex: 0 0 20%;
     margin: 1rem;
 	}
 	.input-container span {
@@ -134,7 +138,7 @@
 	}
 	.color-box {
 		position: relative;
-		top: 2.05rem;
+		top: 4.5rem;
 		display: inline-block;
 		width: 1.5rem;
 		height:1.5rem;
