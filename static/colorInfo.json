@@ -168,7 +168,7 @@
 		},
 		"classes": {
 			"name": "Classes",
-			"description": "Defines classes as well as JSON keys and CSS properties.",
+			"description": "Defines classes as well as JSON keys, CSS properties, Types, and built-ins.",
 			"scopes": [
 				"beginning.punctuation.definition.list.markdown",
 				"beginning.punctuation.definition.quote.markdown",
@@ -662,6 +662,38 @@
 		"advComment": {
 			"name": "Comments",
 			"description": "Controls the color of comments in code. Your color choice will be set at 70% opacity",
+			"scopes": [
+				"comment",
+				"punctuation.definition.comment",
+				"unused.comment",
+				"wildcard.comment"
+			],
+			"tags": []
+		},
+		"advClasses": {
+			"name": "Classes",
+			"description": "Controls the color of classes in code.",
+			"scopes": [
+				"entity.other.inherited-class",
+				"entity.name.type.class",
+				"entity.name.class"
+			],
+			"tags": []
+		},
+		"advJsonVals": {
+			"name": "JSON Values",
+			"description": "Controls the color of JSON values",
+			"scopes": [
+				"comment",
+				"punctuation.definition.comment",
+				"unused.comment",
+				"wildcard.comment"
+			],
+			"tags": []
+		},
+		"advCssProps": {
+			"name": "CSS Properties",
+			"description": "Controls the color of CSS properties",
 			"scopes": [
 				"comment",
 				"punctuation.definition.comment",

@@ -115,7 +115,10 @@
 		advTerminalBackground: '#282A36',
 		advButtonBackground: '#44475A',
 		advFindMatchBackground: '#6272A4',
-		advComment: '#6272A4'
+		advComment: '#6272A4',
+		advClasses: '#8BE9FD',
+		advJsonVals: '#8BE9FD',
+		advCssProps: '#8BE9FD'
 	};
 
 	let advancedColorsArr = [
@@ -126,7 +129,10 @@
 		'advTerminalBackground',
 		'advButtonBackground',
 		'advFindMatchBackground',
-		'advComment'
+		'advComment',
+		'advClasses',
+		'advJsonVals',
+		'advCssProps'
 	];
 
 	let advancedColorsStatus = {
@@ -175,6 +181,24 @@
 		advComment: {
 			associatedBase: 'secondaryForeground',
 			associatedBaseTitle: 'Secondary Foreground',
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		advClasses: {
+			associatedBase: 'classes',
+			associatedBaseTitle: 'Classes',
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		advJsonVals: {
+			associatedBase: 'classes',
+			associatedBaseTitle: 'Classes',
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		advCssProps: {
+			associatedBase: 'classes',
+			associatedBaseTitle: 'Classes',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		}

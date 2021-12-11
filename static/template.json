@@ -446,7 +446,7 @@
 			"name": "User-defined class names",
 			"scope": ["entity.name.type.class", "entity.name.class"],
 			"settings": {
-				"foreground": "classes",
+				"foreground": "advClasses",
 				"fontStyle": "normal"
 			}
 		},
@@ -470,7 +470,7 @@
 			"scope": ["entity.other.inherited-class"],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "classes"
+				"foreground": "advClasses"
 			}
 		},
 		{
@@ -560,6 +560,11 @@
 				"foreground": "functions",
 				"fontStyle": "italic"
 			}
+		},
+		{
+			"name": "CSS properties",
+			"scope": ["support.type.property-name.css"],
+			"settings": { "foreground": "advCssProps" }
 		},
 		{
 			"name": "Function names",
@@ -893,6 +898,13 @@
 			],
 			"settings": {
 				"foreground": "strings"
+			}
+		},
+		{
+			"name": "string.quoted.double.json.comments",
+			"scope": ["string.quoted.double.json.comments"],
+			"settings": {
+				"foreground": "advJsonVals"
 			}
 		},
 		{
