@@ -108,66 +108,71 @@
 	};
 
 	let advancedColors = {
-		pureBlack: '#000000',
-		statusBar: '#343746',
-		activeTab: '#282A36'
+		advPureBlack: '#000000',
+		advStatusBar: '#343746',
+		advActiveTab: '#282A36',
+		advSidebarBackground: '#343746',
+		advTerminalBackground: '#282A36',
+		advButtonBackground: '#44475A',
+		advFindMatchBackground: '#6272A4',
+		advComment: '#6272A4'
 	};
 
 	let advancedColorsArr = [
-		'pureBlack',
-		'statusBar',
-		'activeTab',
-		'sidebarBackground',
-		'terminalBackground',
-		'buttonBackground',
-		'findMatchBackground',
-		'comment'
+		'advPureBlack',
+		'advStatusBar',
+		'advActiveTab',
+		'advSidebarBackground',
+		'advTerminalBackground',
+		'advButtonBackground',
+		'advFindMatchBackground',
+		'advComment'
 	];
 
 	let advancedColorsStatus = {
-		pureBlack: {
+		advPureBlack: {
 			associatedBase: 'none',
 			associatedBaseTitle: 'none',
 			decoupledFromBase: false,
 			whiteOrBlack: '#ffffff'
 		},
-		statusBar: {
+		advStatusBar: {
 			associatedBase: 'activityBarBackground',
 			associatedBaseTitle: 'Activity Bar Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#ffffff'
 		},
-		activeTab: {
+		advActiveTab: {
 			associatedBase: 'primaryBackground',
 			associatedBaseTitle: 'Primary Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
-		sidebarBackground: {
+		advSidebarBackground: {
 			associatedBase: 'activityBarBackground',
 			associatedBaseTitle: 'Activity Bar Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
-		terminalBackground: {
+		advTerminalBackground: {
 			associatedBase: 'primaryBackground',
 			associatedBaseTitle: 'Primary Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
-		buttonBackground: {
+		advButtonBackground: {
 			associatedBase: 'secondaryBackground',
 			associatedBaseTitle: 'Button Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
-		findMatchBackground: {
+		advFindMatchBackground: {
 			associatedBase: 'secondaryForeground',
 			associatedBaseTitle: 'Secondary Foreground',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
-		comment: {
+		advComment: {
 			associatedBase: 'secondaryForeground',
 			associatedBaseTitle: 'Secondary Foreground',
 			decoupledFromBase: false,
@@ -246,161 +251,140 @@
 		generatedTemplate = {};
 		let newTemplate = JSON.parse(JSON.stringify(template));
 
-		const replaceEditorColors = (
-			colorsObj,
-			colorsArr,
-			templateObj,
-			key,
-			val
-		) => {
+		/**
+		 * checks to see if template color has opacity and appends opacity value if
+		 *  there is one
+		 * @param colorKey current template color key (may include opacity value)
+		 * @param colorsArr current color array
+		 * @param colorsObj current color obj
+		 * @returns replacement color to set, modified to include opacity if present
+		 */
+		const checkForOpacity = (colorKey, colorsArr, colorsObj) => {
 			const replacementKey = colorsArr.find((color) => {
-				return val.includes(color);
+				return colorKey.includes(color);
 			});
+			//console.log(replacementKey);
 			if (replacementKey) {
-				let newColor;
-				//if hardcoded opacity in template, replace set opacity
-				if (templateObj[key].length > replacementKey.length) {
-					const opacityVal = templateObj[key].substring(
-						templateObj[key].length - 2,
-						templateObj[key].length
+				if (colorKey.length > replacementKey.length) {
+					const opacityVal = colorKey.substring(
+						colorKey.length - 2,
+						colorKey.length
 					);
-
-					newColor = colorsObj[replacementKey] + opacityVal;
+					return colorsObj[replacementKey] + opacityVal;
 				} else {
-					newColor = colorsObj[replacementKey];
+					return colorsObj[replacementKey];
 				}
-				templateObj[key] = newColor;
-				//	console.log(templateObj[key]);
 			}
 		};
 
-		const checkForOpacity = (colorsObj, templateVal, replacementKey) => {
-			if (templateVal.length > replacementKey.length) {
-				const opacityVal = templateVal.substring(
-					templateVal.length - 2,
-					templateVal.length
-				);
-				return colorsObj[replacementKey] + opacityVal;
-			} else {
-				return colorsObj[replacementKey];
+		/**
+		 * Set theme guide
+		 * Color list is a quick reference guide included at the top of the newly
+		 * generated theme that shows each color key and value. This for loop runs
+		 * through each entry of the colorList array and set the value of each key
+		 * accordingly
+		 */
+		Object.entries(newTemplate.colorList).forEach(([tag, colorKey]) => {
+			let returnedColor;
+			//base colors
+			if (!colorKey.includes('ansi') && !colorKey.includes('adv')) {
+				returnedColor = checkForOpacity(colorKey, baseColorsArr, baseColors);
+				if (returnedColor) {
+					newTemplate.colorList[tag] = returnedColor;
+				}
 			}
-		};
-
-		/*set theme guide*/
-		//base colors
-		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			const replacementKey = baseColorsArr.find((color) => {
-				return val.includes(color);
-			});
-			if (replacementKey) {
-				newTemplate.colors[key] = checkForOpacity(
-					baseColors,
-					newTemplate.colorList[key],
-					replacementKey
-				);
+			//ansi colors
+			if (colorKey.includes('ansi')) {
+				returnedColor = checkForOpacity(colorKey, ansiColorsArr, ansiColors);
+				if (returnedColor) {
+					newTemplate.colorList[tag] = returnedColor;
+				}
 			}
-		});
-		//ansi colors
-		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			replaceEditorColors(
-				ansiColors,
-				ansiColorsArr,
-				newTemplate.colorList,
-				key,
-				val
-			);
-		});
-		//advanced colors
-		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			replaceEditorColors(
-				advancedColors,
-				advancedColorsArr,
-				newTemplate.colorList,
-				key,
-				val
-			);
+			//advanced colors
+			if (colorKey.includes('adv')) {
+				newTemplate.colorList[tag] = checkForOpacity(
+					colorKey,
+					advancedColorsArr,
+					advancedColors
+				);
+				if (returnedColor) {
+					newTemplate.colorList[tag] = returnedColor;
+				}
+			}
 		});
 		/*end set theme guide*/
 
-		/*change editor colors*/
-		//base colors
-		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			const replacementKey = baseColorsArr.find((color) => {
-				return val.includes(color);
-			});
-			if (replacementKey) {
-				newTemplate.colors[key] = checkForOpacity(
-					baseColors,
-					newTemplate.colors[key],
-					replacementKey
-				);
+		/*change editor colors
+		 * Colors is an array of the tags to set for the theme. Tags set many of the
+		 * core colors of the vscode container. This for loop runs through each entry of the
+		 * colors array and set the value of each key accordingly
+		 */
+		Object.entries(newTemplate.colors).forEach(([tag, colorKey]) => {
+			//console.log(key, val);
+			let returnedColor;
+			//base colors
+			if (!colorKey.includes('ansi') && !colorKey.includes('adv')) {
+				returnedColor = checkForOpacity(colorKey, baseColorsArr, baseColors);
+				if (returnedColor) {
+					newTemplate.colors[tag] = returnedColor;
+				}
 			}
-			//	replaceEditorColors(baseColors, baseColorsArr, newTemplate.colors, key, val);
-		});
-		//ansi colors
-		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(
-				ansiColors,
-				ansiColorsArr,
-				newTemplate.colors,
-				key,
-				val
-			);
-		});
-		//advanced colors
-		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(
-				advancedColors,
-				advancedColorsArr,
-				newTemplate.colors,
-				key,
-				val
-			);
+			//ansi colors
+			if (colorKey.includes('ansi')) {
+				returnedColor = checkForOpacity(colorKey, ansiColorsArr, ansiColors);
+				if (returnedColor) {
+					newTemplate.colors[tag] = returnedColor;
+				}
+			}
+			//advanced colors
+			if (colorKey.includes('adv')) {
+				newTemplate.colors[tag] = checkForOpacity(
+					colorKey,
+					advancedColorsArr,
+					advancedColors
+				);
+				if (returnedColor) {
+					newTemplate.colors[tag] = returnedColor;
+				}
+			}
 		});
 		/*end change editor colors*/
 
-		/*change tokenColors functions*/
+		/*change tokenColors functions
+		 * tokenColors is an array of the scopes to set for the theme. Scopes set
+		 * the colors for the various coding languages. This for loop runs through
+		 * each entry of the tokenColros array and set the value of each
+		 * key accordingly
+		 */
 		newTemplate.tokenColors.forEach((token) => {
-			const tokenKey = token.settings.foreground;
-			console.log(tokenKey);
-			let replacementKey;
-			if (tokenKey) {
-				replacementKey = baseColorsArr.find((color) => {
-					return tokenKey.includes(color);
-				});
-			}
-			if (replacementKey) {
-				/**this is the only color that is set manually as it is the
-				 * only token color with opacity*/
-
-				let newColor;
-				//if hardcoded opacity in template, replace set opacity
-
-				if (tokenKey.length > replacementKey.length) {
-					const opacityVal = tokenKey.substring(
-						tokenKey.length - 2,
-						tokenKey.length
-					);
-					newColor = baseColors[replacementKey] + opacityVal;
-				} else {
-					//set new color with opacity
-					newColor = baseColors[tokenKey];
+			let colorKey = token.settings.foreground;
+			let returnedColor;
+			if (colorKey) {
+				//base colors
+				if (!colorKey.includes('ansi') && !colorKey.includes('adv')) {
+					returnedColor = checkForOpacity(colorKey, baseColorsArr, baseColors);
+					if (returnedColor) {
+						token.settings.foreground = returnedColor;
+					}
 				}
-				token.settings.foreground = newColor;
-			}
-		});
-
-		newTemplate.tokenColors.forEach((token) => {
-			const tokenKey = token.settings.foreground;
-			if (ansiColors[tokenKey]) {
-				token.settings.foreground = ansiColors[tokenKey];
-			}
-		});
-
-		newTemplate.tokenColors.forEach((token) => {
-			const tokenKey = token.settings.foreground;
-			if (advancedColors[tokenKey]) {
-				token.settings.foreground = advancedColors[tokenKey];
+				//ansi colors
+				if (colorKey.includes('ansi')) {
+					returnedColor = checkForOpacity(colorKey, ansiColorsArr, ansiColors);
+					if (returnedColor) {
+						token.settings.foreground = returnedColor;
+					}
+				}
+				//advanced colors
+				if (colorKey.includes('adv')) {
+					returnedColor = checkForOpacity(
+						colorKey,
+						advancedColorsArr,
+						advancedColors
+					);
+					if (returnedColor) {
+						token.settings.foreground = returnedColor;
+					}
+				}
 			}
 		});
 

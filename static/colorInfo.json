@@ -461,7 +461,10 @@
 				"meta.scope.prerequisites.makefile",
 				"meta.attribute-selector.scss"
 			],
-			"tags": ["peekViewEditor.matchHighlightBackground", "peekViewResult.matchHighlightBackground"]
+			"tags": [
+				"peekViewEditor.matchHighlightBackground",
+				"peekViewResult.matchHighlightBackground"
+			]
 		},
 		"selectionHighlight": {
 			"name": "Selection Highlight",
@@ -600,7 +603,7 @@
 		}
 	},
 	"advancedColors": {
-		"pureBlack": {
+		"advPureBlack": {
 			"name": "Pure Black",
 			"description": "This is used in a couple of places that pure black is needed CHANGE AT YOUR OWN PERIL",
 			"scopes": [
@@ -615,50 +618,56 @@
 				"settings.dropdownBackground",
 				"settings.checkboxBackground",
 				"settings.textInputBackground",
-				"settings.numberInputBackground"],
+				"settings.numberInputBackground"
+			],
 			"tags": []
 		},
 
-		"statusBar": {
+		"advStatusBar": {
 			"name": "Status Bar",
 			"description": "Controls the color of the status bar at the bottom of the screen",
 			"scopes": [],
 			"tags": ["statusBar.background"]
 		},
-		"activeTab": {
+		"advActiveTab": {
 			"name": "Active Tab",
 			"description": "Controls the color of the active editor tab",
 			"scopes": [],
 			"tags": ["tab.activeBackground"]
 		},
-		"sidebarBackground": {
+		"advSidebarBackground": {
 			"name": "Sidebar Background",
 			"description": "Controls the color of the sidebar background. Selection will be used at 30% opacity",
 			"scopes": [],
 			"tags": ["sidebar.background"]
 		},
-		"terminalBackground": {
+		"advTerminalBackground": {
 			"name": "Terminal Background",
 			"description": "Controls the background of the terminal",
 			"scopes": [],
 			"tags": ["terminal.activeBackground"]
 		},
-		"buttonBackground": {
+		"advButtonBackground": {
 			"name": "Button Background",
 			"description": "Controls the background of buttons in the activity bar",
 			"scopes": [],
 			"tags": ["button.activeBackground"]
 		},
-		"findMatchBackground": {
+		"advFindMatchBackground": {
 			"name": "Find Match Background",
 			"description": "Controls the highlight color of matches in ctrl+f find mode. This will set the active match at 45% opacity and and inactive matches at %50",
 			"scopes": [],
 			"tags": ["button.activeBackground"]
 		},
-		"comment": {
+		"advComment": {
 			"name": "Comments",
 			"description": "Controls the color of comments in code. Your color choice will be set at 70% opacity",
-			"scopes": ["comment", "punctuation.definition.comment", "unused.comment", "wildcard.comment"],
+			"scopes": [
+				"comment",
+				"punctuation.definition.comment",
+				"unused.comment",
+				"wildcard.comment"
+			],
 			"tags": []
 		}
 	}
