@@ -3,21 +3,21 @@
 	import { slide } from 'svelte/transition';
 
 	import template from '/static/template.json';
-	import joker from "../themes/joker.json"
-	import batman from "../themes/batman.json"
+	import joker from '../themes/joker.json';
+	import batman from '../themes/batman.json';
 
 	import ColorSet from '../components/ColorSet.svelte';
 	import CodeFrame from '../components/CodeFrame.svelte';
-	import Search from '../components/Search.svelte'
+	import Search from '../components/Search.svelte';
 
 	let Picker; //color picker
 	let showVsCode = false;
 	let showDownload = false;
-	let showDownloadList = false
+	let showDownloadList = false;
 	let showCopy = false;
 	let showSuccess = false;
 	let downloadButton;
-	let downloadListButton
+	let downloadListButton;
 
 	let themeName = '';
 
@@ -36,7 +36,7 @@
 		}
 	};
 
-	let generatedList = {}
+	let generatedList = {};
 
 	let baseColorsArr = [
 		'primaryBackground',
@@ -66,8 +66,7 @@
 		errors: '#FF5555',
 		strings: '#F1FA8C',
 		selectionHighlight: '#424450',
-		activityBarBackground: '#343746',
-
+		activityBarBackground: '#343746'
 	};
 
 	let ansiColorsArr = [
@@ -105,14 +104,14 @@
 		ansiBrightestBlue: '#D6ACFF',
 		ansiBrightestMagenta: '#FF92DF',
 		ansiBrightestCyan: '#A4FFFF',
-		ansiBrightestWhite: '#FFFFFF',
+		ansiBrightestWhite: '#FFFFFF'
 	};
 
 	let advancedColors = {
-		pureBlack: "#000000",
+		pureBlack: '#000000',
 		statusBar: '#343746',
 		activeTab: '#282A36'
-	}
+	};
 
 	let advancedColorsArr = [
 		'pureBlack',
@@ -123,58 +122,58 @@
 		'buttonBackground',
 		'findMatchBackground',
 		'comment'
-	]
+	];
 
 	let advancedColorsStatus = {
 		pureBlack: {
-			associatedBase: "none",
-			associatedBaseTitle: "none",
+			associatedBase: 'none',
+			associatedBaseTitle: 'none',
 			decoupledFromBase: false,
 			whiteOrBlack: '#ffffff'
 		},
 		statusBar: {
-			associatedBase: "activityBarBackground",
-			associatedBaseTitle: "Activity Bar Background",
+			associatedBase: 'activityBarBackground',
+			associatedBaseTitle: 'Activity Bar Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#ffffff'
 		},
-		activeTab : {
-			associatedBase: "primaryBackground",
-			associatedBaseTitle: "Primary Background",
+		activeTab: {
+			associatedBase: 'primaryBackground',
+			associatedBaseTitle: 'Primary Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
-		sidebarBackground : {
-			associatedBase: "activityBarBackground",
-			associatedBaseTitle: "Activity Bar Background",
+		sidebarBackground: {
+			associatedBase: 'activityBarBackground',
+			associatedBaseTitle: 'Activity Bar Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
-		terminalBackground : {
-			associatedBase: "primaryBackground",
-			associatedBaseTitle: "Primary Background",
+		terminalBackground: {
+			associatedBase: 'primaryBackground',
+			associatedBaseTitle: 'Primary Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
-		buttonBackground : {
-			associatedBase: "secondaryBackground",
-			associatedBaseTitle: "Button Background",
+		buttonBackground: {
+			associatedBase: 'secondaryBackground',
+			associatedBaseTitle: 'Button Background',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
 		findMatchBackground: {
-			associatedBase: "secondaryForeground",
-			associatedBaseTitle: "Secondary Foreground",
+			associatedBase: 'secondaryForeground',
+			associatedBaseTitle: 'Secondary Foreground',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		},
 		comment: {
-			associatedBase: "secondaryForeground",
-			associatedBaseTitle: "Secondary Foreground",
+			associatedBase: 'secondaryForeground',
+			associatedBaseTitle: 'Secondary Foreground',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		}
-	}
+	};
 
 	let showColorCategory = {
 		base: true,
@@ -187,52 +186,55 @@
 	};
 
 	const checkAdvancedColors = (e) => {
-		const advancedColorKey = e.detail.color
-		const advancedColorVal = e.detail.advancedColor
-		if(!advancedColorVal.decoupledFromBase) {
-			advancedColors[advancedColorKey] = baseColors[advancedColorVal.associatedBase]
+		const advancedColorKey = e.detail.color;
+		const advancedColorVal = e.detail.advancedColor;
+		if (!advancedColorVal.decoupledFromBase) {
+			advancedColors[advancedColorKey] =
+				baseColors[advancedColorVal.associatedBase];
 		}
-	}
+	};
 
 	const setAdvancedColors = (advColor) => {
 		Object.entries(advancedColorsStatus).forEach((advancedColor) => {
-			if (advColor.name == advancedColor[1].associatedBase && !advancedColor[1].decoupledFromBase) {
-				advancedColors[advancedColor[0]] = advColor.newColorVal.substring(0,7)
-				advancedColor[1].whiteOrBlack = advColor.whiteOrBlack
+			if (
+				advColor.name == advancedColor[1].associatedBase &&
+				!advancedColor[1].decoupledFromBase
+			) {
+				advancedColors[advancedColor[0]] = advColor.newColorVal.substring(0, 7);
+				advancedColor[1].whiteOrBlack = advColor.whiteOrBlack;
 			}
-		})
-		advancedColorsStatus = advancedColorsStatus
-	}
+		});
+		advancedColorsStatus = advancedColorsStatus;
+	};
 
 	const applyExampleTheme = (themeName) => {
-		let chosenTheme
+		let chosenTheme;
 		switch (themeName) {
 			case 'joker':
-				chosenTheme = joker
-				themeName = "Joker"
+				chosenTheme = joker;
+				themeName = 'Joker';
 				break;
-				case 'batman':
-				chosenTheme = batman
-				themeName = "Batman"
+			case 'batman':
+				chosenTheme = batman;
+				themeName = 'Batman';
 				break;
-		
+
 			default:
 				break;
 		}
-		Object.entries(chosenTheme).forEach(([key, val])=> {
-			baseColors[key] = val
-			ansiColors[key] = val
-			const e = {				
-					name: key,
-					newColorVal: val,
-					whiteOrBlack: "#000000" 				
-			}
-			setAdvancedColors(e)
-
-		})
-		baseColorsArr = [...baseColorsArr]
-		ansiColorsArr = [...ansiColorsArr]
-	}
+		Object.entries(chosenTheme).forEach(([key, val]) => {
+			baseColors[key] = val;
+			ansiColors[key] = val;
+			const e = {
+				name: key,
+				newColorVal: val,
+				whiteOrBlack: '#000000'
+			};
+			setAdvancedColors(e);
+		});
+		baseColorsArr = [...baseColorsArr];
+		ansiColorsArr = [...ansiColorsArr];
+	};
 
 	const generateTheme = () => {
 		generatedSettings = {
@@ -244,7 +246,13 @@
 		generatedTemplate = {};
 		let newTemplate = JSON.parse(JSON.stringify(template));
 
-		const replaceEditorColors = (colorsObj, colorsArr, templateObj, key, val) => {
+		const replaceEditorColors = (
+			colorsObj,
+			colorsArr,
+			templateObj,
+			key,
+			val
+		) => {
 			const replacementKey = colorsArr.find((color) => {
 				return val.includes(color);
 			});
@@ -257,87 +265,112 @@
 						templateObj[key].length
 					);
 
-						newColor = colorsObj[replacementKey] + opacityVal;
+					newColor = colorsObj[replacementKey] + opacityVal;
 				} else {
-
-					newColor = colorsObj[replacementKey]
+					newColor = colorsObj[replacementKey];
 				}
 				templateObj[key] = newColor;
-			//	console.log(templateObj[key]);
+				//	console.log(templateObj[key]);
 			}
 		};
 
 		const checkForOpacity = (colorsObj, templateVal, replacementKey) => {
 			if (templateVal.length > replacementKey.length) {
-					const opacityVal = templateVal.substring(
-						templateVal.length - 2,
-						templateVal.length
-					);
-					return colorsObj[replacementKey] + opacityVal;
-				} else {
-					return colorsObj[replacementKey]
-				}
-		}
+				const opacityVal = templateVal.substring(
+					templateVal.length - 2,
+					templateVal.length
+				);
+				return colorsObj[replacementKey] + opacityVal;
+			} else {
+				return colorsObj[replacementKey];
+			}
+		};
 
 		/*set theme guide*/
 		//base colors
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			console.log(key, val);
-			let newColor
 			const replacementKey = baseColorsArr.find((color) => {
 				return val.includes(color);
 			});
 			if (replacementKey) {
-			//	console.log(key);
-		//		newTemplate.colorlist[key] = checkForOpacity(baseColors, newTemplate.colorlist[key], replacementKey)
+				newTemplate.colors[key] = checkForOpacity(
+					baseColors,
+					newTemplate.colorList[key],
+					replacementKey
+				);
 			}
-		//	console.log(newTemplate.colorlist[key])
-		//	replaceEditorColors(baseColors, baseColorsArr, newTemplate.colorList, key, val);
 		});
 		//ansi colors
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colorList, key, val);
+			replaceEditorColors(
+				ansiColors,
+				ansiColorsArr,
+				newTemplate.colorList,
+				key,
+				val
+			);
 		});
 		//advanced colors
 		Object.entries(newTemplate.colorList).forEach(([key, val]) => {
-			replaceEditorColors(advancedColors, advancedColorsArr, newTemplate.colorList, key, val);
+			replaceEditorColors(
+				advancedColors,
+				advancedColorsArr,
+				newTemplate.colorList,
+				key,
+				val
+			);
 		});
 		/*end set theme guide*/
 
 		/*change editor colors*/
 		//base colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			let newColor
 			const replacementKey = baseColorsArr.find((color) => {
 				return val.includes(color);
 			});
 			if (replacementKey) {
-			console.log(replacementKey)
-		  newTemplate.colors[key] = checkForOpacity(baseColors, newTemplate.colors[key], replacementKey)
+				newTemplate.colors[key] = checkForOpacity(
+					baseColors,
+					newTemplate.colors[key],
+					replacementKey
+				);
 			}
-		//	replaceEditorColors(baseColors, baseColorsArr, newTemplate.colors, key, val);
+			//	replaceEditorColors(baseColors, baseColorsArr, newTemplate.colors, key, val);
 		});
 		//ansi colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(ansiColors, ansiColorsArr, newTemplate.colors, key, val);
+			replaceEditorColors(
+				ansiColors,
+				ansiColorsArr,
+				newTemplate.colors,
+				key,
+				val
+			);
 		});
 		//advanced colors
 		Object.entries(newTemplate.colors).forEach(([key, val]) => {
-			replaceEditorColors(advancedColors, advancedColorsArr, newTemplate.colors, key, val);
+			replaceEditorColors(
+				advancedColors,
+				advancedColorsArr,
+				newTemplate.colors,
+				key,
+				val
+			);
 		});
 		/*end change editor colors*/
 
 		/*change tokenColors functions*/
 		newTemplate.tokenColors.forEach((token) => {
 			const tokenKey = token.settings.foreground;
-			let replacementKey
+			console.log(tokenKey);
+			let replacementKey;
 			if (tokenKey) {
-			 replacementKey = baseColorsArr.find((color) => {
+				replacementKey = baseColorsArr.find((color) => {
 					return tokenKey.includes(color);
 				});
 			}
 			if (replacementKey) {
-				/**this is the only color that is set manually as it is the 
+				/**this is the only color that is set manually as it is the
 				 * only token color with opacity*/
 
 				let newColor;
@@ -351,7 +384,7 @@
 					newColor = baseColors[replacementKey] + opacityVal;
 				} else {
 					//set new color with opacity
-					newColor = baseColors[tokenKey]
+					newColor = baseColors[tokenKey];
 				}
 				token.settings.foreground = newColor;
 			}
@@ -372,24 +405,25 @@
 		});
 
 		generatedSettings['workbench.colorCustomizations'] = newTemplate.colors;
-		generatedSettings['editor.tokenColorCustomizations']['textMateRules'] = newTemplate.tokenColors;
+		generatedSettings['editor.tokenColorCustomizations']['textMateRules'] =
+			newTemplate.tokenColors;
 		generatedSettings = JSON.stringify(generatedSettings);
 
 		generatedTemplate = newTemplate;
 		generatedTemplate.name = themeName;
 		generatedTemplate = JSON.stringify(generatedTemplate);
 
-		generatedList = JSON.stringify(newTemplate.colorList)
+		generatedList = JSON.stringify(newTemplate.colorList);
 
 		showDownload = true;
 		showCopy = true;
-		showDownloadList = true
+		showDownloadList = true;
 
 		generateSuccess();
 	};
 
 	const downloadThemeHandler = () => {
-		let filename =themeName ? `${themeName}.json` : 'theme.json';
+		let filename = themeName ? `${themeName}.json` : 'theme.json';
 		let blob = new Blob([generatedTemplate], { type: 'application/json' });
 		downloadButton.download = filename;
 		downloadButton.innerHTML = 'Theme Downloaded';
@@ -401,7 +435,7 @@
 		downloadListButton.download = filename;
 		downloadListButton.innerHTML = 'Color List Downloaded';
 		downloadListButton.href = window.URL.createObjectURL(blob);
-	}
+	};
 	const copyHandler = () => {
 		navigator.clipboard.writeText(generatedSettings).then(
 			function () {
@@ -425,163 +459,170 @@
 			Picker = (await import('vanilla-picker')).default;
 		})();
 	});
-
 </script>
 
-	<h1>Visual Studio Code Theme Generator</h1>
-	<p>
-		Select colors using the following inputs and click generate to download your custom theme json.
-		Then you can either download a json file to use with the Vs Code yo generator, or click the copy
-		button and just paste the results directly into your settings.json file. You can also click the
-		'Show Vs Code' button to open a browser instance of Vs Code directly in the page and try your
-		theme out there by pasting the results into your settings.json.
-	</p>
+<h1>Visual Studio Code Theme Generator</h1>
+<p>
+	Select colors using the following inputs and click generate to download your
+	custom theme json. Then you can either download a json file to use with the Vs
+	Code yo generator, or click the copy button and just paste the results
+	directly into your settings.json file. You can also click the 'Show Vs Code'
+	button to open a browser instance of Vs Code directly in the page and try your
+	theme out there by pasting the results into your settings.json.
+</p>
+<div>
 	<div>
-		<div>
-			<label>
-				Theme Name
-				<input type="text" bind:value={themeName} />
-			</label>
-		</div>
-		<div>
-			<div class="color-header">
-				<span><h3>Base Colors</h3></span>
-				<span>
-					<button on:click={() => showColorCategoryHandler('base')}
-						>{showColorCategory.base ? 'Hide' : 'Show'}</button
-					>
-				</span>
-			</div>
-			{#if showColorCategory.base}
-				<span class="base" in:slide={{ duration: 500 }}>
-					<div class="color-input-row">
-						{#each baseColorsArr as color}
-							{#key baseColorsArr}
-									<ColorSet 
-										bind:colorObj={baseColors} 
-										colorCategory={'base'} 
-										{color} 
-										{Picker}
-										on:changeColor={(e)=>setAdvancedColors(e.detail)}
-									/>
-								{/key}
-						{/each}
-					</div>
-				</span>
-			{/if}
-		</div>
-		<div>
-			<div class="color-header">
-				<span><h3>Terminal Colors</h3></span>
-				<span>
-					<button on:click={() => showColorCategoryHandler('ansi')}
-						>{showColorCategory.ansi ? 'Hide' : 'Show'}</button
-					> 
-				</span>
-			</div>
-			{#if showColorCategory.ansi}
-				<span in:slide={{ duration: 500 }}>
-					<div class="color-input-row">
-						{#each ansiColorsArr as color}
-							{#key ansiColorsArr}
-								<ColorSet 
-									colorObj={ansiColors} 
-									colorCategory={'ansi'} 
-									{color} 
-									{Picker} 
-								/>
-							{/key}
-						{/each}
-					</div>
-				</span>
-			{/if}
-		</div>
-		<div>
-			<div class="color-header">
-				<span><h3>Advanced Colors</h3></span>
-				<span>
-					<button on:click={() => showColorCategoryHandler('advanced')}
-						>{showColorCategory.advanced ? 'Hide' : 'Show'}</button
-						>
-					</span>
-				</div>
-				{#if showColorCategory.advanced}
-				<div>Check any box to individually set an advanced color. Otherwise they will be set according
-					to their associated parent color
-				</div>
-				<span in:slide={{ duration: 500 }}>
-					<div class="color-input-row">
-						{#each advancedColorsArr as color}
-							{#key advancedColorsArr}
-								<ColorSet 
-									colorObj={advancedColors} 
-									colorCategory={'advanced'}
-									on:changeChecked={(e)=>checkAdvancedColors(e)}
-									bind:advancedColorsStatus
-									{color} 
-									{Picker}
-									whiteOrBlack={advancedColorsStatus[color].whiteOrBlack} 
-								/>
-							{/key}
-						{/each}
-					</div>
-				</span>
-			{/if}
-		</div>
+		<label>
+			Theme Name
+			<input type="text" bind:value={themeName} />
+		</label>
 	</div>
 	<div>
-		<Search/>
-	</div>
-	<div class="generate-btn-row">
-		<div class="generate-btn-container">
-			<button 
-				class="{showSuccess ? "generate-btn-success" : "generate-btn" }"
-				on:click={generateTheme}
-			>
-				{showSuccess ? 'Theme Generated' : 'Generate Theme'}
-			</button>
-		</div>
-
-		<div class="generate-btn-container">
-			<button on:click={() => (showVsCode = !showVsCode)}
-				>{showVsCode ? 'Hide' : 'Show'} Vs Code</button
-			>
-		</div>
-		{#if showDownload}
-			<div>
-				<a href="" bind:this={downloadButton} on:click={() => downloadThemeHandler()}
-					>Download Your Theme</a
+		<div class="color-header">
+			<span><h3>Base Colors</h3></span>
+			<span>
+				<button on:click={() => showColorCategoryHandler('base')}
+					>{showColorCategory.base ? 'Hide' : 'Show'}</button
 				>
-			</div>
-		{/if}
-		{#if showCopy}
-			<div class="generate-btn-container">
-				<button on:click={() => copyHandler()}>Copy to Clipboard</button>
-			</div>
-		{/if}
-		{#if showDownloadList}
-		<div class="generate-btn-container">
-			<a href="" bind:this={downloadListButton} on:click={() => downloadListHandler()}>Download List of Selected Colors</a>
+			</span>
 		</div>
+		{#if showColorCategory.base}
+			<span class="base" in:slide={{ duration: 500 }}>
+				<div class="color-input-row">
+					{#each baseColorsArr as color}
+						{#key baseColorsArr}
+							<ColorSet
+								bind:colorObj={baseColors}
+								colorCategory={'base'}
+								{color}
+								{Picker}
+								on:changeColor={(e) => setAdvancedColors(e.detail)}
+							/>
+						{/key}
+					{/each}
+				</div>
+			</span>
 		{/if}
 	</div>
-	<div class="example-btn-row">
-		<h3>Try an example theme</h3>
-		<div class="example-theme-container">
-			<div>
-				<button on:click={()=>applyExampleTheme('joker')}>Joker</button>
-			</div>
-			<div>
-				<button on:click={()=>applyExampleTheme('batman')}>Batman</button>
-			</div>
+	<div>
+		<div class="color-header">
+			<span><h3>Terminal Colors</h3></span>
+			<span>
+				<button on:click={() => showColorCategoryHandler('ansi')}
+					>{showColorCategory.ansi ? 'Hide' : 'Show'}</button
+				>
+			</span>
 		</div>
+		{#if showColorCategory.ansi}
+			<span in:slide={{ duration: 500 }}>
+				<div class="color-input-row">
+					{#each ansiColorsArr as color}
+						{#key ansiColorsArr}
+							<ColorSet
+								colorObj={ansiColors}
+								colorCategory={'ansi'}
+								{color}
+								{Picker}
+							/>
+						{/key}
+					{/each}
+				</div>
+			</span>
+		{/if}
 	</div>
-	{#if showVsCode}
-		<CodeFrame />
+	<div>
+		<div class="color-header">
+			<span><h3>Advanced Colors</h3></span>
+			<span>
+				<button on:click={() => showColorCategoryHandler('advanced')}
+					>{showColorCategory.advanced ? 'Hide' : 'Show'}</button
+				>
+			</span>
+		</div>
+		{#if showColorCategory.advanced}
+			<div>
+				Check any box to individually set an advanced color. Otherwise they will
+				be set according to their associated parent color
+			</div>
+			<span in:slide={{ duration: 500 }}>
+				<div class="color-input-row">
+					{#each advancedColorsArr as color}
+						{#key advancedColorsArr}
+							<ColorSet
+								colorObj={advancedColors}
+								colorCategory={'advanced'}
+								on:changeChecked={(e) => checkAdvancedColors(e)}
+								bind:advancedColorsStatus
+								{color}
+								{Picker}
+								whiteOrBlack={advancedColorsStatus[color].whiteOrBlack}
+							/>
+						{/key}
+					{/each}
+				</div>
+			</span>
+		{/if}
+	</div>
+</div>
+<div>
+	<Search />
+</div>
+<div class="generate-btn-row">
+	<div class="generate-btn-container">
+		<button
+			class={showSuccess ? 'generate-btn-success' : 'generate-btn'}
+			on:click={generateTheme}
+		>
+			{showSuccess ? 'Theme Generated' : 'Generate Theme'}
+		</button>
+	</div>
+
+	<div class="generate-btn-container">
+		<button on:click={() => (showVsCode = !showVsCode)}
+			>{showVsCode ? 'Hide' : 'Show'} Vs Code</button
+		>
+	</div>
+	{#if showDownload}
+		<div>
+			<a
+				href=""
+				bind:this={downloadButton}
+				on:click={() => downloadThemeHandler()}>Download Your Theme</a
+			>
+		</div>
 	{/if}
+	{#if showCopy}
+		<div class="generate-btn-container">
+			<button on:click={() => copyHandler()}>Copy to Clipboard</button>
+		</div>
+	{/if}
+	{#if showDownloadList}
+		<div class="generate-btn-container">
+			<a
+				href=""
+				bind:this={downloadListButton}
+				on:click={() => downloadListHandler()}
+				>Download List of Selected Colors</a
+			>
+		</div>
+	{/if}
+</div>
+<div class="example-btn-row">
+	<h3>Try an example theme</h3>
+	<div class="example-theme-container">
+		<div>
+			<button on:click={() => applyExampleTheme('joker')}>Joker</button>
+		</div>
+		<div>
+			<button on:click={() => applyExampleTheme('batman')}>Batman</button>
+		</div>
+	</div>
+</div>
+{#if showVsCode}
+	<CodeFrame />
+{/if}
 
 <style>
-
 	input {
 		padding: 0.5rem;
 		border-radius: 0.5rem;
@@ -620,8 +661,8 @@
 		padding: 0.5rem 2rem 2rem;
 		flex-wrap: wrap;
 	}
-	.example-btn-row h3{
-		margin-top: .5rem;
+	.example-btn-row h3 {
+		margin-top: 0.5rem;
 	}
 	.example-theme-container {
 		display: flex;
@@ -629,5 +670,4 @@
 	.example-theme-container div {
 		margin: 0 1rem 0 0;
 	}
-
 </style>
