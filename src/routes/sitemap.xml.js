@@ -3,7 +3,7 @@ const fs = require('fs');
 const BASE_URL = "https://theme.bencohen.dev";
 const pages = [""];
 
-fs.readdirSync("./src/routes").forEach(file => {
+fs.readdirSync("./").forEach(file => {
   file = file.split('.')[0];
   if (file.charAt(0) !== '_' && file !== "sitemap" && file !== "index") {
     pages.push(file);
