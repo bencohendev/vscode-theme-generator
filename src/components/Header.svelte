@@ -18,7 +18,7 @@
 		display: flex;
 		align-items: center;
 	}
-	.logo,
+	.logo a, 
 	.logo a:visited {
 		color: #9daaf2;
 		font-size: 2rem;
