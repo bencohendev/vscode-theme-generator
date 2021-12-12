@@ -718,6 +718,12 @@
 				"keyword.other.unit.vh.css"
 			],
 			"tags": []
+		},
+		"advCssFunctions": {
+			"name": "CSS Functions",
+			"description": "Controls the color of CSS functions",
+			"scopes": ["support.function.misc.css"],
+			"tags": []
 		}
 	}
 }

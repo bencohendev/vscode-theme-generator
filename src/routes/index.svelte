@@ -122,7 +122,8 @@
 		advFunctions: '#50FA7B',
 		advCssSelectors: '#50FA7B',
 		advCssConsts: '#FF79C6',
-		advCssUnits: '#FF79C6'
+		advCssUnits: '#FF79C6',
+		advCssFunctions: '#8BE9FD'
 	};
 
 	let advancedColorsArr = [
@@ -138,7 +139,8 @@
 		'advJsonVals',
 		'advCssProps',
 		'advCssConsts',
-		'advCssUnits'
+		'advCssUnits',
+		'advCssFunctions'
 	];
 
 	let advancedColorsStatus = {
@@ -229,6 +231,12 @@
 		advCssUnits: {
 			associatedBase: 'keywords',
 			associatedBaseTitle: 'Keywords',
+			decoupledFromBase: false,
+			whiteOrBlack: '#000000'
+		},
+		advCssFunctions: {
+			associatedBase: 'classes',
+			associatedBaseTitle: 'Classes',
 			decoupledFromBase: false,
 			whiteOrBlack: '#000000'
 		}
