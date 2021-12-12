@@ -8,7 +8,7 @@
 	with some modifications. And for braver users, there are plenty of advanced
 	colors you can set to truly trick out your theme. If there is a scope or tag
 	you'd like to more easily target, just
-	<a href="mailto:ben@bencohen.dev">let me know</a> and I'll add it.
+	<a href="mailto:ben@bencohen.dev">let me know</a> and I'll add it as an advanced color.
 </p>
 <div>
 	Some basic info about VS Code themes:
@@ -24,10 +24,11 @@
 		>
 	</div>
 	<div>
+		<br>
 		VS Code splits its keys into two groups: <strong>tags</strong> and
 		<strong>scopes</strong>.
 		<p>
-			Tags generally set colors for everything other than explicitly code
+			<strong>Tags</strong> generally set colors for everything other than explicitly code
 			related colors.
 
 			<strong>Scopes</strong> are for code specific colors. 
