@@ -1,3 +1,15 @@
+const fs = require('fs');
+
+const BASE_URL = "https://theme.bencohen.dev";
+const pages = [""];
+
+fs.readdirSync("./src/routes").forEach(file => {
+  file = file.split('.')[0];
+  if (file.charAt(0) !== '_' && file !== "sitemap" && file !== "index") {
+    pages.push(file);
+  }
+});
+
 export async function get() {
 	const headers = {
 		'Cache-Control': 'max-age=0, s-maxage=3600',
@@ -7,16 +19,13 @@ export async function get() {
 		headers,
 		body: `<?xml version="1.0" encoding="UTF-8" ?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    <url>
-    <loc>https://theme.bencohen.dev/</loc>
-    <lastmod>2021-12-12T01:46:41+00:00</lastmod>
-    <priority>1.00</priority>
-    </url>
-    <url>
-    <loc>https://theme.bencohen.dev/about</loc>
-    <lastmod>2021-12-12T01:46:41+00:00</lastmod>
-    <priority>0.80</priority>
-    </url>
+    ${pages
+      .map(
+        page => `
+      <url><loc>${BASE_URL}/${page}</loc><priority>0.85</priority></url>
+    `
+      )
+      .join("\n")}
     </urlset>`
 	};
 }
