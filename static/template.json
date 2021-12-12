@@ -561,11 +561,42 @@
 				"fontStyle": "italic"
 			}
 		},
+
+		{
+			"name": "CSS Properties",
+			"scope": ["meta.property-value.css", "meta.property-list.css"],
+			"settings": {
+				"foreground": "advCssProps"
+			}
+		},
+		{
+			"name": "CSS Constants",
+			"scope": ["constant.numeric.css"],
+			"settings": {
+				"foreground": "advCssConsts"
+			}
+		},
 		{
 			"name": "CSS properties",
 			"scope": ["support.type.property-name.css"],
 			"settings": { "foreground": "advCssProps" }
 		},
+		{
+			"name": "CSS units",
+			"scope": [
+				"keyword.other.unit.rem.css",
+				"keyword.other.unit.em.css",
+				"keyword.other.unit.ex.css",
+				"keyword.other.unit.ch.css",
+				"keyword.other.unit.vvmin.css",
+				"keyword.other.unit.vman.css",
+				"keyword.other.unit.px.css",
+				"keyword.other.unit.vw.css",
+				"keyword.other.unit.vh.css"
+			],
+			"settings": { "foreground": "advCssUnits" }
+		},
+
 		{
 			"name": "Function names",
 			"scope": [
