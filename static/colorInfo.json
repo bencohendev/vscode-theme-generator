@@ -694,12 +694,35 @@
 		"advCssProps": {
 			"name": "CSS Properties",
 			"description": "Controls the color of CSS properties",
+			"scopes": ["meta.property-value.css", "meta.property-list.css"],
+			"tags": []
+		},
+		"advCssConsts": {
+			"name": "CSS Constants",
+			"description": "Controls the color of CSS constants such as numbers",
+			"scopes": ["constant.numeric.css"],
+			"tags": []
+		},
+		"advCssUnits": {
+			"name": "CSS Units",
+			"description": "Controls the color of CSS units such as px or rem",
 			"scopes": [
-				"comment",
-				"punctuation.definition.comment",
-				"unused.comment",
-				"wildcard.comment"
+				"keyword.other.unit.rem.css",
+				"keyword.other.unit.em.css",
+				"keyword.other.unit.ex.css",
+				"keyword.other.unit.ch.css",
+				"keyword.other.unit.vvmin.css",
+				"keyword.other.unit.vman.css",
+				"keyword.other.unit.px.css",
+				"keyword.other.unit.vw.css",
+				"keyword.other.unit.vh.css"
 			],
+			"tags": []
+		},
+		"advCssFunctions": {
+			"name": "CSS Functions",
+			"description": "Controls the color of CSS functions",
+			"scopes": ["support.function.misc.css"],
 			"tags": []
 		}
 	}
