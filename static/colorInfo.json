@@ -167,7 +167,7 @@
 			]
 		},
 		"classes": {
-			"name": "Classes",
+			"name": "Classes/Types",
 			"description": "Defines classes as well as JSON keys, CSS properties, Types, and built-ins.",
 			"scopes": [
 				"beginning.punctuation.definition.list.markdown",
@@ -266,7 +266,7 @@
 		},
 		"parameters": {
 			"name": "Parameters",
-			"description": "Defines function parameters as well as comment variables. It also defines modified files with no 'errors'",
+			"description": "Defines function parameters as well as comment variables. It also defines modified files with warnings",
 			"scopes": [
 				"markup.changed",
 				"markup.bold",
@@ -416,7 +416,7 @@
 		},
 		"errors": {
 			"name": "Error",
-			"description": "Defines errors and invalid code. It also defines modified files with no errors",
+			"description": "Defines errors and invalid code. It also defines modified files with errors",
 			"scopes": [
 				"markup.deleted",
 				"invalid",
