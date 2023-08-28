@@ -83,7 +83,7 @@
 		"list.highlightForeground": "classes",
 		"list.hoverBackground": "secondaryBackground75",
 		"list.inactiveSelectionBackground": "secondaryBackground75",
-		"list.warningForeground": "keywords",
+		"list.warningForeground": "parameters",
 		"list.errorForeground": "errors",
 		"activityBar.background": "activityBarBackground",
 		"activityBar.inactiveForeground": "secondaryForeground",
