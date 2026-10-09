@@ -8,7 +8,7 @@
 		width="1000"
 		height="500"
 		src="https://www.vscode.dev"
-	/>
+	></iframe>
 </div>
 
 <style>

@@ -75,7 +75,7 @@
 						disabled
 					/>
 				</label>
-				<span class="color-box" style="background-color: {colorObj[color]}" />
+				<span class="color-box" style="background-color: {colorObj[color]}"></span>
 			</span>
 	</div>
 	{:else}
@@ -92,7 +92,7 @@
 						style="border-color: {colorObj[color]}"
 					/>
 				</label>
-				<span class="color-box" style="background-color: {colorObj[color]}" />
+				<span class="color-box" style="background-color: {colorObj[color]}"></span>
 			</span>
 	</div>
 	{/if}

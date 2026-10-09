@@ -27,7 +27,7 @@
 			{#if showAdvancedInfo}
 				<div>
 					{#if tags.length > 0}
-						<div class="tag-heading" />
+						<div class="tag-heading"></div>
 						<h5 style="color: {buttonText}">Tags</h5>
 						<ul>
 							{#each tags as tag}
@@ -36,7 +36,7 @@
 						</ul>
 					{/if}
 					{#if scopes.length > 0}
-						<div class="tag-heading" />
+						<div class="tag-heading"></div>
 						<h5 style="color: {buttonText}">Scopes</h5>
 						<ul>
 							{#each scopes as scope}
@@ -47,7 +47,7 @@
 				</div>
 			{/if}
 		</div>
-		<div class="more-info-fuzz" />
+		<div class="more-info-fuzz"></div>
 	</div>
 </div>
 
